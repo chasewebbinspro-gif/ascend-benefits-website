@@ -1,0 +1,38 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
+  from = "/employer-coverage"
+  to = "/employer-coverage.html"
+  status = 200
+
+[[redirects]]
+  from = "/preventive-care"
+  to = "/preventive-care.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+
+[[redirects]]
+  from = "http://ascendbenefitscg.com/*"
+  to = "https://ascendbenefitscg.com/:splat"
+  status = 301
+  force = true

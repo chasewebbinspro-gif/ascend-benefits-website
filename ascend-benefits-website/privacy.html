@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Ascend Benefits Consulting Group</title>
+  <meta name="description" content="Privacy Policy for Ascend Benefits Consulting Group. Learn how we collect, use, and protect your personal information." />
+  <link rel="canonical" href="https://www.ascendbenefitscg.com/privacy" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0D1F3C; --gold: #C9A84C; --gold-light: #e2c06a; --gold-pale: #f5e9c8;
+      --white: #FFFFFF; --off-white: #F8F6F1; --text-mid: #3a4a63; --text-light: #6b7c99;
+      --border: rgba(201,168,76,0.2);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--white); }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .content { max-width: 760px; margin: 0 auto; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 14px 28px; border-radius: 4px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+    .btn-primary:hover { background: var(--gold-light); }
+
+    .announcement { background: var(--navy); color: var(--gold-pale); text-align: center; padding: 10px 24px; font-size: 0.82rem; font-weight: 500; }
+    .announcement strong { color: var(--gold); }
+
+    header { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid rgba(13,31,60,0.08); box-shadow: 0 2px 20px rgba(13,31,60,0.07); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 24px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .logo-mark svg { width: 26px; height: 26px; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); line-height: 1.1; }
+    .logo-sub { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    nav { display: flex; align-items: center; gap: 4px; }
+    nav a { font-size: 0.88rem; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 8px 14px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
+    nav a:hover { color: var(--navy); background: var(--off-white); }
+    .header-phone { display: flex; align-items: center; gap: 7px; font-size: 0.9rem; font-weight: 600; color: var(--navy); text-decoration: none; }
+    .header-phone svg { color: var(--gold); }
+    .header-phone:hover { color: var(--gold); }
+    .header-cta { display: flex; align-items: center; gap: 16px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
+    .mobile-nav { display: none; flex-direction: column; background: var(--white); border-top: 1px solid var(--border); padding: 16px 24px 24px; }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--off-white); }
+    .mobile-nav .btn-primary { margin-top: 16px; justify-content: center; }
+
+    .page-hero { background: var(--navy); padding: 56px 0 48px; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .page-hero p { font-size: 0.9rem; color: rgba(255,255,255,0.55); }
+
+    .policy-body { padding: 64px 0 80px; }
+    .policy-body h2 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin: 40px 0 12px; padding-top: 32px; border-top: 1px solid var(--off-white); }
+    .policy-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+    .policy-body p { font-size: 0.95rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 14px; }
+    .policy-body p strong { color: var(--navy); }
+    .policy-body ul { margin: 12px 0 14px 20px; }
+    .policy-body li { font-size: 0.95rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 6px; }
+    .policy-body a { color: var(--gold); text-decoration: none; }
+    .policy-body a:hover { text-decoration: underline; }
+    .effective-box { background: var(--off-white); border-left: 4px solid var(--gold); border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 36px; font-size: 0.88rem; color: var(--text-mid); }
+    .effective-box strong { color: var(--navy); }
+
+    footer { background: #080f1e; padding: 40px 0 24px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 0; }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      nav, .header-phone { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="announcement"><strong>Ascend Benefits Consulting Group</strong> — Smarter Benefits. Stronger Businesses.</div>
+
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+          <div class="logo-text"><span class="logo-name">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/employer-coverage">Employer Coverage</a>
+          <a href="/preventive-care">Preventive Care</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div class="header-cta">
+          <a href="tel:6155599387" class="header-phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (615) 559-9387
+          </a>
+          <a href="/contact" class="btn-primary">Get Free Analysis</a>
+        </div>
+        <button class="hamburger" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/">Home</a><a href="/employer-coverage">Employer Coverage</a><a href="/preventive-care">Preventive Care</a><a href="/about">About</a><a href="/contact">Contact</a>
+      <a href="tel:6155599387" style="color:var(--gold);font-weight:600;">📞 (615) 559-9387</a>
+      <a href="/contact" class="btn-primary">Get Free Benefits Analysis</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="content">
+        <h1>Privacy Policy</h1>
+        <p>Last updated: January 1, 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="policy-body">
+    <div class="container">
+      <div class="content">
+
+        <div class="effective-box"><strong>Effective Date: January 1, 2026.</strong> This Privacy Policy describes how Ascend Benefits Consulting Group ("Ascend Benefits," "we," "us," or "our") collects, uses, and protects information you provide when using our website and services.</div>
+
+        <h2>1. Information We Collect</h2>
+        <p>We collect information you voluntarily provide to us when you:</p>
+        <ul>
+          <li>Fill out a contact or benefits analysis request form on our website</li>
+          <li>Call or email us directly</li>
+          <li>Interact with our AI chat assistant ("Avery")</li>
+          <li>Request a quote or schedule a consultation</li>
+        </ul>
+        <p>The types of information we may collect include your name, company name, business email address, phone number, number of employees, current health plan type, and any details you share about your benefits needs.</p>
+        <p>We may also collect non-personal information automatically through your use of our website, including your IP address, browser type, pages visited, and time spent on the site, through standard web analytics tools.</p>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>We use the information we collect solely for the purpose of providing and improving our benefits consulting services, including to:</p>
+        <ul>
+          <li>Respond to your inquiry and provide a free benefits analysis</li>
+          <li>Contact you to schedule a consultation or follow up on your request</li>
+          <li>Deliver customized plan recommendations and proposals</li>
+          <li>Send relevant information about our services if you have opted in</li>
+          <li>Improve our website content and user experience</li>
+          <li>Comply with applicable legal and regulatory obligations</li>
+        </ul>
+
+        <h2>3. How We Share Your Information</h2>
+        <p><strong>We do not sell, rent, or trade your personal information to third parties.</strong> We may share information only in the following limited circumstances:</p>
+        <ul>
+          <li><strong>With your consent:</strong> When you authorize us to share information with insurance carriers, TPAs, or other benefit partners as part of obtaining quotes or structuring a plan for your business.</li>
+          <li><strong>Service providers:</strong> We may share data with trusted third-party vendors who assist in operating our website or delivering our services (such as form submission services or scheduling platforms), subject to confidentiality obligations.</li>
+          <li><strong>Legal requirements:</strong> We may disclose information if required to do so by law or in response to valid legal process.</li>
+        </ul>
+
+        <h2>4. Data Security</h2>
+        <p>We take reasonable administrative, technical, and physical measures to protect your personal information from unauthorized access, use, or disclosure. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+        <h2>5. Cookies and Tracking</h2>
+        <p>Our website may use cookies and similar tracking technologies to improve your browsing experience and analyze site traffic. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, some features of our site may not function properly without cookies.</p>
+        <p>We may use Google Analytics or similar tools to understand how visitors use our site. These tools collect anonymized data and do not identify you personally.</p>
+
+        <h2>6. Third-Party Links</h2>
+        <p>Our website may contain links to third-party websites, including carrier portals, scheduling platforms (such as Calendly), and program partner sites (such as getehp.com). We are not responsible for the privacy practices or content of those sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>Our website and services are intended for business owners, HR professionals, and adults acting on behalf of their organizations. We do not knowingly collect personal information from individuals under the age of 18.</p>
+
+        <h2>8. Your Rights and Choices</h2>
+        <p>You have the right to request access to, correction of, or deletion of your personal information that we hold. To exercise any of these rights, please contact us using the information below. We will respond to your request within a reasonable time frame.</p>
+        <p>If you no longer wish to receive communications from us, you may opt out at any time by contacting us directly or using the unsubscribe link in any email we send you.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will post the updated policy on this page with a revised effective date. We encourage you to review this page periodically.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
+        <ul>
+          <li><strong>Ascend Benefits Consulting Group</strong></li>
+          <li>Phone: <a href="tel:6155599387">(615) 559-9387</a></li>
+          <li>Email: <a href="/cdn-cgi/l/email-protection#70191e161f30110313151e1412151e151619040313175e131f1d"><span class="__cf_email__" data-cfemail="553c3b333a15342636303b3137303b30333c212636327b363a38">[email&#160;protected]</span></a></li>
+          <li>Website: <a href="/contact">ascendbenefitscg.com/contact</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 Ascend Benefits Consulting Group. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+    

@@ -1,0 +1,8 @@
+/contact /contact.html 200
+/employer-coverage /employer-coverage.html 200
+/preventive-care /preventive-care.html 200
+/about /about.html 200
+/privacy /privacy.html 200
+/terms /terms.html 200
+http://ascendbenefitscg.com/* https://ascendbenefitscg.com/:splat 301!
+http://www.ascendbenefitscg.com/* https://ascendbenefitscg.com/:splat 301!
