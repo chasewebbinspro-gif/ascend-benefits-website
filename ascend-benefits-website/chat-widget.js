@@ -241,7 +241,7 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
     }, 2000);
   }
 
-  function toggleChat() {
+  window.toggleChat = function toggleChat() {
     const toggle = document.getElementById('ascend-chat-toggle');
     const window_ = document.getElementById('ascend-chat-window');
     const bubble = document.getElementById('ascend-chat-bubble');
