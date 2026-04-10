@@ -1,52 +1,40 @@
-(function() {
-  'use strict';
+(function () {
+  const CALENDLY_URL = 'https://calendly.com/ascendbenefitscg';
 
-  // ── CONFIG ── swap these when you go live ──────────────────────────
-  const CALENDLY_URL = 'https://calendly.com/chase-insurancepro/30min'; // ← replace
-  // ──────────────────────────────────────────────────────────────────
+  const SYSTEM_PROMPT = `You are Avery, a friendly and knowledgeable benefits specialist with Ascend Benefits Consulting Group. You help business owners understand their employee benefits options.
 
-  const SYSTEM_PROMPT = `You are an expert benefits consultant assistant for Ascend Benefits Consulting Group. Your name is Avery. You work directly with Chase Webb, President of Ascend Benefits, who has 15 years of experience in health insurance.
+KEY FACTS ABOUT ASCEND BENEFITS:
+- Specializes in employer group health insurance for companies with 2-250 employees
+- Serves TN, AL, GA, FL, TX, SC, NC, MS, LA and all 50 states
+- Offers level-funded, self-funded, and fully-insured group health plans
+- Also offers the Employee Health Program (EHP) — a preventive care supplemental benefit
+- EHP requires employer to have at least 10 full-time W-2 employees
+- Independent and unbiased — not tied to any single carrier
+- Phone: (615) 559-9387
+- Website: ascendbenefitscg.com
 
-Your job is to:
-1. Answer questions about employee benefits, health insurance, level-funded plans, self-funded/ERISA plans, stop-loss insurance, and the Ascend Preventive Care Program (SIMERP).
-2. Qualify leads by naturally learning about their business during the conversation.
-3. Guide interested visitors toward booking a free benefits analysis with Chase.
+YOUR PERSONALITY:
+- Warm, professional, and easy to talk to
+- Use plain language — avoid jargon unless you explain it
+- Be genuinely helpful, not salesy
+- Keep responses concise (2-4 sentences max unless they ask for detail)
 
-KEY FACTS TO KNOW:
-- Ascend specializes in level-funded and self-funded ERISA plans for employers with 2–250 employees
-- Employers can save up to 30% vs traditional fully-insured group plans
-- With level-funded/self-funded plans, employers pay only for actual claims — not estimated premiums
-- Surplus is returned to the employer if claims come in under budget
-- Stop-loss insurance protects against catastrophic claims — no billing above the stop-loss threshold
-- PPO networks available: UnitedHealth, Cigna, BCBS, Aetna, PHCS (same access, smarter pricing)
-- Ascend also offers a Preventive Care Program (SIMERP) that saves employers ~$640/employee/year in FICA taxes at $0 net cost
-- The SIMERP program is administered by EHP and Revive Health, with 85–90% employee participation
-- Traditional fully-insured plans: premiums rise every year, zero claims transparency, carrier keeps surplus
-- Self-funded: employee claims paid from company budget, full claims transparency, keep surplus, backed by stop-loss
-- Level-funded: fixed monthly payments split into claims fund + stop-loss + admin fees, potential refund at year end
-- No cash advance required (unlike many other TPAs)
-- Ascend is 100% independent — not tied to any carrier, works with top-rated TPAs
-- Phone: (615) 559-9387 | Virtual & nationwide
-
-QUALIFYING QUESTIONS TO NATURALLY ASK (don't ask all at once):
-- How many employees do they have?
-- Do they currently offer health benefits?
-- What type of plan are they on (traditional, level-funded, self-funded)?
-- What's their biggest pain point (cost, talent retention, lack of transparency)?
-
-PERSONALITY & TONE:
-- Warm, knowledgeable, consultative — not salesy
-- Educate first, then guide toward a call
-- Keep responses concise — 2–4 sentences max unless they ask for detail
-- Use plain language, not insurance jargon
-- If someone asks a question outside your expertise, say you'll have Chase follow up personally
-
-BOOKING APPOINTMENTS:
-- When someone expresses interest in a free analysis, savings estimate, or wants to talk to Chase, offer to book them via Calendly
-- Say something like: "I'd love to get you on Chase's calendar for a free 15-minute benefits analysis — no obligation at all. Want me to send you the booking link?"
+YOUR GOAL:
+- Answer their benefits questions
+- Help them understand their options
+- When they seem ready or ask about next steps, offer to get them booked with a team member for a free analysis
+- When offering to book, say something like: "I can get you set up with a team member for a free analysis — want me to send you the booking link?"
 - When they say yes, respond with: "SHOW_CALENDLY_BUTTON" (exactly that — the system will display the button)
 
-IMPORTANT: Never make up specific numbers, savings amounts, or plan details that aren't in the facts above. If unsure, say Chase can walk them through specifics on a call.`;
+IMPORTANT: Never make up specific numbers, savings amounts, or plan details that aren't in the facts above. If unsure, say a team member can walk them through specifics on a call.`;
+
+  const QUICK_REPLIES = [
+    'What plans do you offer?',
+    'How much could I save?',
+    'What is level-funded?',
+    'Do you serve my state?',
+    'Book a free analysis'
+  ];
 
   const STYLES = `
     #ascend-chat-widget * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -90,217 +78,167 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
     }
     #ascend-chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
 
-    .acw-header {
-      background: linear-gradient(135deg, #0D1F3C 0%, #162d56 100%);
-      padding: 18px 20px; display: flex; align-items: center; gap: 12px;
-      border-bottom: 2px solid #C9A84C;
+    #acwHeader {
+      background: linear-gradient(135deg, #0D1F3C 0%, #1e3d72 100%);
+      padding: 16px 20px; display: flex; align-items: center; gap: 12px;
     }
-    .acw-avatar {
+    #acwAvatar {
       width: 42px; height: 42px; border-radius: 50%;
-      background: rgba(201,168,76,0.15); border: 2px solid #C9A84C;
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      background: linear-gradient(135deg, #C9A84C, #e8c96a);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700; color: #0D1F3C; flex-shrink: 0;
     }
-    .acw-avatar svg { width: 22px; height: 22px; color: #C9A84C; }
-    .acw-header-text { flex: 1; }
-    .acw-header-name { font-size: 0.95rem; font-weight: 600; color: #fff; line-height: 1.2; }
-    .acw-header-status { font-size: 0.72rem; color: rgba(255,255,255,0.6); display: flex; align-items: center; gap: 5px; margin-top: 2px; }
-    .acw-status-dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; flex-shrink: 0; }
-    .acw-header-sub { font-size: 0.7rem; color: rgba(201,168,76,0.8); margin-top: 1px; }
+    #acwHeaderInfo { flex: 1; }
+    #acwHeaderName { color: #fff; font-size: 15px; font-weight: 600; }
+    #acwHeaderStatus { color: rgba(255,255,255,0.7); font-size: 12px; display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+    #acwHeaderStatus::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #4ade80; display: inline-block; }
+    #acwClose { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.7); padding: 4px; border-radius: 4px; }
+    #acwClose:hover { color: #fff; background: rgba(255,255,255,0.1); }
 
-    .acw-messages {
-      flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px;
-      background: #F8F6F1;
+    #acwMessages {
+      flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px;
+      background: #f8f9fc;
     }
-    .acw-messages::-webkit-scrollbar { width: 4px; }
-    .acw-messages::-webkit-scrollbar-track { background: transparent; }
-    .acw-messages::-webkit-scrollbar-thumb { background: rgba(13,31,60,0.15); border-radius: 4px; }
+    #acwMessages::-webkit-scrollbar { width: 4px; }
+    #acwMessages::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
 
-    .acw-msg { display: flex; flex-direction: column; max-width: 88%; }
+    .acw-msg { display: flex; flex-direction: column; max-width: 85%; }
     .acw-msg.bot { align-self: flex-start; }
     .acw-msg.user { align-self: flex-end; }
     .acw-bubble {
-      padding: 10px 14px; border-radius: 12px; font-size: 0.875rem; line-height: 1.55;
+      padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.5;
     }
-    .acw-msg.bot .acw-bubble {
-      background: #fff; color: #0D1F3C;
-      border-radius: 4px 12px 12px 12px;
-      box-shadow: 0 1px 4px rgba(13,31,60,0.08);
-      border: 1px solid rgba(13,31,60,0.06);
-    }
-    .acw-msg.user .acw-bubble {
-      background: #0D1F3C; color: #fff;
-      border-radius: 12px 4px 12px 12px;
-    }
-    .acw-msg-time { font-size: 0.65rem; color: #9aabbd; margin-top: 4px; padding: 0 4px; }
+    .acw-msg.bot .acw-bubble { background: #fff; color: #1a202c; border-bottom-left-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    .acw-msg.user .acw-bubble { background: linear-gradient(135deg, #0D1F3C, #1e3d72); color: #fff; border-bottom-right-radius: 4px; }
+    .acw-msg-time { font-size: 11px; color: #9ca3af; margin-top: 4px; }
     .acw-msg.user .acw-msg-time { text-align: right; }
 
-    .acw-typing {
-      display: flex; align-items: center; gap: 4px; padding: 10px 14px;
-      background: #fff; border-radius: 4px 12px 12px 12px;
-      box-shadow: 0 1px 4px rgba(13,31,60,0.08);
-      border: 1px solid rgba(13,31,60,0.06);
-      width: fit-content;
+    #acwTyping { align-self: flex-start; }
+    #acwTyping .acw-bubble { display: flex; gap: 5px; align-items: center; padding: 12px 16px; }
+    .acw-dot { width: 7px; height: 7px; border-radius: 50%; background: #9ca3af; animation: acw-bounce 1.2s infinite; }
+    .acw-dot:nth-child(2) { animation-delay: 0.2s; }
+    .acw-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes acw-bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
+
+    #acwQuickReplies { padding: 8px 12px; display: flex; flex-wrap: wrap; gap: 6px; background: #f8f9fc; border-top: 1px solid #e5e7eb; }
+    .acw-qr {
+      background: #fff; border: 1.5px solid #C9A84C; color: #0D1F3C;
+      border-radius: 20px; padding: 5px 12px; font-size: 12px; font-weight: 500;
+      cursor: pointer; transition: all 0.15s;
     }
-    .acw-typing span {
-      width: 7px; height: 7px; background: #C9A84C; border-radius: 50%;
-      animation: acw-bounce 1.2s ease-in-out infinite;
+    .acw-qr:hover { background: #C9A84C; color: #0D1F3C; }
+
+    #acwInputRow {
+      display: flex; align-items: center; gap: 8px; padding: 12px 16px;
+      border-top: 1px solid #e5e7eb; background: #fff;
     }
-    .acw-typing span:nth-child(2) { animation-delay: 0.2s; }
-    .acw-typing span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes acw-bounce {
-      0%, 60%, 100% { transform: translateY(0); }
-      30% { transform: translateY(-6px); }
+    #acwInput {
+      flex: 1; border: 1.5px solid #e5e7eb; border-radius: 24px;
+      padding: 9px 16px; font-size: 14px; outline: none;
+      transition: border-color 0.2s; color: #1a202c;
     }
+    #acwInput:focus { border-color: #C9A84C; }
+    #acwSend {
+      width: 38px; height: 38px; border-radius: 50%; border: none;
+      background: linear-gradient(135deg, #0D1F3C, #1e3d72); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(13,31,60,0.3);
+    }
+    #acwSend:hover { transform: scale(1.08); box-shadow: 0 4px 12px rgba(13,31,60,0.4); }
+    #acwSend svg { width: 16px; height: 16px; color: #C9A84C; }
 
     .acw-calendly-btn {
       display: inline-flex; align-items: center; gap: 8px;
-      background: #C9A84C; color: #0D1F3C;
-      font-size: 0.82rem; font-weight: 700;
-      padding: 10px 16px; border-radius: 8px;
-      text-decoration: none; margin-top: 8px;
-      transition: background 0.2s; border: none; cursor: pointer;
-      letter-spacing: 0.02em;
+      background: linear-gradient(135deg, #C9A84C, #e8c96a);
+      color: #0D1F3C; font-weight: 600; font-size: 13px;
+      padding: 9px 16px; border-radius: 10px; text-decoration: none;
+      margin-top: 10px; transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(201,168,76,0.4);
     }
-    .acw-calendly-btn:hover { background: #e2c06a; }
-    .acw-calendly-btn svg { width: 14px; height: 14px; }
-
-    .acw-quick-replies {
-      display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px;
-      background: #F8F6F1;
-    }
-    .acw-qr {
-      background: #fff; border: 1.5px solid rgba(13,31,60,0.15);
-      color: #0D1F3C; font-size: 0.75rem; font-weight: 500;
-      padding: 6px 12px; border-radius: 100px; cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      white-space: nowrap;
-    }
-    .acw-qr:hover { border-color: #C9A84C; background: #f5e9c8; }
-
-    .acw-input-area {
-      padding: 12px 14px; background: #fff;
-      border-top: 1px solid rgba(13,31,60,0.08);
-      display: flex; gap: 8px; align-items: flex-end;
-    }
-    .acw-input {
-      flex: 1; background: #F8F6F1; border: 1.5px solid rgba(13,31,60,0.1);
-      border-radius: 10px; padding: 10px 14px;
-      font-size: 0.875rem; color: #0D1F3C; outline: none; resize: none;
-      max-height: 100px; min-height: 40px; line-height: 1.4;
-      transition: border-color 0.2s;
-      font-family: inherit;
-    }
-    .acw-input:focus { border-color: #C9A84C; }
-    .acw-input::placeholder { color: #9aabbd; }
-    .acw-send {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: #0D1F3C; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s; flex-shrink: 0;
-    }
-    .acw-send:hover { background: #C9A84C; }
-    .acw-send:disabled { background: #ccc; cursor: not-allowed; }
-    .acw-send svg { width: 17px; height: 17px; color: #fff; }
-
-    .acw-footer {
-      text-align: center; padding: 6px 0 8px;
-      font-size: 0.62rem; color: #b0bec5; background: #fff;
-      border-top: 1px solid rgba(13,31,60,0.05);
-    }
+    .acw-calendly-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(201,168,76,0.5); }
+    .acw-calendly-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
 
     #ascend-chat-bubble {
-      position: fixed; bottom: 100px; right: 28px; z-index: 9997;
-      background: #0D1F3C; color: #fff;
-      padding: 10px 16px; border-radius: 12px 12px 4px 12px;
-      font-size: 0.82rem; font-weight: 500; max-width: 220px;
-      box-shadow: 0 4px 20px rgba(13,31,60,0.2);
-      animation: acw-fadein 0.4s ease 2s both;
-      cursor: pointer;
+      position: fixed; bottom: 104px; right: 28px; z-index: 9997;
+      background: #0D1F3C; color: #fff; font-size: 13px; font-weight: 500;
+      padding: 10px 16px; border-radius: 12px; max-width: 220px;
+      box-shadow: 0 4px 16px rgba(13,31,60,0.25); cursor: pointer;
+      animation: acw-fadein 0.5s ease;
     }
-    #ascend-chat-bubble span { color: #C9A84C; font-weight: 700; }
+    #ascend-chat-bubble::after {
+      content: ''; position: absolute; bottom: -8px; right: 22px;
+      border: 8px solid transparent; border-top-color: #0D1F3C; border-bottom: none;
+    }
     @keyframes acw-fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-    @media (max-width: 480px) {
-      #ascend-chat-window { width: calc(100vw - 24px); right: 12px; bottom: 96px; height: 70vh; }
+    @media (max-width: 440px) {
+      #ascend-chat-window { width: calc(100vw - 16px); right: 8px; bottom: 96px; }
       #ascend-chat-toggle { bottom: 20px; right: 16px; }
-      #ascend-chat-pulse { bottom: 16px; right: 12px; }
-      #ascend-chat-bubble { right: 16px; bottom: 96px; }
     }
   `;
 
-  const QUICK_REPLIES = [
-    'How does level-funding work?',
-    'How much could I save?',
-    'What is stop-loss insurance?',
-    'Tell me about the Preventive Care Program',
-    'Book a free analysis'
-  ];
-
   let messages = [];
-  let isTyping = false;
   let quickRepliesShown = true;
 
   function getTime() {
-    return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const now = new Date();
+    return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   }
 
-  function buildWidget() {
-    // Inject styles
+  function init() {
     const style = document.createElement('style');
     style.textContent = STYLES;
     document.head.appendChild(style);
 
-    const wrap = document.createElement('div');
-    wrap.id = 'ascend-chat-widget';
-    wrap.innerHTML = `
+    const widget = document.createElement('div');
+    widget.id = 'ascend-chat-widget';
+    widget.innerHTML = `
       <div id="ascend-chat-pulse"></div>
-
-      <div id="ascend-chat-bubble" onclick="document.getElementById('ascend-chat-toggle').click(); this.style.display='none';">
-        👋 <span>Chat with a Specialist</span> — ask us anything about your benefits options!
+      <div id="ascend-chat-bubble" onclick="toggleChat()">
+        💬 Chat with a Specialist —<br>ask us anything about your benefits options!
       </div>
-
-      <button id="ascend-chat-toggle" aria-label="Open chat">
-        <svg class="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <button id="ascend-chat-toggle" onclick="toggleChat()" aria-label="Open chat">
+        <svg class="icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-
       <div id="ascend-chat-window">
-        <div class="acw-header">
-          <div class="acw-avatar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <div id="acwHeader">
+          <div id="acwAvatar">A</div>
+          <div id="acwHeaderInfo">
+            <div id="acwHeaderName">Avery</div>
+            <div id="acwHeaderStatus">Benefits Specialist · Online</div>
           </div>
-          <div class="acw-header-text">
-            <div class="acw-header-name">Avery — Benefits Specialist</div>
-            <div class="acw-header-status"><div class="acw-status-dot"></div>Online now</div>
-            <div class="acw-header-sub">Ascend Benefits Consulting Group</div>
-          </div>
+          <button id="acwClose" onclick="toggleChat()" aria-label="Close chat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
         </div>
-        <div class="acw-messages" id="acwMessages"></div>
-        <div class="acw-quick-replies" id="acwQuickReplies"></div>
-        <div class="acw-input-area">
-          <textarea class="acw-input" id="acwInput" placeholder="Ask about your benefits options..." rows="1"></textarea>
-          <button class="acw-send" id="acwSend" aria-label="Send">
+        <div id="acwMessages"></div>
+        <div id="acwQuickReplies"></div>
+        <div id="acwInputRow">
+          <input id="acwInput" type="text" placeholder="Ask about your benefits options..." autocomplete="off" />
+          <button id="acwSend">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
         </div>
-        <div class="acw-footer">Powered by Ascend Benefits AI · (615) 559-9387</div>
       </div>
     `;
-    document.body.appendChild(wrap);
+    document.body.appendChild(widget);
 
-    // Events
-    document.getElementById('ascend-chat-toggle').addEventListener('click', toggleChat);
-    document.getElementById('acwSend').addEventListener('click', sendMessage);
-    document.getElementById('acwInput').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-    });
-    document.getElementById('acwInput').addEventListener('input', function() {
-      this.style.height = 'auto';
-      this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+    document.getElementById('acwSend').addEventListener('click', handleSend);
+    document.getElementById('acwInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); }
     });
 
-    renderQuickReplies();
-    addBotMessage("Hi there! 👋 I'm Avery, a benefits specialist with Ascend Benefits Consulting Group. I can help answer questions about your coverage options, see how much you might save, or get you booked with Chase for a free analysis. What can I help you with today?");
+    setTimeout(() => {
+      addBotMessage("👋 I'm Avery, a benefits specialist with Ascend Benefits Consulting Group. I can help answer questions about your coverage options, see how much you might save, or get you booked with a team member for a free analysis. What can I help you with today?");
+      renderQuickReplies();
+    }, 800);
+
+    setTimeout(() => {
+      const bubble = document.getElementById('ascend-chat-bubble');
+      if (bubble) bubble.style.display = 'block';
+    }, 2000);
   }
 
   function toggleChat() {
@@ -325,7 +263,7 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
     ).join('');
   }
 
-  window._acwSendQuick = function(text) {
+  window._acwSendQuick = function (text) {
     quickRepliesShown = false;
     renderQuickReplies();
     processUserMessage(text);
@@ -333,12 +271,9 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
 
   function addBotMessage(text) {
     const msgList = document.getElementById('acwMessages');
-
-    // Remove typing indicator if present
     const typing = document.getElementById('acwTyping');
     if (typing) typing.remove();
 
-    // Check if we need to show Calendly button
     const showCalendly = text.includes('SHOW_CALENDLY_BUTTON');
     const cleanText = text.replace('SHOW_CALENDLY_BUTTON', '').trim();
 
@@ -349,59 +284,49 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
         <br/>
         <a href="${CALENDLY_URL}" target="_blank" class="acw-calendly-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Book Free Analysis with Chase
+          Book Free Analysis with Our Team
         </a>` : ''}
       </div>
       <div class="acw-msg-time">${getTime()}</div>
     `;
     msgList.appendChild(msg);
     msgList.scrollTop = msgList.scrollHeight;
-    messages.push({ role: 'assistant', content: cleanText + (showCalendly ? ' [Calendly booking link shown]' : '') });
+    messages.push({ role: 'assistant', content: cleanText });
   }
 
   function addUserMessage(text) {
     const msgList = document.getElementById('acwMessages');
     const msg = document.createElement('div');
     msg.className = 'acw-msg user';
-    msg.innerHTML = `<div class="acw-bubble">${escapeHtml(text)}</div><div class="acw-msg-time">${getTime()}</div>`;
+    msg.innerHTML = `<div class="acw-bubble">${text}</div><div class="acw-msg-time">${getTime()}</div>`;
     msgList.appendChild(msg);
     msgList.scrollTop = msgList.scrollHeight;
+    messages.push({ role: 'user', content: text });
   }
 
   function showTyping() {
     const msgList = document.getElementById('acwMessages');
-    const el = document.createElement('div');
-    el.className = 'acw-msg bot';
-    el.id = 'acwTyping';
-    el.innerHTML = `<div class="acw-typing"><span></span><span></span><span></span></div>`;
-    msgList.appendChild(el);
+    const typing = document.createElement('div');
+    typing.className = 'acw-msg bot';
+    typing.id = 'acwTyping';
+    typing.innerHTML = `<div class="acw-bubble"><span class="acw-dot"></span><span class="acw-dot"></span><span class="acw-dot"></span></div>`;
+    msgList.appendChild(typing);
     msgList.scrollTop = msgList.scrollHeight;
   }
 
-  function escapeHtml(text) {
-    return text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>');
-  }
-
-  function sendMessage() {
+  function handleSend() {
     const input = document.getElementById('acwInput');
     const text = input.value.trim();
-    if (!text || isTyping) return;
+    if (!text) return;
     input.value = '';
-    input.style.height = 'auto';
     quickRepliesShown = false;
     renderQuickReplies();
     processUserMessage(text);
   }
 
   async function processUserMessage(text) {
-    if (isTyping) return;
-    isTyping = true;
-    document.getElementById('acwSend').disabled = true;
-
     addUserMessage(text);
-    messages.push({ role: 'user', content: text });
     showTyping();
-
     try {
       const response = await fetch('/.netlify/functions/chat', {
         method: 'POST',
@@ -413,23 +338,17 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
           messages: messages.filter(m => m.role !== 'system')
         })
       });
-
       const data = await response.json();
-      const reply = data.content?.[0]?.text || "I'm sorry, I had trouble with that. Please call us directly at (615) 559-9387 and we'll be happy to help!";
+      const reply = data.content && data.content[0] ? data.content[0].text : "I'm having trouble connecting right now. Please call us at (615) 559-9387.";
       addBotMessage(reply);
-
     } catch (err) {
-      addBotMessage("I'm having a little trouble connecting right now. Please call us at <strong>(615) 559-9387</strong> or email us and we'll get right back to you!");
+      addBotMessage("I'm having trouble connecting right now. Please call us at (615) 559-9387 or use the contact form.");
     }
-
-    isTyping = false;
-    document.getElementById('acwSend').disabled = false;
   }
 
-  // Init
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', buildWidget);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    buildWidget();
+    init();
   }
 })();
