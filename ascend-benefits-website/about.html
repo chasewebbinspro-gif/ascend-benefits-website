@@ -22,11 +22,8 @@
     /* NAV */
     nav { position: sticky; top: 0; z-index: 100; background: rgba(13,31,60,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.2); }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo img { height: 40px; width: auto; }
-    .nav-logo-text { display: flex; flex-direction: column; }
-    .nav-logo-name { font-size: 15px; font-weight: 700; color: var(--white); letter-spacing: 0.02em; }
-    .nav-logo-sub { font-size: 9px; font-weight: 500; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 48px; width: auto; }
     .nav-links { display: flex; align-items: center; gap: 32px; }
     .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover, .nav-links a.active { color: var(--white); }
@@ -69,8 +66,8 @@
     .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
     .team-card { background: var(--white); border-radius: 16px; box-shadow: 0 4px 24px rgba(13,31,60,0.08); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
     .team-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,31,60,0.14); }
-    .team-photo-wrap { width: 100%; height: 280px; overflow: hidden; background: var(--navy-mid); }
-    .team-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
+    .team-photo-wrap { width: 100%; height: 220px; overflow: hidden; background: var(--navy-mid); }
+    .team-photo-wrap img { width: 100%; height: 100%; object-fit: contain; object-position: center center; display: block; background: #f1f3f7; }
     .team-info { padding: 24px; }
     .team-name { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
     .team-title { font-size: 12px; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
@@ -129,10 +126,6 @@
     <div class="container nav-inner">
       <a href="/" class="nav-logo">
         <img src="/ascend-benefits-logo-transparent.svg" alt="Ascend Benefits Consulting Group" />
-        <div class="nav-logo-text">
-          <span class="nav-logo-name">Ascend Benefits</span>
-          <span class="nav-logo-sub">Consulting Group</span>
-        </div>
       </a>
       <div class="nav-links">
         <a href="/">Home</a>
@@ -286,7 +279,7 @@
         <div class="footer-col">
           <h4>Contact</h4>
           <a href="tel:6155599387">(615) 559-9387</a>
-          <a href="mailto:info@ascendbenefitscg.com">info@ascendbenefitscg.com</a>
+          <a href="/cdn-cgi/l/email-protection#2841464e4768495b4b4d464c4a4d464d4e415c5b4b4f064b4745"><span class="__cf_email__" data-cfemail="cca5a2aaa38cadbfafa9a2a8aea9a2a9aaa5b8bfafabe2afa3a1">[email&#160;protected]</span></a>
           <a href="/contact.html">Schedule a Consultation</a>
         </div>
       </div>
@@ -297,9 +290,4 @@
     </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('.fade-up').forEach(function(el) { el.classList.add('visible'); });
-  </script>
-  <script src="/chat-widget.js"></script>
-</body>
-</html>
+  <script data-cfasync="false" s
