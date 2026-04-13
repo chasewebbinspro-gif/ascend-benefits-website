@@ -10,7 +10,6 @@
   <meta property="og:description" content="Free primary care, urgent care, mental health, and pharmacy for employees — funded entirely through FICA tax savings. Zero net cost to employer or employee." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://www.ascendbenefitscg.com/preventive-care" />
-
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -18,7 +17,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
   <style>
     :root {
       --navy: #0D1F3C; --navy-mid: #162d56; --navy-light: #1e3d72;
@@ -41,9 +39,11 @@
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-    /* ANNOUNCEMENT */
-    .announcement { background: var(--navy); color: var(--gold-pale); text-align: center; padding: 10px 24px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em; }
-    .announcement strong { color: var(--gold); }
+    /* TICKER */
+    .ticker { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.3); padding: 8px 0; overflow: hidden; }
+    .ticker-track { display: flex; gap: 60px; animation: ticker 30s linear infinite; white-space: nowrap; }
+    .ticker-track span { color: var(--gold); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* HEADER */
     header { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid rgba(13,31,60,0.08); box-shadow: 0 2px 20px rgba(13,31,60,0.07); }
@@ -280,8 +280,20 @@
 </head>
 <body>
 
-  <div class="announcement">
-    <strong>Preventive Care Management Program</strong> — EHP Preventive Care Program | Serving TN · AL · GA · FL · TX · SC · NC · MS · LA &amp; All 50 States
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Preventive Care Management Program</span><span>★</span>
+      <span>EHP Wellness — Zero Net Cost to Employer or Employee</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>Up to $1,120 FICA Savings Per Employee Per Year</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+      <span>Preventive Care Management Program</span><span>★</span>
+      <span>EHP Wellness — Zero Net Cost to Employer or Employee</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>Up to $1,120 FICA Savings Per Employee Per Year</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+    </div>
   </div>
 
   <header>
@@ -389,21 +401,9 @@
         <p>The wellness program cost is deducted from gross wages on a pre-tax basis. This lowers taxable income, reduces FICA taxes for both parties, and the employee is reimbursed dollar-for-dollar — take-home pay stays identical.</p>
       </div>
       <div class="how-components">
-        <div class="how-card fade-up">
-          <div class="how-card-label">Component 01</div>
-          <h4>PCMP Plan Documents</h4>
-          <p>Specifies all IRC 213(d)-compliant wellness benefits. All benefits are compliant, enabling the pre-tax deduction and reimbursement of the wellness premium.</p>
-        </div>
-        <div class="how-card fade-up">
-          <div class="how-card-label">Component 02</div>
-          <h4>Section 125 Cafeteria Plan</h4>
-          <p>Funded under IRC 106(a), allowing pre-taxing of 213(d)-compliant medical expenses and generating FICA savings for both the employer and the employee.</p>
-        </div>
-        <div class="how-card fade-up">
-          <div class="how-card-label">Component 03</div>
-          <h4>SIMERP</h4>
-          <p>The Self-Insured Medical Expense Reimbursement Plan reimburses employees dollar-for-dollar based on plan benefits — not individual claims — keeping take-home pay unchanged.</p>
-        </div>
+        <div class="how-card fade-up"><div class="how-card-label">Component 01</div><h4>PCMP Plan Documents</h4><p>Specifies all IRC 213(d)-compliant wellness benefits. All benefits are compliant, enabling the pre-tax deduction and reimbursement of the wellness premium.</p></div>
+        <div class="how-card fade-up"><div class="how-card-label">Component 02</div><h4>Section 125 Cafeteria Plan</h4><p>Funded under IRC 106(a), allowing pre-taxing of 213(d)-compliant medical expenses and generating FICA savings for both the employer and the employee.</p></div>
+        <div class="how-card fade-up"><div class="how-card-label">Component 03</div><h4>SIMERP</h4><p>The Self-Insured Medical Expense Reimbursement Plan reimburses employees dollar-for-dollar based on plan benefits — not individual claims — keeping take-home pay unchanged.</p></div>
       </div>
       <div class="how-flow fade-up">
         <div class="how-step"><div class="how-step-num">1</div><h5>Pre-Tax Deduction</h5><p>Wellness cost deducted from gross wages before taxes</p></div>
@@ -491,38 +491,12 @@
         <p>All services delivered through the Revive Health platform — accessible 24/7 via web or mobile app. No co-pays, deductibles, or additional charges.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card fade-up">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-          <h4>Primary Care</h4>
-          <p>Nationwide access to board-certified physicians, Mon–Fri. Most consults within 1–3 days. Covers chronic conditions: hypertension, diabetes, allergies, cholesterol, and more. No copay or deductible.</p>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-          <h4>Urgent Care (24/7)</h4>
-          <p>Connect with a provider from anywhere in the U.S. — Tennessee, Georgia, Florida, Texas, and beyond — at any time. Eliminates costly ER visits for non-emergencies.</p>
-          <span class="service-stat">90%+ of consults within 3 minutes</span>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          <h4>Mental Health</h4>
-          <p>24/7 access to master's-level clinicians, matched within 5 days. Includes the 'Revive &amp; Thrive' app with live group sessions, AI coaching, and self-assessments.</p>
-          <span class="service-stat">88% first-session attendance vs. 30–40% for EAPs</span>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-          <h4>Weight Health</h4>
-          <p>Physician-supervised weight management with GLP-1 medication access, personalized coaching, and FitOn fitness content. Oral GLP-1 from $85/first month; Injectable Semaglutide $90–$210; Tirzepatide $155–$400.</p>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-          <h4>Pharmacy</h4>
-          <p>1,000+ maintenance and 70+ acute formulary medications delivered to the home at no cost. Discount card for off-formulary medications. Pharmacist consultations included.</p>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
-          <h4>Reporting &amp; Analytics</h4>
-          <p>Monthly Virtual Clinic Reports with utilization rates, savings data, venue redirection metrics, satisfaction scores, and top diagnosis trends.</p>
-        </div>
+        <div class="service-card fade-up"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h4>Primary Care</h4><p>Nationwide access to board-certified physicians, Mon–Fri. Most consults within 1–3 days. Covers chronic conditions: hypertension, diabetes, allergies, cholesterol, and more. No copay or deductible.</p></div>
+        <div class="service-card fade-up"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h4>Urgent Care (24/7)</h4><p>Connect with a provider from anywhere in the U.S. — Tennessee, Georgia, Florida, Texas, and beyond — at any time. Eliminates costly ER visits for non-emergencies.</p><span class="service-stat">90%+ of consults within 3 minutes</span></div>
+        <div class="service-card fade-up"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h4>Mental Health</h4><p>24/7 access to master's-level clinicians, matched within 5 days. Includes the 'Revive &amp; Thrive' app with live group sessions, AI coaching, and self-assessments.</p><span class="service-stat">88% first-session attendance vs. 30–40% for EAPs</span></div>
+        <div class="service-card fade-up"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h4>Weight Health</h4><p>Physician-supervised weight management with GLP-1 medication access, personalized coaching, and FitOn fitness content. Oral GLP-1 from $85/first month; Injectable Semaglutide $90–$210; Tirzepatide $155–$400.</p></div>
+        <div class="service-card fade-up"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><h4>Pharmacy</h4><p>1,000+ maintenance and 70+ acute formulary medications delivered to the home at no cost. Discount card for off-formulary medications. Pharmacist consultations included.</p></div>
+        <div class="service-card fade-up"><div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div><h4>Reporting &amp; Analytics</h4><p>Monthly Virtual Clinic Reports with utilization rates, savings data, venue redirection metrics, satisfaction scores, and top diagnosis trends.</p></div>
       </div>
       <div class="satisfaction-bar fade-up">
         <div class="sat-item"><div class="sat-num">98.45%</div><div class="sat-label">Would use services again</div></div>
@@ -541,18 +515,9 @@
           <h2 class="section-title">Simple Eligibility Requirements</h2>
           <p style="font-size:0.96rem; line-height:1.8; color:var(--text-mid); margin-bottom:20px;">EHP is designed to be as accessible as possible. Employees do <strong>not</strong> need to be on the company's group health plan to participate.</p>
           <div class="eligibility-cards">
-            <div class="eligibility-card">
-              <div class="elig-num">01</div>
-              <div><h4>W-2 Employee</h4><p>Must be a W-2 employee of the participating company.</p></div>
-            </div>
-            <div class="eligibility-card">
-              <div class="elig-num">02</div>
-              <div><h4>Major Medical Coverage</h4><p>Must carry qualifying coverage — employer plan, spouse's plan, individual marketplace policy, or other qualifying insurance.</p></div>
-            </div>
-            <div class="eligibility-card">
-              <div class="elig-num">03</div>
-              <div><h4>Full-Time Status</h4><p>Must work 30 or more hours per week. Employer must have a minimum of 10 full-time W-2 employees to qualify.</p></div>
-            </div>
+            <div class="eligibility-card"><div class="elig-num">01</div><div><h4>W-2 Employee</h4><p>Must be a W-2 employee of the participating company.</p></div></div>
+            <div class="eligibility-card"><div class="elig-num">02</div><div><h4>Major Medical Coverage</h4><p>Must carry qualifying coverage — employer plan, spouse's plan, individual marketplace policy, or other qualifying insurance.</p></div></div>
+            <div class="eligibility-card"><div class="elig-num">03</div><div><h4>Full-Time Status</h4><p>Must work 30 or more hours per week. Employer must have a minimum of 10 full-time W-2 employees to qualify.</p></div></div>
           </div>
           <div class="eligibility-note"><strong>Employer Minimum:</strong> Employers must have a minimum of 10 full-time W-2 employees to qualify for the program.<br><br><strong>No company group plan?</strong> Employers without a company-sponsored health plan can still offer EHP, provided each participating employee carries their own qualifying major medical coverage.</div>
         </div>
