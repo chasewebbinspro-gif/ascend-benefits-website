@@ -59,9 +59,11 @@
     .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: block; }
     h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
 
-    /* ANNOUNCEMENT */
-    .announcement { background: var(--navy); color: var(--gold-pale); text-align: center; padding: 10px 24px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em; }
-    .announcement strong { color: var(--gold); }
+    /* TICKER */
+    .ticker { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.3); padding: 8px 0; overflow: hidden; }
+    .ticker-track { display: flex; gap: 60px; animation: ticker 30s linear infinite; white-space: nowrap; }
+    .ticker-track span { color: var(--gold); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* HEADER */
     header { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid rgba(13,31,60,0.08); box-shadow: 0 2px 20px rgba(13,31,60,0.07); }
@@ -245,8 +247,20 @@
 </head>
 <body>
 
-  <div class="announcement">
-    <strong>Employer Coverage</strong> — Level-Funded &amp; Self-Funded ERISA Plans | Serving TN · AL · GA · FL · TX · SC · NC · MS · LA &amp; All 50 States
+  <!-- TICKER (replaces announcement bar) -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Employer Coverage</span><span>★</span>
+      <span>Level-Funded &amp; Self-Funded ERISA Plans</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+      <span>Employer Coverage</span><span>★</span>
+      <span>Level-Funded &amp; Self-Funded ERISA Plans</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+    </div>
   </div>
 
   <!-- Header -->
