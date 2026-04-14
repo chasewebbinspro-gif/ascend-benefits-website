@@ -5,261 +5,255 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reference-Based Pricing Plans | Ascend Benefits Consulting Group</title>
   <meta name="description" content="Reference-Based Pricing group health plans through Trustmark and Imagine360. See how RBP compares to Level-Funded PPO plans — pros, cons, and Tennessee market data." />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #0D1F3C;
-      --navy-mid: #162d56;
-      --navy-light: #1e3d72;
-      --gold: #C9A84C;
-      --gold-light: #e2c06a;
-      --gold-pale: #f5e9c8;
-      --white: #FFFFFF;
-      --off-white: #F8F6F1;
-      --text-dark: #0D1F3C;
-      --text-mid: #3a4a63;
-      --text-light: #6b7c99;
-      --border: rgba(201,168,76,0.2);
-      --shadow: 0 4px 32px rgba(13,31,60,0.12);
-      --red: #e53e3e;
+      --navy:#0D1F3C; --navy-mid:#162d56; --navy-light:#1e3d72;
+      --gold:#C9A84C; --gold-light:#e2c06a; --gold-pale:#f5e9c8;
+      --white:#FFFFFF; --off-white:#F8F6F1;
+      --text-dark:#0D1F3C; --text-mid:#3a4a63; --text-light:#6b7c99;
+      --border:rgba(201,168,76,0.2); --shadow:0 4px 32px rgba(13,31,60,0.12);
+      --red:#e53e3e;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 14px 28px; border-radius: 4px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; letter-spacing: 0.02em; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 40px rgba(201,168,76,0.18); }
-    .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.95rem; padding: 13px 28px; border-radius: 4px; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: block; }
-    h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden;}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:600;font-size:0.95rem;padding:14px 28px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s,box-shadow 0.2s;letter-spacing:0.02em;}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 8px 40px rgba(201,168,76,0.18);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-weight:600;font-size:0.95rem;padding:13px 28px;border-radius:4px;border:2px solid rgba(255,255,255,0.5);text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+    .section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+    h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px;}
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
 
-    /* ANNOUNCEMENT */
-    .announcement { background: var(--navy); color: var(--gold-pale); text-align: center; padding: 10px 24px; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.03em; }
-    .announcement strong { color: var(--gold); }
+    /* TICKER */
+    .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
+    .ticker-track{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap;}
+    .ticker-track span{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+    @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
     /* HEADER */
-    header { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid rgba(13,31,60,0.08); box-shadow: 0 2px 20px rgba(13,31,60,0.07); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 24px; }
-    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .logo-mark { width: 44px; height: 44px; background: var(--navy); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
-    .logo-mark svg { width: 26px; height: 26px; }
-    .logo-text { display: flex; flex-direction: column; }
-    .logo-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); line-height: 1.1; }
-    .logo-sub { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
-    nav { display: flex; align-items: center; gap: 4px; }
-    nav a { font-size: 0.88rem; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 8px 14px; border-radius: 4px; transition: color 0.2s, background 0.2s; }
-    nav a:hover, nav a.active { color: var(--navy); background: var(--off-white); }
-    .header-cta { display: flex; align-items: center; gap: 16px; }
-    .header-phone { display: flex; align-items: center; gap: 7px; font-size: 0.9rem; font-weight: 600; color: var(--navy); text-decoration: none; }
-    .header-phone svg { color: var(--gold); }
-    .header-phone:hover { color: var(--gold); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; }
-    .mobile-nav { display: none; flex-direction: column; background: var(--white); border-top: 1px solid var(--border); padding: 16px 24px 24px; }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a { font-size: 1rem; font-weight: 500; color: var(--text-mid); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--off-white); }
-    .mobile-nav .btn-primary { margin-top: 16px; justify-content: center; }
+    header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(13,31,60,0.08);box-shadow:0 2px 20px rgba(13,31,60,0.07);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:24px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-mark{width:44px;height:44px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+    .logo-mark svg{width:26px;height:26px;}
+    .logo-text{display:flex;flex-direction:column;}
+    .logo-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1.1;}
+    .logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+    nav{display:flex;align-items:center;gap:4px;}
+    nav a{font-size:0.82rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:8px 10px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    nav a:hover,nav a.active{color:var(--navy);background:var(--off-white);}
+    .header-cta{display:flex;align-items:center;gap:16px;}
+    .header-phone{display:flex;align-items:center;gap:7px;font-size:0.9rem;font-weight:600;color:var(--navy);text-decoration:none;}
+    .header-phone svg{color:var(--gold);}
+    .header-phone:hover{color:var(--gold);}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;}
+    .mobile-nav{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:16px 24px 24px;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--off-white);}
+    .mobile-nav .btn-primary{margin-top:16px;justify-content:center;}
 
-    /* HERO */
-    .page-hero { background: var(--navy); padding: 80px 0 72px; position: relative; overflow: hidden; }
-    .page-hero-grid { position: absolute; inset: 0; opacity: 0.04; background-image: linear-gradient(rgba(201,168,76,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,1) 1px, transparent 1px); background-size: 60px 60px; }
-    .page-hero-glow { position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%); pointer-events: none; }
-    .page-hero-inner { position: relative; z-index: 2; max-width: 780px; }
-    .page-hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); border-radius: 100px; padding: 6px 14px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
-    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4.5vw, 3.4rem); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
-    .page-hero h1 em { color: var(--gold); font-style: normal; }
-    .page-hero-sub { font-size: 1.08rem; font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 36px; max-width: 640px; }
-    .page-hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 52px; }
-    .hero-pain-row { display: flex; gap: 32px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
-    .hero-pain-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.65); }
-    .hero-pain-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+    /* ── HERO WITH PHOTO BG ── */
+    .page-hero{position:relative;overflow:hidden;min-height:540px;display:flex;align-items:center;}
+    .hero-photo-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80');background-size:cover;background-position:center;}
+    .hero-photo-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(13,31,60,0.96) 0%,rgba(13,31,60,0.88) 55%,rgba(13,31,60,0.65) 100%);}
+    .hero-grid-bg{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(201,168,76,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,1) 1px,transparent 1px);background-size:60px 60px;z-index:1;}
+    .hero-inner{position:relative;z-index:2;padding:80px 0 72px;max-width:780px;}
+    .page-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);border-radius:100px;padding:6px 14px;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;}
+    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:20px;}
+    .page-hero h1 em{color:var(--gold);font-style:normal;}
+    .page-hero-sub{font-size:1.08rem;font-weight:300;color:rgba(255,255,255,0.82);line-height:1.75;margin-bottom:36px;max-width:640px;}
+    .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:52px;}
+    .hero-pain-row{display:flex;gap:32px;padding-top:40px;border-top:1px solid rgba(255,255,255,0.15);flex-wrap:wrap;}
+    .hero-pain-item{display:flex;align-items:center;gap:10px;font-size:0.85rem;color:rgba(255,255,255,0.75);}
+    .hero-pain-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;flex-shrink:0;}
 
-    /* WHAT IS RBP */
-    .what-section { padding: 88px 0; background: var(--white); }
-    .what-intro { max-width: 760px; margin: 0 auto 64px; text-align: center; }
-    .what-intro p { font-size: 1.05rem; color: var(--text-mid); line-height: 1.8; margin-top: 16px; }
-    .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px; }
-    .what-card { background: var(--off-white); border-radius: 10px; padding: 36px 32px; border-top: 3px solid var(--gold); }
-    .what-card.dark { background: var(--navy); border-top-color: var(--gold); }
-    .what-card h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
-    .what-card.dark h4 { color: var(--gold); }
-    .what-card p { font-size: 0.93rem; color: var(--text-mid); line-height: 1.75; }
-    .what-card.dark p { color: rgba(255,255,255,0.72); }
+    /* ── WHAT IS RBP: PHOTO SPLIT ── */
+    .what-section{padding:88px 0;background:var(--white);}
+    .what-intro{max-width:760px;margin:0 auto 56px;text-align:center;}
+    .what-intro p{font-size:1.05rem;color:var(--text-mid);line-height:1.8;margin-top:16px;}
+    .what-split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border-radius:20px;overflow:hidden;box-shadow:0 20px 80px rgba(13,31,60,0.12);margin-bottom:48px;}
+    .what-photo-col{position:relative;min-height:440px;}
+    .what-photo-col img{width:100%;height:100%;object-fit:cover;display:block;}
+    .what-photo-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,31,60,0.75) 0%,rgba(13,31,60,0.3) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:40px;}
+    .what-stat-big{font-family:'Playfair Display',serif;font-size:4rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:8px;}
+    .what-stat-label{font-size:1rem;color:var(--white);line-height:1.4;}
+    .what-content-col{background:var(--off-white);padding:52px 48px;display:flex;flex-direction:column;justify-content:center;gap:20px;}
+    .what-card{border-radius:10px;padding:28px;}
+    .what-card.light{background:var(--white);border-top:3px solid rgba(13,31,60,0.15);}
+    .what-card.dark{background:var(--navy);border-top:3px solid var(--gold);}
+    .what-card h4{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:10px;}
+    .what-card.dark h4{color:var(--gold);}
+    .what-card p{font-size:0.88rem;color:var(--text-mid);line-height:1.75;}
+    .what-card.dark p{color:rgba(255,255,255,0.72);}
 
     /* COST EXAMPLE */
-    .cost-example { background: var(--navy); border-radius: 12px; padding: 40px 44px; position: relative; overflow: hidden; }
-    .cost-example::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 40px 40px; }
-    .cost-example > * { position: relative; z-index: 1; }
-    .cost-example h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold); margin-bottom: 28px; }
-    .cost-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .cost-col { text-align: center; padding: 24px 16px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
-    .cost-col.highlight { background: rgba(201,168,76,0.1); border-color: rgba(201,168,76,0.35); }
-    .cost-col-tag { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
-    .cost-col.highlight .cost-col-tag { color: var(--gold); }
-    .cost-col-amount { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--white); line-height: 1; }
-    .cost-col.highlight .cost-col-amount { color: var(--gold); }
-    .cost-col-note { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 8px; }
-    .cost-source { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 20px; text-align: center; }
+    .cost-example{background:var(--navy);border-radius:12px;padding:40px 44px;position:relative;overflow:hidden;}
+    .cost-example::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.04) 1px,transparent 1px);background-size:40px 40px;}
+    .cost-example>*{position:relative;z-index:1;}
+    .cost-example h4{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:28px;}
+    .cost-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .cost-col{text-align:center;padding:24px 16px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);}
+    .cost-col.highlight{background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.35);}
+    .cost-col-tag{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin-bottom:10px;}
+    .cost-col.highlight .cost-col-tag{color:var(--gold);}
+    .cost-col-amount{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--white);line-height:1;}
+    .cost-col.highlight .cost-col-amount{color:var(--gold);}
+    .cost-col-note{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:8px;}
+    .cost-source{font-size:0.75rem;color:rgba(255,255,255,0.3);margin-top:20px;text-align:center;}
 
-    /* PLANS SECTION */
-    .plans-section { padding: 88px 0; background: var(--off-white); }
-    .plans-header { text-align: center; margin-bottom: 60px; }
-    .plans-header p { font-size: 1rem; color: var(--text-mid); max-width: 560px; margin: 12px auto 0; }
-    .plan-block { background: var(--white); border-radius: 14px; padding: 48px 44px; margin-bottom: 32px; border: 1px solid rgba(13,31,60,0.08); position: relative; overflow: hidden; }
-    .plan-block::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 5px; background: var(--gold); border-radius: 14px 0 0 14px; }
-    .plan-block.featured { border-color: rgba(201,168,76,0.3); box-shadow: 0 8px 40px rgba(201,168,76,0.12); }
-    .plan-block-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
-    .plan-block-title-group { display: flex; align-items: center; gap: 16px; }
-    .plan-block-icon { width: 52px; height: 52px; background: var(--navy); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .plan-block-icon svg { width: 26px; height: 26px; color: var(--gold); }
-    .plan-block h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .plan-block-subtitle { font-size: 0.82rem; color: var(--text-light); font-weight: 400; }
-    .plan-badge { background: var(--gold); color: var(--navy); font-size: 0.72rem; font-weight: 700; padding: 6px 14px; border-radius: 100px; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; align-self: flex-start; }
-    .plan-badge.secondary { background: var(--navy); color: var(--gold); }
-    .plan-body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-    .plan-description p { font-size: 0.96rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 16px; }
-    .plan-description p strong { color: var(--navy); }
-    .plan-pros { display: flex; flex-direction: column; gap: 12px; }
-    .plan-pro { display: flex; align-items: flex-start; gap: 10px; }
-    .pro-icon { width: 20px; height: 20px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
-    .pro-icon svg { width: 10px; height: 10px; color: var(--gold); }
-    .pro-icon.red-icon { background: rgba(229,62,62,0.08); border-color: rgba(229,62,62,0.3); }
-    .pro-icon.red-icon svg { color: var(--red); }
-    .plan-pro p { font-size: 0.86rem; color: var(--text-mid); line-height: 1.55; }
-    .plan-pro p strong { color: var(--navy); }
+    /* ── PLAN BLOCKS WITH PHOTO HEADERS ── */
+    .plans-section{padding:88px 0;background:var(--off-white);}
+    .plans-header{text-align:center;margin-bottom:60px;}
+    .plans-header p{font-size:1rem;color:var(--text-mid);max-width:560px;margin:12px auto 0;}
+    .plan-block{background:var(--white);border-radius:14px;margin-bottom:32px;border:1px solid rgba(13,31,60,0.08);overflow:hidden;box-shadow:var(--shadow);}
+    .plan-block.featured{border-color:rgba(201,168,76,0.3);box-shadow:0 8px 40px rgba(201,168,76,0.12);}
+    .plan-photo-header{width:100%;height:200px;overflow:hidden;position:relative;}
+    .plan-photo-header img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s;}
+    .plan-block:hover .plan-photo-header img{transform:scale(1.03);}
+    .plan-photo-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,31,60,0.2) 0%,rgba(13,31,60,0.75) 100%);display:flex;align-items:flex-end;padding:24px;}
+    .plan-photo-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--white);}
+    .plan-photo-subtitle{font-size:0.85rem;color:rgba(255,255,255,0.75);margin-top:4px;}
+    .plan-badge-overlay{position:absolute;top:16px;right:16px;background:var(--gold);color:var(--navy);font-size:0.72rem;font-weight:700;padding:6px 14px;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;}
+    .plan-badge-overlay.secondary{background:var(--navy);color:var(--gold);}
+    .plan-body{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:40px;align-items:start;}
+    .plan-description p{font-size:0.96rem;line-height:1.8;color:var(--text-mid);margin-bottom:16px;}
+    .plan-description p strong{color:var(--navy);}
+    .plan-pros{display:flex;flex-direction:column;gap:12px;}
+    .plan-pro{display:flex;align-items:flex-start;gap:10px;}
+    .pro-icon{width:20px;height:20px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+    .pro-icon svg{width:10px;height:10px;color:var(--gold);}
+    .pro-icon.red-icon{background:rgba(229,62,62,0.08);border-color:rgba(229,62,62,0.3);}
+    .pro-icon.red-icon svg{color:var(--red);}
+    .plan-pro p{font-size:0.86rem;color:var(--text-mid);line-height:1.55;}
+    .plan-pro p strong{color:var(--navy);}
 
-    /* TN SECTION */
-    .tn-section { padding: 88px 0; background: var(--navy); position: relative; overflow: hidden; }
-    .tn-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 50px 50px; }
-    .tn-inner { position: relative; z-index: 1; }
-    .tn-header { text-align: center; margin-bottom: 52px; }
-    .tn-header h2 { color: var(--white); }
-    .tn-header h2 em { color: var(--gold); font-style: normal; }
-    .tn-header p { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 560px; margin: 12px auto 0; }
-    .tn-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 48px; }
-    .tn-stat { text-align: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 28px 16px; }
-    .tn-stat-number { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; }
-    .tn-stat-label { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); margin-top: 8px; }
-    .tn-table-wrap { overflow-x: auto; }
-    .tn-table { width: 100%; border-collapse: collapse; }
-    .tn-table th { background: rgba(201,168,76,0.12); color: var(--gold); font-size: 0.78rem; font-weight: 600; padding: 16px 18px; text-align: left; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid rgba(201,168,76,0.2); }
-    .tn-table td { padding: 15px 18px; font-size: 0.88rem; color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .tn-table tr:last-child td { border-bottom: none; font-weight: 600; color: var(--white); background: rgba(201,168,76,0.07); }
-    .tn-table tr:hover td { background: rgba(255,255,255,0.03); }
-    .score-pill { display: inline-block; background: var(--gold); color: var(--navy); font-size: 0.78rem; font-weight: 700; padding: 3px 12px; border-radius: 100px; }
-    .tn-footnote { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 20px; line-height: 1.7; }
+    /* ── TN DATA: DARK PHOTO BG ── */
+    .tn-section{padding:88px 0;background:var(--navy);position:relative;overflow:hidden;}
+    .tn-photo-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1609619385002-f40f1df9b7eb?w=1600&q=80');background-size:cover;background-position:center;opacity:0.08;}
+    .tn-inner{position:relative;z-index:1;}
+    .tn-header{text-align:center;margin-bottom:52px;}
+    .tn-header h2{color:var(--white);}
+    .tn-header h2 em{color:var(--gold);font-style:normal;}
+    .tn-header p{font-size:1rem;color:rgba(255,255,255,0.65);max-width:560px;margin:12px auto 0;}
+    .tn-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px;}
+    .tn-stat{text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(201,168,76,0.2);border-radius:10px;padding:28px 16px;}
+    .tn-stat-number{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--gold);line-height:1;}
+    .tn-stat-label{font-size:0.78rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.55);margin-top:8px;}
+    .tn-table-wrap{overflow-x:auto;}
+    .tn-table{width:100%;border-collapse:collapse;}
+    .tn-table th{background:rgba(201,168,76,0.12);color:var(--gold);font-size:0.78rem;font-weight:600;padding:16px 18px;text-align:left;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px solid rgba(201,168,76,0.2);}
+    .tn-table td{padding:15px 18px;font-size:0.88rem;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .tn-table tr:last-child td{border-bottom:none;font-weight:600;color:var(--white);background:rgba(201,168,76,0.07);}
+    .score-pill{display:inline-block;background:var(--gold);color:var(--navy);font-size:0.78rem;font-weight:700;padding:3px 12px;border-radius:100px;}
+    .tn-footnote{font-size:0.75rem;color:rgba(255,255,255,0.3);margin-top:20px;line-height:1.7;}
 
-    /* COMPARISON */
-    .compare-section { padding: 88px 0; background: var(--white); }
-    .compare-header { text-align: center; margin-bottom: 52px; }
-    .compare-header p { font-size: 1rem; color: var(--text-mid); max-width: 560px; margin: 12px auto 0; }
-    .compare-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
-    .compare-table th { background: var(--navy); color: var(--white); font-size: 0.85rem; font-weight: 600; padding: 18px 20px; text-align: left; letter-spacing: 0.03em; }
-    .compare-table th:first-child { width: 34%; }
-    .compare-table th.gold-col { color: var(--gold); }
-    .compare-table td { padding: 16px 20px; font-size: 0.85rem; color: var(--text-mid); border-bottom: 1px solid rgba(13,31,60,0.06); vertical-align: middle; }
-    .compare-table tr:last-child td { border-bottom: none; }
-    .compare-table tr:nth-child(even) td { background: var(--off-white); }
-    .compare-table td.feature { font-weight: 600; color: var(--navy); }
-    .check { color: #22c55e; font-size: 1.1rem; font-weight: 700; }
-    .cross { color: var(--red); font-size: 1.1rem; font-weight: 700; }
-    .partial { color: #f59e0b; font-size: 0.85rem; font-weight: 600; }
-    .col-highlight { background: rgba(201,168,76,0.05) !important; }
+    /* COMPARISON TABLE */
+    .compare-section{padding:88px 0;background:var(--white);}
+    .compare-header{text-align:center;margin-bottom:52px;}
+    .compare-header p{font-size:1rem;color:var(--text-mid);max-width:560px;margin:12px auto 0;}
+    .compare-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);}
+    .compare-table th{background:var(--navy);color:var(--white);font-size:0.85rem;font-weight:600;padding:18px 20px;text-align:left;letter-spacing:0.03em;}
+    .compare-table th:first-child{width:34%;}
+    .compare-table th.gold-col{color:var(--gold);}
+    .compare-table td{padding:16px 20px;font-size:0.85rem;color:var(--text-mid);border-bottom:1px solid rgba(13,31,60,0.06);vertical-align:middle;}
+    .compare-table tr:last-child td{border-bottom:none;}
+    .compare-table tr:nth-child(even) td{background:var(--off-white);}
+    .compare-table td.feature{font-weight:600;color:var(--navy);}
+    .check{color:#22c55e;font-size:1.1rem;font-weight:700;}
+    .cross{color:var(--red);font-size:1.1rem;font-weight:700;}
+    .partial{color:#f59e0b;font-size:0.85rem;font-weight:600;}
+    .col-highlight{background:rgba(201,168,76,0.05)!important;}
 
     /* MYTHS */
-    .myths-section { padding: 88px 0; background: var(--off-white); }
-    .myths-header { text-align: center; margin-bottom: 52px; }
-    .myths-header p { font-size: 1rem; color: var(--text-mid); max-width: 560px; margin: 12px auto 0; }
-    .myths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .myth-card { border-radius: 10px; overflow: hidden; border: 1px solid rgba(13,31,60,0.08); background: var(--white); }
-    .myth-top { background: #fff5f5; padding: 18px 22px; font-size: 0.88rem; font-weight: 600; color: var(--red); display: flex; gap: 10px; align-items: flex-start; border-bottom: 1px solid rgba(229,62,62,0.1); }
-    .myth-bottom { padding: 18px 22px; font-size: 0.88rem; color: #166534; display: flex; gap: 10px; align-items: flex-start; background: #f0fdf4; }
+    .myths-section{padding:88px 0;background:var(--off-white);}
+    .myths-header{text-align:center;margin-bottom:52px;}
+    .myths-header p{font-size:1rem;color:var(--text-mid);max-width:560px;margin:12px auto 0;}
+    .myths-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    .myth-card{border-radius:10px;overflow:hidden;border:1px solid rgba(13,31,60,0.08);background:var(--white);}
+    .myth-top{background:#fff5f5;padding:18px 22px;font-size:0.88rem;font-weight:600;color:var(--red);display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid rgba(229,62,62,0.1);}
+    .myth-bottom{padding:18px 22px;font-size:0.88rem;color:#166534;display:flex;gap:10px;align-items:flex-start;background:#f0fdf4;}
 
-    /* DECIDE */
-    .decide-section { padding: 88px 0; background: var(--white); }
-    .decide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-    .decide-text p { font-size: 0.96rem; line-height: 1.8; color: var(--text-mid); margin-bottom: 16px; }
-    .decide-text p strong { color: var(--navy); }
-    .decide-steps { display: flex; flex-direction: column; gap: 20px; }
-    .decide-step { display: flex; gap: 18px; align-items: flex-start; }
-    .decide-step-num { width: 40px; height: 40px; background: var(--navy); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold); flex-shrink: 0; }
-    .decide-step h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
-    .decide-step p { font-size: 0.84rem; color: var(--text-light); line-height: 1.55; }
+    /* ── DECIDE: PHOTO SPLIT ── */
+    .decide-section{padding:88px 0;background:var(--white);}
+    .decide-split{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border-radius:20px;overflow:hidden;box-shadow:0 20px 80px rgba(13,31,60,0.12);}
+    .decide-photo-col{position:relative;min-height:500px;}
+    .decide-photo-col img{width:100%;height:100%;object-fit:cover;display:block;}
+    .decide-photo-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,31,60,0.75) 0%,rgba(13,31,60,0.3) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:40px;}
+    .decide-stat-big{font-family:'Playfair Display',serif;font-size:4rem;font-weight:800;color:var(--gold);line-height:1;margin-bottom:8px;}
+    .decide-stat-label{font-size:1rem;color:var(--white);line-height:1.4;}
+    .decide-content-col{background:var(--off-white);padding:52px 48px;display:flex;flex-direction:column;justify-content:center;}
+    .decide-content-col p{font-size:0.96rem;line-height:1.8;color:var(--text-mid);margin-bottom:16px;}
+    .decide-content-col p strong{color:var(--navy);}
+    .decide-steps{display:flex;flex-direction:column;gap:18px;margin-top:20px;}
+    .decide-step{display:flex;gap:16px;align-items:flex-start;}
+    .decide-step-num{width:38px;height:38px;background:var(--navy);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold);flex-shrink:0;}
+    .decide-step h4{font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:5px;}
+    .decide-step p{font-size:0.84rem;color:var(--text-light);line-height:1.55;}
 
-    /* CTA */
-    .cta-banner { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); padding: 72px 0; text-align: center; position: relative; overflow: hidden; }
-    .cta-banner::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px); background-size: 40px 40px; }
-    .cta-banner > * { position: relative; z-index: 1; }
-    .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700; color: var(--white); margin-bottom: 14px; }
-    .cta-banner h2 em { color: var(--gold); font-style: normal; }
-    .cta-banner p { font-size: 1.05rem; color: rgba(255,255,255,0.7); margin-bottom: 36px; }
-    .cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    /* ── CTA WITH PHOTO BG ── */
+    .cta-banner{position:relative;overflow:hidden;}
+    .cta-photo-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80');background-size:cover;background-position:center;}
+    .cta-photo-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,31,60,0.95) 0%,rgba(13,31,60,0.88) 100%);}
+    .cta-inner{position:relative;z-index:1;padding:80px 0;text-align:center;}
+    .cta-banner h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--white);margin-bottom:14px;}
+    .cta-banner h2 em{color:var(--gold);font-style:normal;}
+    .cta-banner p{font-size:1.05rem;color:rgba(255,255,255,0.75);margin-bottom:36px;}
+    .cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
 
     /* FOOTER */
-    footer { background: #080f1e; padding: 56px 0 28px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; margin: 16px 0 20px; }
-    .footer-contact a { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
-    .footer-contact a:hover { color: var(--gold); }
-    .footer-contact svg { color: var(--gold); width: 14px; height: 14px; flex-shrink: 0; }
-    .footer-col h5 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
-    .footer-col a { display: block; font-size: 0.84rem; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--white); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
-    .footer-bottom-links { display: flex; gap: 20px; }
-    .footer-bottom-links a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
-    .footer-bottom-links a:hover { color: var(--gold); }
+    footer{background:#080f1e;padding:56px 0 28px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+    .footer-brand p{font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.7;margin:16px 0 20px;}
+    .footer-contact a{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.6);text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+    .footer-contact a:hover{color:var(--gold);}
+    .footer-contact svg{color:var(--gold);width:14px;height:14px;flex-shrink:0;}
+    .footer-col h5{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+    .footer-col a{display:block;font-size:0.84rem;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:10px;transition:color 0.2s;}
+    .footer-col a:hover{color:var(--white);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.3);}
+    .footer-bottom-links{display:flex;gap:20px;}
+    .footer-bottom-links a{font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
+    .footer-bottom-links a:hover{color:var(--gold);}
 
-    /* ANIMATIONS */
-    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-    /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .plan-body, .decide-grid { grid-template-columns: 1fr; gap: 24px; }
-      .what-grid { grid-template-columns: 1fr; }
-      .tn-stats { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-    }
-    @media (max-width: 768px) {
-      nav, .header-phone { display: none; }
-      .hamburger { display: flex; }
-      .plan-block { padding: 32px 24px; }
-      .myths-grid { grid-template-columns: 1fr; }
-      .cost-row { grid-template-columns: 1fr; }
-      .compare-table th, .compare-table td { padding: 12px 14px; font-size: 0.78rem; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .cost-example { padding: 28px 24px; }
-    }
-    @media (max-width: 480px) {
-      .page-hero-actions { flex-direction: column; align-items: stretch; }
-      .cta-actions { flex-direction: column; align-items: center; }
-      .hero-pain-row { flex-direction: column; gap: 12px; }
-      .tn-stats { grid-template-columns: 1fr 1fr; }
-    }
+    @media(max-width:1024px){.what-split,.decide-split{grid-template-columns:1fr;}.what-photo-col,.decide-photo-col{min-height:280px;}.plan-body{grid-template-columns:1fr;gap:24px;}.tn-stats{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+    @media(max-width:768px){nav,.header-phone{display:none;}.hamburger{display:flex;}.myths-grid{grid-template-columns:1fr;}.cost-row{grid-template-columns:1fr;}.compare-table th,.compare-table td{padding:12px 14px;font-size:0.78rem;}.footer-grid{grid-template-columns:1fr;}.cost-example{padding:28px 24px;}}
+    @media(max-width:480px){.hero-actions,.cta-actions{flex-direction:column;align-items:stretch;}.hero-pain-row{flex-direction:column;gap:12px;}.tn-stats{grid-template-columns:1fr 1fr;}}
   </style>
 </head>
 <body>
 
-  <div class="announcement">
-    <strong>Reference-Based Pricing</strong> — Group Health Plans Through Trustmark &amp; Imagine360 | Serving TN · AL · GA · FL · TX · SC · NC · MS · LA &amp; All 50 States
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Reference-Based Pricing Plans</span><span>★</span>
+      <span>Stop Paying Inflated Rates — Pay What's Fair</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>Tennessee RBP Score: 9 out of 10</span><span>★</span>
+      <span>Trustmark &amp; Imagine360 — Independent &amp; Unbiased</span><span>★</span>
+      <span>Reference-Based Pricing Plans</span><span>★</span>
+      <span>Stop Paying Inflated Rates — Pay What's Fair</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>Tennessee RBP Score: 9 out of 10</span><span>★</span>
+      <span>Trustmark &amp; Imagine360 — Independent &amp; Unbiased</span><span>★</span>
+    </div>
   </div>
 
+  <!-- HEADER -->
   <header>
     <div class="container">
       <div class="header-inner">
         <a href="/" class="logo">
-          <div class="logo-mark">
-            <svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg>
-          </div>
-          <div class="logo-text">
-            <span class="logo-name">Ascend Benefits</span>
-            <span class="logo-sub">Consulting Group</span>
-          </div>
+          <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+          <div class="logo-text"><span class="logo-name">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
         </a>
         <nav>
           <a href="/">Home</a>
@@ -282,7 +276,7 @@
     </div>
     <div class="mobile-nav" id="mobileNav">
       <a href="/">Home</a>
-      <a href="/employer-coverage">Employer Coverage</a>
+      <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
       <a href="/reference-based-pricing">RBP Plans</a>
       <a href="/preventive-care">Preventive Care</a>
       <a href="/about">About</a>
@@ -292,19 +286,19 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- ── HERO WITH PHOTO BG ── -->
   <section class="page-hero">
-    <div class="page-hero-grid"></div>
-    <div class="page-hero-glow"></div>
+    <div class="hero-photo-bg"></div>
+    <div class="hero-grid-bg"></div>
     <div class="container">
-      <div class="page-hero-inner">
+      <div class="hero-inner">
         <div class="page-hero-eyebrow">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           Reference-Based Pricing — A Smarter Way to Control Healthcare Costs
         </div>
         <h1>Stop Paying <em>Inflated Rates.</em><br>Start Paying What's Fair.</h1>
-        <p class="page-hero-sub">Reference-Based Pricing (RBP) is a self-funded healthcare strategy that replaces the traditional PPO pricing model with a transparent, Medicare-based benchmark. The result: dramatically lower costs, no network restrictions, and real control over what your business pays for healthcare.</p>
-        <div class="page-hero-actions">
+        <p class="page-hero-sub">Reference-Based Pricing (RBP) replaces the traditional PPO pricing model with a transparent, Medicare-based benchmark. The result: dramatically lower costs, no network restrictions, and real control over what your business pays for healthcare.</p>
+        <div class="hero-actions">
           <a href="/contact" class="btn-primary">Get a Free RBP Analysis</a>
           <a href="tel:6155599387" class="btn-outline">Call (615) 559-9387</a>
         </div>
@@ -318,22 +312,31 @@
     </div>
   </section>
 
-  <!-- WHAT IS RBP -->
+  <!-- ── WHAT IS RBP: PHOTO SPLIT ── -->
   <section class="what-section">
     <div class="container">
       <div class="what-intro fade-up">
         <span class="section-label">Understanding RBP</span>
         <h2 class="section-title">What Is Reference-Based Pricing?</h2>
-        <p>Traditional PPO plans start with an inflated chargemaster price and negotiate a "discount." RBP flips this entirely — starting at the bottom with a fair, transparent Medicare-based benchmark and building up from there.</p>
+        <p>Traditional PPO plans start with an inflated chargemaster price and negotiate a "discount." RBP flips this entirely — starting at a fair, transparent Medicare-based benchmark and building up from there.</p>
       </div>
-      <div class="what-grid fade-up">
-        <div class="what-card">
-          <h4>The PPO Pricing Model</h4>
-          <p>Your insurer negotiates a "discount" off whatever price a hospital sets. That original chargemaster price is often 400–500% of what Medicare pays for the same service. Even after the discount, you're still paying far more than necessary — with no visibility into why.</p>
+      <div class="what-split fade-up">
+        <div class="what-photo-col">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Financial documents and analysis" loading="lazy" />
+          <div class="what-photo-overlay">
+            <div class="what-stat-big">67%</div>
+            <div class="what-stat-label">Average discount off billed<br>charges in Tennessee</div>
+          </div>
         </div>
-        <div class="what-card dark">
-          <h4>The RBP Pricing Model</h4>
-          <p>Providers are reimbursed based on a fair multiple of Medicare reimbursement rates — typically 130–150% depending on the service type. The benchmark is transparent, consistent, and verified. Providers still get paid fairly — and employers pay significantly less.</p>
+        <div class="what-content-col">
+          <div class="what-card light">
+            <h4>The PPO Pricing Model</h4>
+            <p>Your insurer negotiates a "discount" off whatever price a hospital sets. That original chargemaster price is often 400–500% of what Medicare pays. Even after the discount, you're paying far more than necessary — with no visibility into why.</p>
+          </div>
+          <div class="what-card dark">
+            <h4>The RBP Pricing Model</h4>
+            <p>Providers are reimbursed based on a fair multiple of Medicare reimbursement rates — typically 130–150% depending on the service type. The benchmark is transparent, consistent, and verified. Providers get paid fairly — and employers pay significantly less.</p>
+          </div>
         </div>
       </div>
       <div class="cost-example fade-up">
@@ -360,7 +363,7 @@
     </div>
   </section>
 
-  <!-- PLAN BLOCKS -->
+  <!-- ── PLAN BLOCKS WITH PHOTO HEADERS ── -->
   <section class="plans-section">
     <div class="container">
       <div class="plans-header fade-up">
@@ -371,23 +374,21 @@
 
       <!-- Level Funded PPO -->
       <div class="plan-block featured fade-up">
-        <div class="plan-block-header">
-          <div class="plan-block-title-group">
-            <div class="plan-block-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
+        <div class="plan-photo-header">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80" alt="Level funded PPO plans" loading="lazy" />
+          <div class="plan-photo-overlay">
             <div>
-              <h3>Level-Funded PPO Plans</h3>
-              <div class="plan-block-subtitle">Predictable payments, familiar networks, real savings potential</div>
+              <div class="plan-photo-title">Level-Funded PPO Plans</div>
+              <div class="plan-photo-subtitle">Predictable payments, familiar networks, real savings potential</div>
             </div>
           </div>
-          <span class="plan-badge">Most Familiar Starting Point</span>
+          <div class="plan-badge-overlay">Most Familiar Starting Point</div>
         </div>
         <div class="plan-body">
           <div class="plan-description">
-            <p>A Level-Funded PPO plan gives your business the <strong>predictability of fixed monthly payments</strong> while still capturing the cost-saving potential of self-funding. Employees use the same major PPO networks they already know — UnitedHealth, Cigna, BCBS, Aetna, PHCS — with no disruption to how they access care.</p>
+            <p>A Level-Funded PPO plan gives your business <strong>predictable fixed monthly payments</strong> while capturing the cost-saving potential of self-funding. Employees use the same major PPO networks they already know — UnitedHealth, Cigna, BCBS, Aetna, PHCS — with no disruption to how they access care.</p>
             <p>Each month, you pay a set amount covering expected claims, stop-loss insurance, and administrative fees. <strong>If your group stays healthier than projected, the surplus can come back to you</strong> — unlike traditional insurance where the carrier keeps it all.</p>
-            <p>The Level-Funded PPO is the most familiar transition for groups coming off traditional group insurance. It delivers meaningful savings and transparency <strong>without asking employees to change how they find and see providers.</strong></p>
+            <p>The Level-Funded PPO is the most familiar transition for groups coming off traditional group insurance. It delivers meaningful savings and transparency <strong>without asking employees to change how they find providers.</strong></p>
           </div>
           <div class="plan-pros">
             <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Familiar PPO networks</strong> — employees use the same doctors and hospitals</p></div>
@@ -396,51 +397,48 @@
             <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Stop-loss protection</strong> — caps your exposure on high-cost claims</p></div>
             <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Claims data transparency</strong> — know what's driving costs before renewal</p></div>
             <div class="plan-pro"><div class="pro-icon red-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><p><strong>Network restrictions still apply</strong> — in/out-of-network cost differences remain</p></div>
-            <div class="plan-pro"><div class="pro-icon red-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><p><strong>Provider pricing still PPO-based</strong> — savings limited vs. true RBP reimbursement</p></div>
           </div>
         </div>
       </div>
 
       <!-- RBP -->
       <div class="plan-block fade-up">
-        <div class="plan-block-header">
-          <div class="plan-block-title-group">
-            <div class="plan-block-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
+        <div class="plan-photo-header">
+          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&q=80" alt="Reference based pricing plans" loading="lazy" />
+          <div class="plan-photo-overlay">
             <div>
-              <h3>Reference-Based Pricing Plans</h3>
-              <div class="plan-block-subtitle">Maximum savings, transparent pricing, true provider freedom</div>
+              <div class="plan-photo-title">Reference-Based Pricing Plans</div>
+              <div class="plan-photo-subtitle">Maximum savings, transparent pricing, true provider freedom</div>
             </div>
           </div>
-          <span class="plan-badge secondary">Greatest Cost Reduction</span>
+          <div class="plan-badge-overlay secondary">Greatest Cost Reduction</div>
         </div>
         <div class="plan-body">
           <div class="plan-description">
             <p>Reference-Based Pricing takes self-funding one step further by <strong>replacing PPO network rates with a transparent Medicare-based benchmark.</strong> Instead of paying a discounted percentage of an inflated chargemaster price, your plan pays providers a fair, verified amount — typically 130–150% of Medicare rates.</p>
             <p>Because RBP is non-network, <strong>employees can see any licensed provider in the country</strong> without worrying about in/out-of-network penalties. No network limitations. No referral requirements. No surprises based on which hospital they choose.</p>
-            <p>Plans are backed by dedicated advocacy teams — Trustmark's Trusted Member Care or Imagine360's concierge support — who handle any provider billing questions or balance bill situations on behalf of employees. <strong>Fewer than 2% of claims result in balance bills, and 90% are resolved within two business days.</strong></p>
+            <p>Plans are backed by dedicated advocacy teams — Trustmark's Trusted Member Care or Imagine360's concierge support — who handle any provider billing questions. <strong>Fewer than 2% of claims result in balance bills, and 90% are resolved within two business days.</strong></p>
           </div>
           <div class="plan-pros">
             <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Up to 30% savings vs. PPO plans</strong> — driven by Medicare-based reimbursement</p></div>
             <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>See any provider, anywhere</strong> — zero network restrictions in the U.S.</p></div>
             <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Full pricing transparency</strong> — clear, consistent benchmark tied to Medicare</p></div>
             <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>5%+ lower claims trend year over year</strong> — sustainable savings, not a one-year deal</p></div>
-            <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Balance bill protection</strong> — advocacy team resolves issues; employees pay nothing beyond their normal cost-share</p></div>
+            <div class="plan-pro"><div class="pro-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Balance bill protection</strong> — advocacy team resolves issues; employees pay nothing beyond normal cost-share</p></div>
             <div class="plan-pro"><div class="pro-icon red-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><p><strong>Requires member education upfront</strong> — employees need to understand how it differs from a PPO</p></div>
-            <div class="plan-pro"><div class="pro-icon red-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><p><strong>Rare balance billing can occur</strong> — uncommon (&lt;2% of claims) but possible; advocacy resolves quickly</p></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TN DATA -->
+  <!-- ── TN DATA: DARK PHOTO BG ── -->
   <section class="tn-section">
+    <div class="tn-photo-bg"></div>
     <div class="container">
       <div class="tn-inner">
         <div class="tn-header fade-up">
-          <span class="section-label">Tennessee Market Data</span>
+          <span class="section-label" style="color:var(--gold);">Tennessee Market Data</span>
           <h2 class="section-title">How RBP Performs in <em>Tennessee</em></h2>
           <p>Tennessee earns a 9 out of 10 RBP Score from Trustmark — one of the strongest markets in the country for RBP adoption and savings.</p>
         </div>
@@ -454,12 +452,7 @@
           <table class="tn-table">
             <thead>
               <tr>
-                <th>Market</th>
-                <th>RBP Score</th>
-                <th>Appeal Rate</th>
-                <th>Discount Off Billed</th>
-                <th>Rate Advantage vs. PPO</th>
-                <th>Active Groups</th>
+                <th>Market</th><th>RBP Score</th><th>Appeal Rate</th><th>Discount Off Billed</th><th>Rate Advantage vs. PPO</th><th>Active Groups</th>
               </tr>
             </thead>
             <tbody>
@@ -489,73 +482,21 @@
       <div class="fade-up" style="overflow-x:auto;">
         <table class="compare-table">
           <thead>
-            <tr>
-              <th>Feature</th>
-              <th class="gold-col">Level-Funded PPO</th>
-              <th class="gold-col">Reference-Based Pricing</th>
-            </tr>
+            <tr><th>Feature</th><th class="gold-col">Level-Funded PPO</th><th class="gold-col">Reference-Based Pricing</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="feature">Plan structure</td>
-              <td class="col-highlight">Self-funded with fixed monthly payments</td>
-              <td class="col-highlight">Self-funded with Medicare-based reimbursement</td>
-            </tr>
-            <tr>
-              <td class="feature">Provider access</td>
-              <td>In-network PPO (UHC, Cigna, BCBS, Aetna, PHCS)</td>
-              <td class="col-highlight"><span class="check">✓</span> Any licensed provider in the U.S. — no network</td>
-            </tr>
-            <tr>
-              <td class="feature">Pricing benchmark</td>
-              <td>Discounted chargemaster / PPO contracted rates</td>
-              <td class="col-highlight">Transparent Medicare-based rates (avg. 135%)</td>
-            </tr>
-            <tr>
-              <td class="feature">Potential savings vs. traditional</td>
-              <td class="col-highlight">Up to 20–25%</td>
-              <td class="col-highlight" style="font-weight:600;color:var(--navy);">Up to 30%</td>
-            </tr>
-            <tr>
-              <td class="feature">Claims data transparency</td>
-              <td class="col-highlight"><span class="check">✓</span></td>
-              <td class="col-highlight"><span class="check">✓</span></td>
-            </tr>
-            <tr>
-              <td class="feature">Surplus refund if claims are low</td>
-              <td class="col-highlight"><span class="check">✓</span></td>
-              <td class="col-highlight"><span class="check">✓</span></td>
-            </tr>
-            <tr>
-              <td class="feature">Stop-loss protection</td>
-              <td class="col-highlight"><span class="check">✓</span></td>
-              <td class="col-highlight"><span class="check">✓</span></td>
-            </tr>
-            <tr>
-              <td class="feature">In/out-of-network cost differences</td>
-              <td><span class="partial">Yes — apply to out-of-network use</span></td>
-              <td class="col-highlight"><span class="check">✓</span> No — single cost-share structure</td>
-            </tr>
-            <tr>
-              <td class="feature">Balance billing risk</td>
-              <td>Minimal — PPO contracts eliminate most balance bills</td>
-              <td class="col-highlight">Rare (&lt;2% of claims) — advocacy team resolves fast</td>
-            </tr>
-            <tr>
-              <td class="feature">Employee education required</td>
-              <td><span class="check">✓</span> Minimal — familiar PPO experience</td>
-              <td class="col-highlight"><span class="partial">Yes — upfront education recommended</span></td>
-            </tr>
-            <tr>
-              <td class="feature">Long-term claims trend</td>
-              <td>Depends on PPO network efficiency</td>
-              <td class="col-highlight" style="font-weight:600;color:var(--navy);">5%+ lower trend vs. PPO (Trustmark data)</td>
-            </tr>
-            <tr>
-              <td class="feature">Best fit for</td>
-              <td>Groups transitioning from traditional insurance; employees who want familiar network access</td>
-              <td class="col-highlight">Groups open to change; employers focused on maximum long-term cost reduction</td>
-            </tr>
+            <tr><td class="feature">Plan structure</td><td class="col-highlight">Self-funded with fixed monthly payments</td><td class="col-highlight">Self-funded with Medicare-based reimbursement</td></tr>
+            <tr><td class="feature">Provider access</td><td>In-network PPO (UHC, Cigna, BCBS, Aetna, PHCS)</td><td class="col-highlight"><span class="check">✓</span> Any licensed provider in the U.S. — no network</td></tr>
+            <tr><td class="feature">Pricing benchmark</td><td>Discounted chargemaster / PPO contracted rates</td><td class="col-highlight">Transparent Medicare-based rates (avg. 135%)</td></tr>
+            <tr><td class="feature">Potential savings vs. traditional</td><td class="col-highlight">Up to 20–25%</td><td class="col-highlight" style="font-weight:600;color:var(--navy);">Up to 30%</td></tr>
+            <tr><td class="feature">Claims data transparency</td><td class="col-highlight"><span class="check">✓</span></td><td class="col-highlight"><span class="check">✓</span></td></tr>
+            <tr><td class="feature">Surplus refund if claims are low</td><td class="col-highlight"><span class="check">✓</span></td><td class="col-highlight"><span class="check">✓</span></td></tr>
+            <tr><td class="feature">Stop-loss protection</td><td class="col-highlight"><span class="check">✓</span></td><td class="col-highlight"><span class="check">✓</span></td></tr>
+            <tr><td class="feature">In/out-of-network cost differences</td><td><span class="partial">Yes — apply to out-of-network use</span></td><td class="col-highlight"><span class="check">✓</span> No — single cost-share structure</td></tr>
+            <tr><td class="feature">Balance billing risk</td><td>Minimal — PPO contracts eliminate most balance bills</td><td class="col-highlight">Rare (&lt;2% of claims) — advocacy team resolves fast</td></tr>
+            <tr><td class="feature">Employee education required</td><td><span class="check">✓</span> Minimal — familiar PPO experience</td><td class="col-highlight"><span class="partial">Yes — upfront education recommended</span></td></tr>
+            <tr><td class="feature">Long-term claims trend</td><td>Depends on PPO network efficiency</td><td class="col-highlight" style="font-weight:600;color:var(--navy);">5%+ lower trend vs. PPO (Trustmark data)</td></tr>
+            <tr><td class="feature">Best fit for</td><td>Groups transitioning from traditional insurance; employees who want familiar network access</td><td class="col-highlight">Groups open to change; employers focused on maximum long-term cost reduction</td></tr>
           </tbody>
         </table>
       </div>
@@ -571,94 +512,57 @@
         <p>Hesitation about RBP is common — and mostly based on outdated concerns. Here's what the data actually shows.</p>
       </div>
       <div class="myths-grid fade-up">
-        <div class="myth-card">
-          <div class="myth-top"><span>✗</span><span>"RBP is only for large employers."</span></div>
-          <div class="myth-bottom"><span>✓</span><span>Trustmark's Healthy Choices plan works for groups as small as 5 employees. Many small Tennessee businesses are saving with RBP right now.</span></div>
-        </div>
-        <div class="myth-card">
-          <div class="myth-top"><span>✗</span><span>"Providers won't accept RBP plans."</span></div>
-          <div class="myth-bottom"><span>✓</span><span>Most providers accept RBP, especially when supported by a TPA that actively educates providers about how the plan works and how they get paid.</span></div>
-        </div>
-        <div class="myth-card">
-          <div class="myth-top"><span>✗</span><span>"Employees will always get balance bills."</span></div>
-          <div class="myth-bottom"><span>✓</span><span>Fewer than 2% of claims result in balance bills. Of those, 90%+ are resolved within two business days — and employees are never responsible for paying them.</span></div>
-        </div>
-        <div class="myth-card">
-          <div class="myth-top"><span>✗</span><span>"RBP plans have worse coverage than PPOs."</span></div>
-          <div class="myth-bottom"><span>✓</span><span>RBP plans can be just as rich as PPOs — often with lower deductibles and a single out-of-pocket maximum, since there's no separate in/out-of-network structure.</span></div>
-        </div>
-        <div class="myth-card">
-          <div class="myth-top"><span>✗</span><span>"Costs are unpredictable for employers."</span></div>
-          <div class="myth-bottom"><span>✓</span><span>Reimbursements are tied to a transparent Medicare benchmark — giving employers far more pricing visibility than a PPO, where contracted rates can vary wildly for the same service.</span></div>
-        </div>
-        <div class="myth-card">
-          <div class="myth-top"><span>✗</span><span>"RBP is a new, unproven model."</span></div>
-          <div class="myth-bottom"><span>✓</span><span>RBP has been in use for over a decade. North Carolina moved its entire state employee health plan to RBP. Trustmark has nearly 10 years of RBP data; Imagine360 has 18+ years.</span></div>
-        </div>
+        <div class="myth-card"><div class="myth-top"><span>✗</span><span>"RBP is only for large employers."</span></div><div class="myth-bottom"><span>✓</span><span>Trustmark's Healthy Choices plan works for groups as small as 5 employees. Many small Tennessee businesses are saving with RBP right now.</span></div></div>
+        <div class="myth-card"><div class="myth-top"><span>✗</span><span>"Providers won't accept RBP plans."</span></div><div class="myth-bottom"><span>✓</span><span>Most providers accept RBP, especially when supported by a TPA that actively educates providers about how the plan works and how they get paid.</span></div></div>
+        <div class="myth-card"><div class="myth-top"><span>✗</span><span>"Employees will always get balance bills."</span></div><div class="myth-bottom"><span>✓</span><span>Fewer than 2% of claims result in balance bills. Of those, 90%+ are resolved within two business days — and employees are never responsible for paying them.</span></div></div>
+        <div class="myth-card"><div class="myth-top"><span>✗</span><span>"RBP plans have worse coverage than PPOs."</span></div><div class="myth-bottom"><span>✓</span><span>RBP plans can be just as rich as PPOs — often with lower deductibles and a single out-of-pocket maximum, since there's no separate in/out-of-network structure.</span></div></div>
+        <div class="myth-card"><div class="myth-top"><span>✗</span><span>"Costs are unpredictable for employers."</span></div><div class="myth-bottom"><span>✓</span><span>Reimbursements are tied to a transparent Medicare benchmark — giving employers far more pricing visibility than a PPO, where contracted rates can vary wildly for the same service.</span></div></div>
+        <div class="myth-card"><div class="myth-top"><span>✗</span><span>"RBP is a new, unproven model."</span></div><div class="myth-bottom"><span>✓</span><span>RBP has been in use for over a decade. North Carolina moved its entire state employee health plan to RBP. Trustmark has nearly 10 years of RBP data; Imagine360 has 18+ years.</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- IS IT RIGHT FOR YOU -->
+  <!-- ── IS IT RIGHT FOR YOU: PHOTO SPLIT ── -->
   <section class="decide-section">
     <div class="container">
-      <div class="decide-grid">
-        <div class="decide-text fade-up">
-          <span class="section-label">Our Approach</span>
-          <h2 class="section-title">Is RBP the Right Fit for Your Business?</h2>
-          <p>RBP isn't the right choice for every employer — and we'll tell you honestly when it's not. <strong>Our job is to find the strategy that delivers the best outcome for your specific group,</strong> whether that's a Level-Funded PPO, an RBP plan, or a combination of both.</p>
-          <p>We offer RBP through two industry-leading carriers — <strong>Trustmark Healthy Choices</strong> (groups as small as 5 employees) and <strong>Imagine360</strong> (100+ employees) — and we'll help you determine which carrier, which plan design, and which funding strategy makes the most sense for your workforce.</p>
-          <p>As independent consultants, we're not incentivized to push one product over another. We bring you the analysis and let the numbers make the case.</p>
+      <div style="text-align:center;margin-bottom:48px;" class="fade-up">
+        <span class="section-label">Our Approach</span>
+        <h2 class="section-title">Is RBP the Right Fit for Your Business?</h2>
+      </div>
+      <div class="decide-split fade-up">
+        <div class="decide-photo-col">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Business consultant reviewing plan options" loading="lazy" />
+          <div class="decide-photo-overlay">
+            <div class="decide-stat-big">9/10</div>
+            <div class="decide-stat-label">Tennessee RBP Score —<br>one of the best markets in the U.S.</div>
+          </div>
         </div>
-        <div class="decide-steps fade-up">
-          <div class="decide-step">
-            <div class="decide-step-num">1</div>
-            <div>
-              <h4>Are premiums rising unsustainably?</h4>
-              <p>If you've seen year-over-year increases with no ability to benefit from a healthy group, RBP is worth a serious look.</p>
-            </div>
-          </div>
-          <div class="decide-step">
-            <div class="decide-step-num">2</div>
-            <div>
-              <h4>Do you value pricing transparency?</h4>
-              <p>Employers who want to understand exactly what they're paying for — and why — are strong RBP candidates.</p>
-            </div>
-          </div>
-          <div class="decide-step">
-            <div class="decide-step-num">3</div>
-            <div>
-              <h4>Is your group between 5 and 150+ employees?</h4>
-              <p>Trustmark works for groups as small as 5. Imagine360 is designed for groups of 100 or more. Both are strong options depending on size.</p>
-            </div>
-          </div>
-          <div class="decide-step">
-            <div class="decide-step-num">4</div>
-            <div>
-              <h4>Is your market a good fit?</h4>
-              <p>Tennessee scores 9 out of 10 on Trustmark's RBP Market Score. Nashville, Knoxville, Memphis, and Chattanooga all score 8 or above — strong indicators of success in your area.</p>
-            </div>
-          </div>
-          <div class="decide-step">
-            <div class="decide-step-num">5</div>
-            <div>
-              <h4>Is your team open to a new approach?</h4>
-              <p>RBP requires some upfront employee education. Both carriers provide robust onboarding resources — and we walk your team through everything before day one.</p>
-            </div>
+        <div class="decide-content-col">
+          <p>RBP isn't the right choice for every employer — and we'll tell you honestly when it's not. <strong>Our job is to find the strategy that delivers the best outcome for your specific group.</strong></p>
+          <p>We offer RBP through two industry-leading carriers — <strong>Trustmark Healthy Choices</strong> (groups as small as 5 employees) and <strong>Imagine360</strong> (100+ employees) — and we'll help you determine which makes the most sense for your workforce.</p>
+          <div class="decide-steps">
+            <div class="decide-step"><div class="decide-step-num">1</div><div><h4>Are premiums rising unsustainably?</h4><p>If you've seen year-over-year increases with no ability to benefit from a healthy group, RBP is worth a serious look.</p></div></div>
+            <div class="decide-step"><div class="decide-step-num">2</div><div><h4>Do you value pricing transparency?</h4><p>Employers who want to understand exactly what they're paying for — and why — are strong RBP candidates.</p></div></div>
+            <div class="decide-step"><div class="decide-step-num">3</div><div><h4>Is your group between 5 and 150+ employees?</h4><p>Trustmark works for groups as small as 5. Imagine360 is designed for groups of 100 or more.</p></div></div>
+            <div class="decide-step"><div class="decide-step-num">4</div><div><h4>Is your market a good fit?</h4><p>Tennessee scores 9 out of 10 on Trustmark's RBP Market Score. Nashville, Knoxville, Memphis, and Chattanooga all score 8 or above.</p></div></div>
+            <div class="decide-step"><div class="decide-step-num">5</div><div><h4>Is your team open to a new approach?</h4><p>RBP requires some upfront employee education. Both carriers provide robust onboarding resources — and we walk your team through everything before day one.</p></div></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- CTA WITH PHOTO BG -->
   <section class="cta-banner">
+    <div class="cta-photo-bg"></div>
     <div class="container">
-      <h2>Ready to See What RBP Could Save <em>Your Business?</em></h2>
-      <p>Get a free, no-obligation analysis. We'll show you how a Reference-Based Pricing plan compares to your current coverage — with real numbers.</p>
-      <div class="cta-actions">
-        <a href="/contact" class="btn-primary" style="font-size:1rem;padding:16px 32px;">Get My Free RBP Analysis</a>
-        <a href="tel:6155599387" class="btn-outline" style="font-size:1rem;padding:15px 32px;">Call (615) 559-9387</a>
+      <div class="cta-inner">
+        <h2>Ready to See What RBP Could Save <em>Your Business?</em></h2>
+        <p>Get a free, no-obligation analysis. We'll show you how a Reference-Based Pricing plan compares to your current coverage — with real numbers.</p>
+        <div class="cta-actions">
+          <a href="/contact" class="btn-primary" style="font-size:1rem;padding:16px 32px;">Get My Free RBP Analysis</a>
+          <a href="tel:6155599387" class="btn-outline" style="font-size:1rem;padding:15px 32px;">Call (615) 559-9387</a>
+        </div>
       </div>
     </div>
   </section>
@@ -670,12 +574,9 @@
         <div class="footer-brand">
           <a href="/" class="logo">
             <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
-            <div class="logo-text">
-              <span class="logo-name" style="color:var(--white);">Ascend Benefits</span>
-              <span class="logo-sub">Consulting Group</span>
-            </div>
+            <div class="logo-text"><span class="logo-name" style="color:var(--white);">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
           </a>
-          <p>Smarter Benefits. Stronger Businesses. Independent benefits consulting specializing in level-funded, self-funded ERISA, and Reference-Based Pricing plans for employers across Tennessee, Alabama, Georgia, Florida, Texas, South Carolina, North Carolina, Mississippi, Louisiana, and all 50 states.</p>
+          <p>Smarter Benefits. Stronger Businesses. Independent benefits consulting specializing in level-funded, self-funded ERISA, and Reference-Based Pricing plans for employers across Tennessee and all 50 states.</p>
           <div class="footer-contact">
             <a href="tel:6155599387">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -683,49 +584,22 @@
             </a>
           </div>
         </div>
-        <div class="footer-col">
-          <h5>Pages</h5>
-          <a href="/">Home</a>
-          <a href="/employer-coverage">Employer Coverage</a>
-          <a href="/reference-based-pricing">RBP Plans</a>
-          <a href="/preventive-care">Preventive Care</a>
-          <a href="/about">About Us</a>
-          <a href="/contact">Contact</a>
-        </div>
-        <div class="footer-col">
-          <h5>Services</h5>
-          <a href="/employer-coverage">Level-Funded Plans</a>
-          <a href="/employer-coverage">Self-Funded / ERISA</a>
-          <a href="/reference-based-pricing">Reference-Based Pricing</a>
-          <a href="/employer-coverage">Stop-Loss Insurance</a>
-          <a href="/employer-coverage">Dental &amp; Vision</a>
-          <a href="/employer-coverage">Life &amp; Disability</a>
-        </div>
-        <div class="footer-col">
-          <h5>Learn More</h5>
-          <a href="/employer-coverage">What Is Level-Funding?</a>
-          <a href="/employer-coverage">Self-Funded ERISA Guide</a>
-          <a href="/reference-based-pricing">What Is RBP?</a>
-          <a href="/employer-coverage">Stop-Loss Explained</a>
-          <a href="/contact">Free Analysis</a>
-        </div>
+        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
+        <div class="footer-col"><h5>Services</h5><a href="/employer-coverage">Level-Funded Plans</a><a href="/employer-coverage">Self-Funded / ERISA</a><a href="/reference-based-pricing">Reference-Based Pricing</a><a href="/employer-coverage">Stop-Loss Insurance</a><a href="/employer-coverage">Dental &amp; Vision</a><a href="/employer-coverage">Life &amp; Disability</a></div>
+        <div class="footer-col"><h5>Learn More</h5><a href="/employer-coverage">What Is Level-Funding?</a><a href="/employer-coverage">Self-Funded ERISA Guide</a><a href="/reference-based-pricing">What Is RBP?</a><a href="/employer-coverage">Stop-Loss Explained</a><a href="/contact">Free Analysis</a></div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Ascend Benefits Consulting Group. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
-        </div>
+        <div class="footer-bottom-links"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></div>
       </div>
     </div>
   </footer>
 
   <script>
-    function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
   </script>
+  <script src="/chat-widget.js"></script>
 </body>
 </html>
