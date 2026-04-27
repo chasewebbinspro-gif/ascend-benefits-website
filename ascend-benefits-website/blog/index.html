@@ -8,87 +8,118 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy: #0D1F3C; --navy-mid: #162d56; --gold: #C9A84C; --gold-light: #e8c96a;
-      --white: #ffffff; --gray-50: #f8f9fc; --gray-600: #4b5563; --gray-800: #1f2937;
+      --navy:#0D1F3C; --navy-mid:#162d56; --navy-light:#1e3d72;
+      --gold:#C9A84C; --gold-light:#e2c06a; --gold-pale:#f5e9c8;
+      --white:#FFFFFF; --off-white:#F8F6F1;
+      --text-dark:#0D1F3C; --text-mid:#3a4a63; --text-light:#6b7c99;
+      --border:rgba(201,168,76,0.2); --shadow:0 4px 32px rgba(13,31,60,0.12);
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--gray-800); background: var(--white); }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-
-    /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,31,60,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.2); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 48px; width: auto; }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .nav-cta { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--gold-light); }
-    .nav-phone { color: rgba(255,255,255,0.8); font-size: 14px; display: flex; align-items: center; gap: 6px; text-decoration: none; }
-    .nav-phone:hover { color: var(--white); }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden;}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.82rem;padding:10px 18px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s,box-shadow 0.2s;letter-spacing:0.02em;}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 8px 40px rgba(201,168,76,0.18);}
+    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.95rem;padding:13px 28px;border-radius:4px;border:2px solid rgba(255,255,255,0.5);cursor:pointer;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
 
     /* TICKER */
-    .ticker { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.3); padding: 8px 0; overflow: hidden; }
-    .ticker-track { display: flex; gap: 60px; animation: ticker 30s linear infinite; white-space: nowrap; }
-    .ticker-track span { color: var(--gold); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
+    .ticker-track{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap;}
+    .ticker-track span{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+    @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(13,31,60,0.08);box-shadow:0 2px 20px rgba(13,31,60,0.07);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-mark{width:38px;height:38px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+    .logo-mark svg{width:22px;height:22px;}
+    .logo-text{display:flex;flex-direction:column;}
+    .logo-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--navy);line-height:1.1;}
+    .logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+    nav{display:flex;align-items:center;gap:2px;}
+    nav a{font-size:0.78rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:6px 8px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    nav a:hover,nav a.active{color:var(--navy);background:var(--off-white);}
+    .header-cta{display:flex;align-items:center;gap:10px;}
+    .header-phone{display:flex;align-items:center;gap:5px;font-size:0.82rem;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap;}
+    .header-phone svg{color:var(--gold);}
+    .header-phone:hover{color:var(--gold);}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;}
+    .mobile-nav{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:16px 24px 24px;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--off-white);}
+    .mobile-nav .btn-primary{margin-top:16px;justify-content:center;}
 
     /* HERO */
-    .blog-hero { background: linear-gradient(135deg, var(--navy) 0%, #1a3660 60%, #0f2847 100%); padding: 80px 0 70px; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
-    .blog-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 54px); color: var(--white); line-height: 1.15; margin-bottom: 20px; }
-    .blog-hero h1 span { color: var(--gold); }
-    .blog-hero p { font-size: 17px; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 600px; }
+    .blog-hero{background:var(--navy);padding:80px 0 70px;position:relative;overflow:hidden;}
+    .blog-hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(201,168,76,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,1) 1px,transparent 1px);background-size:60px 60px;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:20px;}
+    .blog-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,54px);color:var(--white);line-height:1.15;margin-bottom:20px;position:relative;z-index:1;}
+    .blog-hero h1 span{color:var(--gold);}
+    .blog-hero p{font-size:17px;color:rgba(255,255,255,0.75);line-height:1.7;max-width:600px;position:relative;z-index:1;}
+    .hero-inner{position:relative;z-index:1;}
 
     /* BLOG GRID */
-    .blog-section { padding: 80px 0; background: var(--gray-50); }
-    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; margin-top: 48px; }
-    .blog-card { background: var(--white); border-radius: 16px; box-shadow: 0 4px 24px rgba(13,31,60,0.08); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
-    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(13,31,60,0.14); }
-    .card-top { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 32px 28px; }
-    .card-category { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-    .card-top h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); line-height: 1.3; }
-    .card-body { padding: 24px 28px; flex: 1; display: flex; flex-direction: column; }
-    .card-body p { font-size: 14px; color: var(--gray-600); line-height: 1.7; flex: 1; margin-bottom: 24px; }
-    .card-meta { font-size: 12px; color: var(--gray-600); margin-bottom: 16px; }
-    .card-link { display: inline-flex; align-items: center; gap: 6px; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 14px; padding: 10px 20px; border-radius: 6px; text-decoration: none; transition: background 0.2s; width: fit-content; }
-    .card-link:hover { background: var(--gold-light); }
+    .blog-section{padding:80px 0;background:var(--off-white);}
+    .section-label{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;margin-top:48px;}
+    .blog-card{background:var(--white);border-radius:16px;box-shadow:0 4px 24px rgba(13,31,60,0.08);overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;}
+    .blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(13,31,60,0.14);}
+    .card-top{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:32px 28px;}
+    .card-category{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+    .card-top h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--white);line-height:1.3;}
+    .card-body{padding:24px 28px;flex:1;display:flex;flex-direction:column;}
+    .card-body p{font-size:14px;color:var(--text-mid);line-height:1.7;flex:1;margin-bottom:24px;}
+    .card-meta{font-size:12px;color:var(--text-light);margin-bottom:16px;}
+    .card-link{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;padding:10px 20px;border-radius:6px;text-decoration:none;transition:background 0.2s;width:fit-content;}
+    .card-link:hover{background:var(--gold-light);}
 
     /* CTA */
-    .cta-section { padding: 80px 0; background: linear-gradient(135deg, var(--navy) 0%, #1a3660 100%); text-align: center; }
-    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); color: var(--white); margin-bottom: 16px; }
-    .cta-section p { font-size: 17px; color: rgba(255,255,255,0.75); margin-bottom: 36px; }
-    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
-    .btn-primary:hover { background: var(--gold-light); }
-    .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: var(--white); font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
-    .btn-outline:hover { border-color: var(--white); }
+    .cta-section{padding:80px 0;background:var(--navy);text-align:center;position:relative;overflow:hidden;}
+    .cta-section::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(201,168,76,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,1) 1px,transparent 1px);background-size:60px 60px;}
+    .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);color:var(--white);margin-bottom:16px;position:relative;z-index:1;}
+    .cta-section h2 em{color:var(--gold);font-style:normal;}
+    .cta-section p{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:36px;position:relative;z-index:1;}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
 
     /* FOOTER */
-    footer { background: #080f1e; padding: 48px 0 24px; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand p { color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.7; margin-top: 12px; max-width: 260px; }
-    .footer-col h4 { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
-    .footer-col a { display: block; color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--white); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 12px; }
+    footer{background:#080f1e;padding:56px 0 28px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+    .footer-brand p{font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.7;margin:16px 0 20px;}
+    .footer-contact a{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.6);text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+    .footer-contact a:hover{color:var(--gold);}
+    .footer-contact svg{color:var(--gold);width:14px;height:14px;flex-shrink:0;}
+    .footer-col h5{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+    .footer-col a{display:block;font-size:0.84rem;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:10px;transition:color 0.2s;}
+    .footer-col a:hover{color:var(--white);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.3);}
+    .footer-bottom-links{display:flex;gap:20px;}
+    .footer-bottom-links a{font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
+    .footer-bottom-links a:hover{color:var(--gold);}
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .blog-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+
+    @media(max-width:768px){
+      nav,.header-phone{display:none;}
+      .hamburger{display:flex;}
+      .blog-grid{grid-template-columns:1fr;}
+      .footer-grid{grid-template-columns:1fr;}
+    }
+    @media(max-width:1024px){
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
     }
   </style>
 </head>
 <body>
 
+  <!-- TICKER -->
   <div class="ticker">
     <div class="ticker-track">
       <span>Benefits Insights &amp; Education</span><span>★</span>
@@ -104,41 +135,70 @@
     </div>
   </div>
 
-  <nav>
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/ascend-benefits-logo-transparent.svg" alt="Ascend Benefits Consulting Group" />
-      </a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/employer-coverage.html">Employer Coverage</a>
-        <a href="/preventive-care.html">Preventive Care</a>
-        <a href="/about.html">About</a>
-        <a href="/blog/" class="active">Blog</a>
-        <a href="/contact.html">Contact</a>
-        <a href="tel:6155599387" class="nav-phone">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 5.37 5.37l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (615) 559-9387
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <div class="logo-mark">
+            <svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">Ascend Benefits</span>
+            <span class="logo-sub">Consulting Group</span>
+          </div>
         </a>
-        <a href="/contact.html" class="nav-cta">Get Free Analysis</a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
+          <a href="/reference-based-pricing">RBP Plans</a>
+          <a href="/preventive-care">Preventive Care</a>
+          <a href="/about">About</a>
+          <a href="/blog/" class="active">Blog</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div class="header-cta">
+          <a href="tel:6157033941" class="header-phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (615) 703-3941
+          </a>
+          <a href="/contact" class="btn-primary">Get Free Analysis</a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
-  </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/">Home</a>
+      <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
+      <a href="/reference-based-pricing">RBP Plans</a>
+      <a href="/preventive-care">Preventive Care</a>
+      <a href="/about">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact">Contact</a>
+      <a href="tel:6157033941" style="color:var(--gold);font-weight:600;">📞 (615) 703-3941</a>
+      <a href="/contact" class="btn-primary">Get Free Benefits Analysis</a>
+    </div>
+  </header>
 
+  <!-- HERO -->
   <section class="blog-hero">
+    <div class="blog-hero-grid"></div>
     <div class="container">
-      <div class="hero-badge">★ Resources &amp; Insights</div>
-      <h1>Benefits Education for <span>Business Owners</span></h1>
-      <p>Straightforward answers to the questions your traditional broker was never asked. Learn how level-funded plans, ERISA strategies, and smarter benefits design can reduce your costs without cutting your coverage.</p>
+      <div class="hero-inner">
+        <div class="hero-badge">★ Resources &amp; Insights</div>
+        <h1>Benefits Education for <span>Business Owners</span></h1>
+        <p>Straightforward answers to the questions your traditional broker was never asked. Learn how level-funded plans, ERISA strategies, and smarter benefits design can reduce your costs without cutting your coverage.</p>
+      </div>
     </div>
   </section>
 
+  <!-- BLOG GRID -->
   <section class="blog-section">
     <div class="container">
-      <div class="section-label">Latest Articles</div>
+      <span class="section-label">Latest Articles</span>
       <div class="blog-grid">
 
-        <div class="blog-card">
+        <div class="blog-card fade-up">
           <div class="card-top">
             <div class="card-category">Employee Benefits Education</div>
             <h2>What Is a Level-Funded Health Plan? A Plain-English Guide for Small Business Owners</h2>
@@ -150,7 +210,7 @@
           </div>
         </div>
 
-        <div class="blog-card">
+        <div class="blog-card fade-up">
           <div class="card-top">
             <div class="card-category">Cost Management</div>
             <h2>Why Your Group Health Insurance Premiums Keep Going Up — And What You Can Do About It</h2>
@@ -162,7 +222,7 @@
           </div>
         </div>
 
-        <div class="blog-card">
+        <div class="blog-card fade-up">
           <div class="card-top">
             <div class="card-category">Plan Strategy</div>
             <h2>ERISA Plans Explained: How Small Businesses Access Fortune 500 Benefits Strategies</h2>
@@ -178,43 +238,55 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>Ready to Stop Overpaying for Benefits?</h2>
+      <h2>Ready to Stop Overpaying for <em>Benefits?</em></h2>
       <p>A free analysis takes 30 minutes and could save your company thousands per year.</p>
       <div class="cta-buttons">
-        <a href="/contact.html" class="btn-primary">Get Your Free Analysis</a>
-        <a href="tel:6155599387" class="btn-outline">Call (615) 559-9387</a>
+        <a href="/contact" class="btn-primary" style="font-size:1rem;padding:16px 32px;">Get Your Free Analysis</a>
+        <a href="tel:6157033941" class="btn-outline" style="font-size:1rem;padding:15px 32px;">Call (615) 703-3941</a>
       </div>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="/ascend-benefits-logo-transparent.svg" alt="Ascend Benefits" style="height:36px;width:auto;" />
-          <p>Independent employee benefits consulting for employers with 2–250 employees. Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; all 50 states.</p>
+          <a href="/" class="logo">
+            <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+            <div class="logo-text"><span class="logo-name" style="color:var(--white);">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+          </a>
+          <p>Smarter Benefits. Stronger Businesses. Independent benefits consulting for employers with 2–250 employees across the Southeast and all 50 states.</p>
+          <div class="footer-contact">
+            <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin-bottom:8px;">3439 Hwy 25, Cottontown, TN 37048</p>
+            <a href="tel:6157033941">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              (615) 703-3941
+            </a>
+          </div>
         </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <a href="/employer-coverage.html">Employer Coverage</a>
-          <a href="/preventive-care.html">Preventive Care Program</a>
-          <a href="/blog/">Blog &amp; Resources</a>
-          <a href="/contact.html">Free Benefits Analysis</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="tel:6155599387">(615) 559-9387</a>
-          <a href="/contact.html">Schedule a Consultation</a>
-        </div>
+        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
+        <div class="footer-col"><h5>Services</h5><a href="/employer-coverage">Level-Funded Plans</a><a href="/employer-coverage">Self-Funded / ERISA</a><a href="/employer-coverage">Stop-Loss Insurance</a><a href="/employer-coverage">Dental &amp; Vision</a><a href="/employer-coverage">Life &amp; Disability</a></div>
+        <div class="footer-col"><h5>Resources</h5><a href="/blog/">Blog &amp; Insights</a><a href="/employer-coverage">What is Level-Funding?</a><a href="/employer-coverage">ERISA Plan Guide</a><a href="/contact">Free Benefits Analysis</a></div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Ascend Benefits Consulting Group. All rights reserved.</p>
-        <p>Independent &amp; Unbiased · No Carrier Bias · Serving All 50 States</p>
+        <div class="footer-bottom-links"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></div>
       </div>
     </div>
   </footer>
+
+  <script>
+    function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+  </script>
+
+  <!-- GoHighLevel Chat Widget -->
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69ef764ab50033039fb6dfb4" data-source="WEB_USER"></script>
 
 </body>
 </html>
