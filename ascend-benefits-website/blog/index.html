@@ -23,8 +23,6 @@
     .container{max-width:1140px;margin:0 auto;padding:0 24px;}
     .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.82rem;padding:10px 18px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s,box-shadow 0.2s;letter-spacing:0.02em;}
     .btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 8px 40px rgba(201,168,76,0.18);}
-    .btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.95rem;padding:13px 28px;border-radius:4px;border:2px solid rgba(255,255,255,0.5);cursor:pointer;text-decoration:none;transition:border-color 0.2s,color 0.2s;}
-    .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
 
     /* TICKER */
     .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
@@ -45,9 +43,8 @@
     nav a{font-size:0.78rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:6px 8px;border-radius:4px;transition:color 0.2s,background 0.2s;}
     nav a:hover,nav a.active{color:var(--navy);background:var(--off-white);}
     .header-cta{display:flex;align-items:center;gap:10px;}
-    .header-phone{display:flex;align-items:center;gap:5px;font-size:0.82rem;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap;}
-    .header-phone svg{color:var(--gold);}
-    .header-phone:hover{color:var(--gold);}
+    .btn-nav{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.82rem;padding:9px 16px;border-radius:4px;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+    .btn-nav:hover{background:var(--gold-light);}
     .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
     .hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;}
     .mobile-nav{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:16px 24px 24px;}
@@ -106,15 +103,8 @@
     .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .fade-up.visible{opacity:1;transform:translateY(0);}
 
-    @media(max-width:768px){
-      nav,.header-phone{display:none;}
-      .hamburger{display:flex;}
-      .blog-grid{grid-template-columns:1fr;}
-      .footer-grid{grid-template-columns:1fr;}
-    }
-    @media(max-width:1024px){
-      .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
-    }
+    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.blog-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+    @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
   </style>
 </head>
 <body>
@@ -158,11 +148,7 @@
           <a href="/contact">Contact</a>
         </nav>
         <div class="header-cta">
-          <a href="tel:6157033941" class="header-phone">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            (615) 703-3941
-          </a>
-          <a href="/contact" class="btn-primary">Get Free Analysis</a>
+          <a href="/contact" class="btn-nav">Get Free Analysis</a>
         </div>
         <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
@@ -175,7 +161,6 @@
       <a href="/about">About</a>
       <a href="/blog/">Blog</a>
       <a href="/contact">Contact</a>
-      <a href="tel:6157033941" style="color:var(--gold);font-weight:600;">📞 (615) 703-3941</a>
       <a href="/contact" class="btn-primary">Get Free Benefits Analysis</a>
     </div>
   </header>
@@ -245,7 +230,6 @@
       <p>A free analysis takes 30 minutes and could save your company thousands per year.</p>
       <div class="cta-buttons">
         <a href="/contact" class="btn-primary" style="font-size:1rem;padding:16px 32px;">Get Your Free Analysis</a>
-        <a href="tel:6157033941" class="btn-outline" style="font-size:1rem;padding:15px 32px;">Call (615) 703-3941</a>
       </div>
     </div>
   </section>
@@ -261,15 +245,14 @@
           </a>
           <p>Smarter Benefits. Stronger Businesses. Independent benefits consulting for employers with 2–250 employees across the Southeast and all 50 states.</p>
           <div class="footer-contact">
-            <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin-bottom:8px;">3439 Hwy 25, Cottontown, TN 37048</p>
-            <a href="tel:6157033941">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              (615) 703-3941
+            <a href="mailto:info@ascendbenefitscg.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              info@ascendbenefitscg.com
             </a>
           </div>
         </div>
-        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
-        <div class="footer-col"><h5>Services</h5><a href="/employer-coverage">Level-Funded Plans</a><a href="/employer-coverage">Self-Funded / ERISA</a><a href="/employer-coverage">Stop-Loss Insurance</a><a href="/employer-coverage">Dental &amp; Vision</a><a href="/employer-coverage">Life &amp; Disability</a></div>
+        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
+        <div class="footer-col"><h5>Services</h5><a href="/employer-coverage">Level-Funded Plans</a><a href="/employer-coverage">Self-Funded / ERISA</a><a href="/reference-based-pricing">Reference-Based Pricing</a><a href="/employer-coverage">Stop-Loss Insurance</a><a href="/employer-coverage">Dental &amp; Vision</a><a href="/employer-coverage">Life &amp; Disability</a></div>
         <div class="footer-col"><h5>Resources</h5><a href="/blog/">Blog &amp; Insights</a><a href="/employer-coverage">What is Level-Funding?</a><a href="/employer-coverage">ERISA Plan Guide</a><a href="/contact">Free Benefits Analysis</a></div>
       </div>
       <div class="footer-bottom">
@@ -285,7 +268,6 @@
     document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
   </script>
 
-  <!-- GoHighLevel Chat Widget -->
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69ef764ab50033039fb6dfb4" data-source="WEB_USER"></script>
 
 </body>
