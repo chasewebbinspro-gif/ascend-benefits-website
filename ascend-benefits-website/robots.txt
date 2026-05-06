@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block admin or private directories if any
+Disallow: /cdn-cgi/
+
+Sitemap: https://ascendbenefitscg.com/sitemap.xml
