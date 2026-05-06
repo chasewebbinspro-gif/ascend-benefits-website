@@ -3,103 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Why Group Health Insurance Premiums Keep Rising — And How to Fight Back | Ascend Benefits</title>
+  <title>Why Health Insurance Premiums Keep Rising & How to Fight Back</title>
   <meta name="description" content="Small business health insurance premiums are rising 11% in 2026. Learn why costs keep climbing and what strategies Tennessee employers can use to cut costs without cutting coverage." />
+  <link rel="canonical" href="https://www.ascendbenefitscg.com/blog/why-premiums-keep-rising" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0D1F3C; --navy-mid: #162d56; --gold: #C9A84C; --gold-light: #e8c96a;
-      --white: #ffffff; --gray-50: #f8f9fc; --gray-600: #4b5563; --gray-800: #1f2937;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--gray-800); background: var(--white); }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--navy:#0D1F3C;--navy-mid:#162d56;--gold:#C9A84C;--gold-light:#e8c96a;--white:#ffffff;--off-white:#F8F6F1;--gray-50:#f8f9fc;--gray-600:#4b5563;--gray-800:#1f2937;--text-mid:#3a4a63;--border:rgba(201,168,76,0.2);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden;}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px;}
 
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(13,31,60,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.2); }
-    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav-logo { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo img { height: 48px; width: auto; }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); }
-    .nav-cta { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 14px; padding: 10px 22px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
-    .nav-cta:hover { background: var(--gold-light); }
-    .nav-phone { color: rgba(255,255,255,0.8); font-size: 14px; display: flex; align-items: center; gap: 6px; text-decoration: none; }
-    .nav-phone:hover { color: var(--white); }
+    /* TICKER */
+    .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
+    .ticker-track{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap;}
+    .ticker-track span{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+    @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-    .ticker { background: var(--navy); border-bottom: 1px solid rgba(201,168,76,0.3); padding: 8px 0; overflow: hidden; }
-    .ticker-track { display: flex; gap: 60px; animation: ticker 30s linear infinite; white-space: nowrap; }
-    .ticker-track span { color: var(--gold); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    /* HEADER */
+    header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(13,31,60,0.08);box-shadow:0 2px 20px rgba(13,31,60,0.07);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-mark{width:38px;height:38px;background:#0D1F3C;border-radius:6px;display:flex;align-items:center;justify-content:center;}
+    .logo-mark svg{width:22px;height:22px;}
+    .logo-text{display:flex;flex-direction:column;}
+    .logo-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#0D1F3C;line-height:1.1;}
+    .logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;}
+    nav{display:flex;align-items:center;gap:2px;}
+    nav a{font-size:0.78rem;font-weight:500;color:#3a4a63;text-decoration:none;padding:6px 8px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    nav a:hover,nav a.active{color:#0D1F3C;background:#F8F6F1;}
+    .header-cta{display:flex;align-items:center;gap:10px;}
+    .btn-nav{display:inline-flex;align-items:center;background:#C9A84C;color:#0D1F3C;font-weight:700;font-size:0.82rem;padding:9px 16px;border-radius:4px;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+    .btn-nav:hover{background:#e2c06a;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:#0D1F3C;border-radius:2px;}
+    .mobile-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid rgba(201,168,76,0.2);padding:16px 24px 24px;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:#3a4a63;text-decoration:none;padding:12px 0;border-bottom:1px solid #F8F6F1;}
 
-    .article-hero { background: linear-gradient(135deg, var(--navy) 0%, #1a3660 60%, #0f2847 100%); padding: 72px 0 60px; }
-    .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
-    .breadcrumb a { color: var(--gold); text-decoration: none; }
-    .article-category { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
-    .article-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 48px); color: var(--white); line-height: 1.2; margin-bottom: 20px; max-width: 760px; }
-    .article-meta { font-size: 14px; color: rgba(255,255,255,0.55); }
-
-    .article-body { padding: 64px 0 80px; }
-    .article-layout { display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
-    .article-content h2 { font-family: 'Playfair Display', serif; font-size: 26px; color: var(--navy); margin: 40px 0 16px; }
-    .article-content h2:first-child { margin-top: 0; }
-    .article-content p { font-size: 16px; color: var(--gray-600); line-height: 1.8; margin-bottom: 20px; }
-    .article-content ul { margin: 0 0 20px 24px; }
-    .article-content li { font-size: 16px; color: var(--gray-600); line-height: 1.8; margin-bottom: 10px; }
-    .article-content strong { color: var(--navy); font-weight: 700; }
-
-    .callout { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-left: 4px solid var(--gold); padding: 24px 28px; margin: 36px 0; border-radius: 0 8px 8px 0; }
-    .callout p { color: rgba(255,255,255,0.9); font-size: 16px; font-style: italic; line-height: 1.7; margin: 0 0 8px; }
-    .callout .source { color: rgba(255,255,255,0.45); font-size: 13px; font-style: normal; }
-
-    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 32px 0; }
-    .stat-box { background: var(--gray-50); border: 1px solid #e5e7eb; border-top: 3px solid var(--gold); padding: 20px 16px; text-align: center; border-radius: 8px; }
-    .stat-box .num { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--gold); font-weight: 700; display: block; }
-    .stat-box .label { font-size: 12px; color: var(--gray-600); margin-top: 6px; display: block; line-height: 1.4; }
-
-    .sidebar { position: sticky; top: 96px; }
-    .sidebar-card { background: var(--gray-50); border: 1px solid #e5e7eb; border-radius: 12px; padding: 28px; margin-bottom: 24px; }
-    .sidebar-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 12px; }
-    .sidebar-card p { font-size: 14px; color: var(--gray-600); line-height: 1.7; margin-bottom: 20px; }
-    .sidebar-cta { display: block; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 14px; padding: 12px 20px; border-radius: 6px; text-decoration: none; text-align: center; transition: background 0.2s; margin-bottom: 10px; }
-    .sidebar-cta:hover { background: var(--gold-light); }
-    .sidebar-phone { display: block; text-align: center; color: var(--navy); font-size: 14px; font-weight: 600; text-decoration: none; }
-    .sidebar-related h3 { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-    .sidebar-related a { display: block; font-size: 14px; color: var(--navy); text-decoration: none; padding: 10px 0; border-bottom: 1px solid #e5e7eb; line-height: 1.4; font-weight: 500; }
-    .sidebar-related a:last-child { border-bottom: none; }
-    .sidebar-related a:hover { color: var(--gold); }
-
-    .cta-section { padding: 72px 0; background: linear-gradient(135deg, var(--navy) 0%, #1a3660 100%); text-align: center; }
-    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 38px); color: var(--white); margin-bottom: 16px; }
-    .cta-section p { font-size: 17px; color: rgba(255,255,255,0.75); margin-bottom: 36px; }
-    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: background 0.2s; }
-    .btn-primary:hover { background: var(--gold-light); }
-    .btn-outline { border: 2px solid rgba(255,255,255,0.4); color: var(--white); font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: border-color 0.2s; }
-    .btn-outline:hover { border-color: var(--white); }
-
-    footer { background: #080f1e; padding: 48px 0 24px; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-brand p { color: rgba(255,255,255,0.55); font-size: 13px; line-height: 1.7; margin-top: 12px; max-width: 260px; }
-    .footer-col h4 { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
-    .footer-col a { display: block; color: rgba(255,255,255,0.6); font-size: 13px; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--white); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-bottom p { color: rgba(255,255,255,0.4); font-size: 12px; }
-
-    @media (max-width: 900px) {
-      .article-layout { grid-template-columns: 1fr; }
-      .sidebar { position: static; }
-      .stat-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .footer-grid { grid-template-columns: 1fr; }
-    }
+    /* ARTICLE */
+    .article-hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3660 60%,#0f2847 100%);padding:72px 0 60px;}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;}
+    .breadcrumb a{color:var(--gold);text-decoration:none;}
+    .article-category{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:20px;}
+    .article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);color:var(--white);line-height:1.2;margin-bottom:20px;max-width:760px;}
+    .article-meta{font-size:14px;color:rgba(255,255,255,0.55);}
+    .article-body{padding:64px 0 80px;}
+    .article-layout{display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start;}
+    .article-content h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin:40px 0 16px;}
+    .article-content h2:first-child{margin-top:0;}
+    .article-content p{font-size:16px;color:var(--gray-600);line-height:1.8;margin-bottom:20px;}
+    .article-content ul{margin:0 0 20px 24px;}
+    .article-content li{font-size:16px;color:var(--gray-600);line-height:1.8;margin-bottom:10px;}
+    .article-content strong{color:var(--navy);font-weight:700;}
+    .callout{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-left:4px solid var(--gold);padding:24px 28px;margin:36px 0;border-radius:0 8px 8px 0;}
+    .callout p{color:rgba(255,255,255,0.9);font-size:16px;font-style:italic;line-height:1.7;margin:0 0 8px;}
+    .callout .source{color:rgba(255,255,255,0.45);font-size:13px;font-style:normal;}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;}
+    .stat-box{background:var(--gray-50);border:1px solid #e5e7eb;border-top:3px solid var(--gold);padding:20px 16px;text-align:center;border-radius:8px;}
+    .stat-box .num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700;display:block;}
+    .stat-box .label{font-size:12px;color:var(--gray-600);margin-top:6px;display:block;line-height:1.4;}
+    .sidebar{position:sticky;top:96px;}
+    .sidebar-card{background:var(--gray-50);border:1px solid #e5e7eb;border-radius:12px;padding:28px;margin-bottom:24px;}
+    .sidebar-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:12px;}
+    .sidebar-card p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:20px;}
+    .sidebar-cta{display:block;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;transition:background 0.2s;}
+    .sidebar-cta:hover{background:var(--gold-light);}
+    .sidebar-related h3{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+    .sidebar-related a{display:block;font-size:14px;color:var(--navy);text-decoration:none;padding:10px 0;border-bottom:1px solid #e5e7eb;line-height:1.4;font-weight:500;}
+    .sidebar-related a:last-child{border-bottom:none;}
+    .sidebar-related a:hover{color:var(--gold);}
+    .cta-section{padding:72px 0;background:linear-gradient(135deg,var(--navy) 0%,#1a3660 100%);text-align:center;}
+    .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);color:var(--white);margin-bottom:16px;}
+    .cta-section p{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:36px;}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--gold-light);}
+    footer{background:#080f1e;padding:48px 0 24px;}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-brand p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.7;margin-top:12px;max-width:260px;}
+    .footer-col h4{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;}
+    .footer-col a{display:block;color:rgba(255,255,255,0.6);font-size:13px;text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+    .footer-col a:hover{color:#fff;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-bottom p{color:rgba(255,255,255,0.4);font-size:12px;}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;}.sidebar{position:static;}.stat-row{grid-template-columns:1fr;}}
+    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.footer-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -119,26 +111,30 @@
     </div>
   </div>
 
-  <nav>
-    <div class="container nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="/ascend-benefits-logo-transparent.svg" alt="Ascend Benefits Consulting Group" />
-      </a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/employer-coverage.html">Employer Coverage</a>
-        <a href="/preventive-care.html">Preventive Care</a>
-        <a href="/about.html">About</a>
-        <a href="/blog/" class="active">Blog</a>
-        <a href="/contact.html">Contact</a>
-        <a href="tel:6155599387" class="nav-phone">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.72a16 16 0 0 0 5.37 5.37l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          (615) 559-9387
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+          <div class="logo-text"><span class="logo-name">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
         </a>
-        <a href="/contact.html" class="nav-cta">Get Free Analysis</a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
+          <a href="/reference-based-pricing">RBP Plans</a>
+          <a href="/preventive-care">Preventive Care</a>
+          <a href="/about">About</a>
+          <a href="/blog/" class="active">Blog</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div class="header-cta"><a href="/contact" class="btn-nav">Get Free Analysis</a></div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
       </div>
     </div>
-  </nav>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About</a><a href="/blog/">Blog</a><a href="/contact">Contact</a>
+    </div>
+  </header>
 
   <section class="article-hero">
     <div class="container">
@@ -152,17 +148,13 @@
   <section class="article-body">
     <div class="container">
       <div class="article-layout">
-
         <div class="article-content">
 
           <p>If your group health insurance renewal came with a rate increase this year, you're in very good company. According to an analysis by the Peterson-KFF Health System Tracker, the median proposed premium increase among small group insurers for the 2026 plan year is 11%. That follows a 6% increase the year before, and similar hikes stretching back nearly a decade.</p>
-
           <p>For a business with 20 employees, an 11% increase on a $170,000 annual benefits spend is $18,700 more per year — money that could have gone to salaries, equipment, or growth. Understanding <em>why</em> this keeps happening is the first step toward doing something about it.</p>
 
           <h2>Why Premiums Keep Rising</h2>
-
           <p>Insurance carriers cite several factors in their rate filings year after year:</p>
-
           <ul>
             <li><strong>Rising cost of care.</strong> Hospitalizations, physician services, and prescription drugs all cost more than they did the year before. Carriers estimate the underlying medical trend at around 9% annually.</li>
             <li><strong>Prescription drug spending.</strong> Specialty drugs, including newer GLP-1 weight-loss medications, are driving a disproportionate share of cost increases in many plans.</li>
@@ -176,56 +168,35 @@
           </div>
 
           <h2>The Smallest Businesses Pay the Most</h2>
-
           <p>The cost burden isn't shared equally. Research found that for companies with just 2 to 5 employees, premiums have increased 18% faster than inflation since 2022. Annual premiums for this group reached nearly $8,500 per employee in 2025 — the highest cost of any employer size segment.</p>
-
           <p>The reason is structural. Carriers need large pools of people to spread risk. With a small group, a single employee with a serious diagnosis can dramatically affect the group's cost profile. Carriers know this, and they price accordingly — charging small businesses a premium for having fewer employees.</p>
 
           <h2>What Doesn't Work</h2>
-
           <p>Many business owners respond to rising premiums by shifting costs to employees — higher deductibles, higher employee contributions, narrower networks. This can reduce the employer's line-item cost, but it creates a different problem: employees feel the squeeze, recruitment suffers, and your benefits package stops being a competitive advantage.</p>
-
           <p>Shopping for a different traditional carrier usually produces a one-time bump in savings at most. A year later, you're back on the same treadmill.</p>
 
           <h2>What Actually Works</h2>
-
           <p><strong>Moving to level-funded or self-funded ERISA plans.</strong> Rather than paying a carrier to assume all the risk and keep all the profit when claims are low, these employers fund their own claims with stop-loss insurance as a backstop. For healthy groups, this can produce 20–30% savings versus traditional premiums — plus refunds in low-claims years. Employees access the same networks they've always used.</p>
-
           <p><strong>Using claims data to drive decisions.</strong> Traditional plans give employers almost no insight into what's driving costs. Level-funded and self-funded plans provide detailed monthly reporting. Employers who look at that data — identifying high-cost diagnoses, overused services, or gaps in preventive care — can make plan design changes that reduce future claims.</p>
-
           <p><strong>Investing in preventive care and wellness.</strong> The math is straightforward: a $300 wellness program that prevents a $30,000 hospitalization pays for itself many times over. Employers on self-funded or level-funded plans benefit directly from these investments, because their claims fund reflects the results.</p>
-
           <p><strong>Working with an independent consultant, not a captive broker.</strong> Brokers who work with a single carrier or narrow panel have limited options to offer. An independent consultant can shop the full market — traditional, level-funded, and self-funded — and give you an honest comparison of what each path would cost your specific group.</p>
 
           <div class="stat-row">
-            <div class="stat-box">
-              <span class="num">11%</span>
-              <span class="label">Median proposed small group premium increase for 2026</span>
-            </div>
-            <div class="stat-box">
-              <span class="num">$17K+</span>
-              <span class="label">Projected average employer cost per employee in 2026</span>
-            </div>
-            <div class="stat-box">
-              <span class="num">9%</span>
-              <span class="label">Estimated underlying medical cost trend cited by carriers</span>
-            </div>
+            <div class="stat-box"><span class="num">11%</span><span class="label">Median proposed small group premium increase for 2026</span></div>
+            <div class="stat-box"><span class="num">$17K+</span><span class="label">Projected average employer cost per employee in 2026</span></div>
+            <div class="stat-box"><span class="num">9%</span><span class="label">Estimated underlying medical cost trend cited by carriers</span></div>
           </div>
 
           <h2>The Good News</h2>
-
           <p>Employers with healthy workforces have never had more options. The same strategies Fortune 500 companies have used for decades to control benefits costs are now accessible to businesses with as few as two employees. The critical difference is knowing those options exist — and working with someone who can run the numbers honestly.</p>
-
           <p>If your last renewal came with a double-digit increase and your broker's only solution was to raise employee deductibles, it may be time to get a second opinion.</p>
 
         </div>
-
         <aside class="sidebar">
           <div class="sidebar-card">
             <h3>Get a Free Analysis of Your Current Plan</h3>
             <p>We'll show you exactly what level-funded and self-funded alternatives would cost your group — no obligation, no pressure.</p>
-            <a href="/contact.html" class="sidebar-cta">Start Your Free Analysis →</a>
-            <a href="tel:6155599387" class="sidebar-phone">or call (615) 559-9387</a>
+            <a href="/contact" class="sidebar-cta">Start Your Free Analysis →</a>
           </div>
           <div class="sidebar-card sidebar-related">
             <h3>Related Articles</h3>
@@ -233,7 +204,6 @@
             <a href="/blog/erisa-plans-explained.html">ERISA Plans Explained: How Small Businesses Access Fortune 500 Strategies</a>
           </div>
         </aside>
-
       </div>
     </div>
   </section>
@@ -243,8 +213,7 @@
       <h2>Ready to Stop Overpaying?</h2>
       <p>A free analysis takes 30 minutes and could save your company thousands per year.</p>
       <div class="cta-buttons">
-        <a href="/contact.html" class="btn-primary">Get Your Free Analysis</a>
-        <a href="tel:6155599387" class="btn-outline">Call (615) 559-9387</a>
+        <a href="/contact" class="btn-primary">Get Your Free Analysis</a>
       </div>
     </div>
   </section>
@@ -253,21 +222,14 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="/ascend-benefits-logo-transparent.svg" alt="Ascend Benefits" style="height:36px;width:auto;" />
+          <a href="/" class="logo">
+            <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+            <div class="logo-text"><span class="logo-name" style="color:#fff;">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+          </a>
           <p>Independent employee benefits consulting for employers with 2–250 employees. Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; all 50 states.</p>
         </div>
-        <div class="footer-col">
-          <h4>Services</h4>
-          <a href="/employer-coverage.html">Employer Coverage</a>
-          <a href="/preventive-care.html">Preventive Care Program</a>
-          <a href="/blog/">Blog &amp; Resources</a>
-          <a href="/contact.html">Free Benefits Analysis</a>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <a href="tel:6155599387">(615) 559-9387</a>
-          <a href="/contact.html">Schedule a Consultation</a>
-        </div>
+        <div class="footer-col"><h4>Services</h4><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care Program</a><a href="/blog/">Blog &amp; Resources</a><a href="/contact">Free Benefits Analysis</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/contact">Contact Us</a></div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Ascend Benefits Consulting Group. All rights reserved.</p>
@@ -275,6 +237,6 @@
       </div>
     </div>
   </footer>
-
+  <script>function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
 </body>
 </html>
