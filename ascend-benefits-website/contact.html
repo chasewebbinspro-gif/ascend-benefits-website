@@ -285,9 +285,16 @@
               </div>
             </div>
             <div class="form-group"><label>What's your biggest benefits challenge right now?</label><textarea id="message" placeholder="e.g. Premiums keep going up at renewal, struggling to compete for talent, want to understand my options..."></textarea></div>
-            <label class="sms-consent">
+            <div class="sms-consent">
               <input type="checkbox" id="smsConsent" />
-              <span>I consent to receive SMS messages from Ascend Benefits Consulting Group related to my inquiry. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to unsubscribe, HELP for help.</span>
+              <span>By checking this box I consent to receive SMS messages from Ascend Benefits Group Health Plans and Supplement Insurance. Message &amp; data rates may apply. Message frequency varies. Carriers are not liable for delayed or undelivered messages. Text HELP for help. You can reply STOP to unsubscribe at any time.</span>
+            </div>
+            <div class="sms-consent" style="margin-bottom:18px;">
+              <input type="checkbox" id="marketingConsent" />
+              <span>By checking this box I agree to receive occasional marketing and promotional messages from Ascend Benefits as outlined in our <a href="https://app.connectdashboard.com/v2/preview/ascendbenefitscg.com/terms-of-service" target="_blank" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>.</span>
+            </div>
+            <p style="font-size:0.72rem;color:#6b7c99;line-height:1.5;margin-bottom:12px;">By submitting this form you agree to our <a href="/privacy" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a> and <a href="/terms" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>. We do not sell or share your information.</p>
+            <label class="sms-consent" style="display:none;">
             </label>
             <button class="btn-primary form-submit" id="submitBtn" onclick="handleSubmit()">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -432,7 +439,8 @@
         employees:document.getElementById('employees').value,
         planType:document.getElementById('planType').value,
         message:document.getElementById('message').value,
-        smsConsent:document.getElementById('smsConsent').checked?'Yes':'No'
+        smsConsent:document.getElementById('smsConsent').checked?'Yes':'No',
+          marketingConsent:document.getElementById('marketingConsent').checked?'Yes':'No'
       };
       fetch('https://formspree.io/f/xeepdnvz',{
         method:'POST',
