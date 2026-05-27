@@ -248,7 +248,7 @@
       <div class="contact-grid">
 
         <!-- FORM -->
-        <div class="form-card fade-up">
+        <div class="form-card">
           <h2>Let's Find Out How Much Your Business Can Save</h2>
           <p>A free, no-obligation benefits analysis takes less than 15 minutes. We'll review your current plan, show you what alternatives exist, and give you a clear picture of your savings potential — with zero pressure.</p>
 
@@ -430,6 +430,8 @@
   </footer>
 
   <script>
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});},{threshold:0.05});
+    document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
     function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
 
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69ef764ab50033039fb6dfb4" data-source="WEB_USER"></script>
