@@ -248,66 +248,24 @@
       <div class="contact-grid">
 
         <!-- FORM -->
-        <div class="form-card fade-up">
-          <div id="formContent">
-            <h2>Request a Free Analysis</h2>
-            <p>Fill out the form below and a member of the Ascend team will be in touch within one business day.</p>
-            <div class="form-row">
-              <div class="form-group"><label>First Name <span>*</span></label><input type="text" id="firstName" placeholder="John" /></div>
-              <div class="form-group"><label>Last Name <span>*</span></label><input type="text" id="lastName" placeholder="Smith" /></div>
-            </div>
-            <div class="form-group"><label>Business Email <span>*</span></label><input type="email" id="email" placeholder="john@yourcompany.com" /></div>
-            <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="(000) 000-0000" /></div>
-            <div class="form-group"><label>Company Name <span>*</span></label><input type="text" id="company" placeholder="Your Company LLC" /></div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Number of Employees <span>*</span></label>
-                <select id="employees">
-                  <option value="" disabled selected>Select range</option>
-                  <option value="1-4">1–4 employees</option>
-                  <option value="5-10">5–10 employees</option>
-                  <option value="11-25">11–25 employees</option>
-                  <option value="26-50">26–50 employees</option>
-                  <option value="51-100">51–100 employees</option>
-                  <option value="100+">100+ employees</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Current Plan Type</label>
-                <select id="planType">
-                  <option value="" disabled selected>Select type</option>
-                  <option value="traditional">Traditional / Fully-Insured</option>
-                  <option value="level-funded">Level-Funded</option>
-                  <option value="self-funded">Self-Funded / ERISA</option>
-                  <option value="none">No current plan</option>
-                  <option value="unsure">Not sure</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group"><label>What's your biggest benefits challenge right now?</label><textarea id="message" placeholder="e.g. Premiums keep going up at renewal, struggling to compete for talent, want to understand my options..."></textarea></div>
-            <div class="sms-consent">
-              <input type="checkbox" id="smsConsent" required />
-              <span><strong style="color:#e53e3e;">* Required — </strong>By checking this box I consent to receive SMS messages from Ascend Benefits Group Health Plans and Supplement Insurance. Message &amp; data rates may apply. Message frequency varies. Carriers are not liable for delayed or undelivered messages. Text HELP for help. You can reply STOP to unsubscribe at any time.</span>
-            </div>
-            <div class="sms-consent" style="margin-bottom:18px;">
-              <input type="checkbox" id="marketingConsent" />
-              <span>By checking this box I agree to receive occasional marketing and promotional messages from Ascend Benefits as outlined in our <a href="/terms" target="_blank" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>.</span>
-            </div>
-            <p style="font-size:0.72rem;color:#6b7c99;line-height:1.5;margin-bottom:12px;">By submitting this form you agree to our <a href="/privacy" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a> and <a href="/terms" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>. We do not sell or share your information.</p>
-            <label class="sms-consent" style="display:none;">
-            </label>
-            <button class="btn-primary form-submit" id="submitBtn" onclick="handleSubmit()">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send My Request
-            </button>
-            <p class="form-note">We respect your privacy. Your information will never be shared or sold.</p>
-          </div>
-          <div class="form-success" id="formSuccess">
-            <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <h3>We Got Your Request!</h3>
-            <p>Thanks for reaching out. A member of the Ascend team will be in touch within one business day to schedule your free benefits analysis.</p>
-            <p style="font-size:0.85rem;color:var(--text-light);">In the meantime, feel free to email us at <a href="mailto:info@ascendbenefitscg.com" style="color:var(--gold);font-weight:600;">Send Us an Email</a>.</p>
-          </div>
+        <div class="form-card fade-up" style="padding:0;overflow:hidden;min-height:980px;background:#fff;border-radius:14px;box-shadow:0 4px 32px rgba(13,31,60,0.12);border:1px solid rgba(13,31,60,0.06);border-top:4px solid #C9A84C;">
+          <iframe
+            src="https://link.ascendbenefitscg.com/widget/form/NildBb3dPCtrEclxGLvH"
+            style="width:100%;height:980px;border:none;border-radius:0 0 14px 14px;"
+            id="inline-NildBb3dPCtrEclxGLvH"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Ascend Benefits submission form"
+            data-height="951"
+            data-layout-iframe-id="inline-NildBb3dPCtrEclxGLvH"
+            data-form-id="NildBb3dPCtrEclxGLvH"
+            title="Ascend Benefits submission form">
+          </iframe>
         </div>
 
         <!-- SIDEBAR -->
@@ -415,67 +373,9 @@
   </footer>
 
   <script>
-    function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
-
-    function handleSubmit(){
-      const required=['firstName','lastName','email','company','employees'];
-      // Check SMS consent required
-      const smsCheck = document.getElementById('smsConsent');
-      if(!smsCheck.checked){
-        smsCheck.closest('.sms-consent').style.outline='2px solid #e53e3e';
-        smsCheck.closest('.sms-consent').style.borderRadius='6px';
-        smsCheck.scrollIntoView({behavior:'smooth',block:'center'});
-        return;
-      } else {
-        smsCheck.closest('.sms-consent').style.outline='';
-      }
-      let valid=true;
-      required.forEach(id=>{
-        const el=document.getElementById(id);
-        if(!el.value.trim()){el.style.borderColor='#e53e3e';el.style.boxShadow='0 0 0 3px rgba(229,62,62,0.1)';valid=false;}
-        else{el.style.borderColor='';el.style.boxShadow='';}
-      });
-      const email=document.getElementById('email');
-      if(email.value&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){email.style.borderColor='#e53e3e';email.style.boxShadow='0 0 0 3px rgba(229,62,62,0.1)';valid=false;}
-      if(!valid)return;
-      const btn=document.getElementById('submitBtn');
-      btn.textContent='Sending...';btn.disabled=true;
-      const data={
-        firstName:document.getElementById('firstName').value,
-        lastName:document.getElementById('lastName').value,
-        email:document.getElementById('email').value,
-        phone:document.getElementById('phone').value,
-        company:document.getElementById('company').value,
-        employees:document.getElementById('employees').value,
-        planType:document.getElementById('planType').value,
-        message:document.getElementById('message').value,
-        smsConsent:document.getElementById('smsConsent').checked?'Yes':'No',
-          marketingConsent:document.getElementById('marketingConsent').checked?'Yes':'No'
-      };
-      fetch('https://formspree.io/f/xeepdnvz',{
-        method:'POST',
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify(data)
-      })
-      .then(res=>{
-        if(res.ok){
-          document.getElementById('formContent').style.display='none';
-          document.getElementById('formSuccess').classList.add('visible');
-        }else{
-          btn.textContent='Send My Request';btn.disabled=false;
-          alert('There was a problem submitting your request. Please email us at info&#64;ascendbenefitscg.com directly.');
-        }
-      })
-      .catch(()=>{
-        btn.textContent='Send My Request';btn.disabled=false;
-        alert('There was a problem submitting your request. Please email us at info&#64;ascendbenefitscg.com directly.');
-      });
-    }
-
-    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1});
-    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-  </script>
+    function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
 
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69ef764ab50033039fb6dfb4" data-source="WEB_USER"></script>
+  <script src="https://link.ascendbenefitscg.com/js/form_embed.js"></script>
 </body>
 </html>
