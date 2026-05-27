@@ -432,7 +432,50 @@
   <script>
     const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});},{threshold:0.05});
     document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
-    function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
+    function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+    function handleSubmit(){
+      const smsCheck=document.getElementById('smsConsent');
+      if(!smsCheck.checked){
+        smsCheck.closest('.sms-consent').style.outline='2px solid #e53e3e';
+        smsCheck.closest('.sms-consent').style.borderRadius='6px';
+        smsCheck.scrollIntoView({behavior:'smooth',block:'center'});
+        return;
+      } else { smsCheck.closest('.sms-consent').style.outline=''; }
+      const required=['firstName','lastName','email','company','employees'];
+      let valid=true;
+      required.forEach(id=>{
+        const el=document.getElementById(id);
+        if(!el.value.trim()){el.style.borderColor='#e53e3e';valid=false;}
+        else{el.style.borderColor='';}
+      });
+      if(!valid){return;}
+      const btn=document.getElementById('submitBtn');
+      btn.disabled=true;
+      btn.innerHTML='Sending...';
+      fetch('https://formspree.io/f/xeepdnvz',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({
+          firstName:document.getElementById('firstName').value,
+          lastName:document.getElementById('lastName').value,
+          email:document.getElementById('email').value,
+          company:document.getElementById('company').value,
+          employees:document.getElementById('employees').value,
+          insuranceType:document.getElementById('insuranceType').value,
+          message:document.getElementById('message').value,
+          smsConsent:document.getElementById('smsConsent').checked?'Yes':'No',
+          marketingConsent:document.getElementById('marketingConsent').checked?'Yes':'No'
+        })
+      }).then(()=>{
+        document.getElementById('form-fields').style.display='none';
+        document.getElementById('form-success').style.display='block';
+      }).catch(()=>{
+        btn.disabled=false;
+        btn.innerHTML='Request My Free Benefits Analysis';
+        alert('Something went wrong. Please try again.');
+      });
+    }
+  </script>
 
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69ef764ab50033039fb6dfb4" data-source="WEB_USER"></script>
 </body>
