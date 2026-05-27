@@ -248,28 +248,81 @@
       <div class="contact-grid">
 
         <!-- FORM -->
-        <div class="form-card fade-up" style="background:#fff;border-radius:14px;box-shadow:0 4px 32px rgba(13,31,60,0.12);border:1px solid rgba(13,31,60,0.06);border-top:4px solid #C9A84C;padding:48px;">
-          <h2 style="font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:#0D1F3C;margin-bottom:8px;">Let's Find Out How Much Your Business Can Save</h2>
-          <p style="font-size:0.9rem;color:#6b7c99;margin-bottom:32px;line-height:1.6;">A free, no-obligation benefits analysis takes less than 15 minutes. Complete the form below and we'll be in touch within one business day.</p>
-          <div id="ghl-form-container" style="min-height:900px;width:100%;">
-            <iframe
-              src="https://link.ascendbenefitscg.com/widget/form/NildBb3dPCtrEclxGLvH"
-              style="width:100%;min-height:900px;border:none;display:block;"
-              title="Ascend Benefits Contact Form"
-              id="ghl-form-iframe"
-              onload="resizeIframe(this)"
-              allowfullscreen>
-            </iframe>
+        <div class="form-card fade-up">
+          <h2>Let's Find Out How Much Your Business Can Save</h2>
+          <p>A free, no-obligation benefits analysis takes less than 15 minutes. We'll review your current plan, show you what alternatives exist, and give you a clear picture of your savings potential — with zero pressure.</p>
+
+          <div id="form-success" style="display:none;background:linear-gradient(135deg,#0D1F3C,#162d56);border-radius:10px;padding:32px;text-align:center;">
+            <div style="width:56px;height:56px;background:rgba(34,197,94,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-bottom:8px;">We'll Be In Touch Soon!</h3>
+            <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Thanks for reaching out. We typically respond within one business day.</p>
           </div>
-          <script>
-            function resizeIframe(iframe) {
-              try {
-                iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-              } catch(e) {
-                iframe.style.height = '950px';
-              }
-            }
-          </script>
+
+          <div id="form-fields">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" id="firstName" placeholder="John" />
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" id="lastName" placeholder="Smith" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Business Email *</label>
+              <input type="email" id="email" placeholder="john@yourcompany.com" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Company Name *</label>
+                <input type="text" id="company" placeholder="Your Company LLC" />
+              </div>
+              <div class="form-group">
+                <label>Number of Employees *</label>
+                <select id="employees">
+                  <option value="" disabled selected>Select range</option>
+                  <option value="2-10">2–10 employees</option>
+                  <option value="11-25">11–25 employees</option>
+                  <option value="26-50">26–50 employees</option>
+                  <option value="51-100">51–100 employees</option>
+                  <option value="101-200">101–200 employees</option>
+                  <option value="200+">200+ employees</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Current Insurance Type</label>
+              <select id="insuranceType">
+                <option value="" disabled selected>Select current plan type</option>
+                <option value="fully-insured">Fully Insured / Traditional</option>
+                <option value="level-funded">Level Funded</option>
+                <option value="self-funded">Self Funded / ERISA</option>
+                <option value="unsure">Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea id="message" rows="3" placeholder="Tell us about your current benefits situation or what you're looking to improve..." style="width:100%;padding:12px 14px;border:1.5px solid rgba(13,31,60,0.12);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:#0D1F3C;background:#F8F6F1;resize:vertical;outline:none;"></textarea>
+            </div>
+
+            <div class="sms-consent">
+              <input type="checkbox" id="smsConsent" required />
+              <span><strong style="color:#e53e3e;">* Required — </strong>By checking this box I consent to receive SMS messages from Ascend Benefits Group Health Plans and Supplement Insurance. Message &amp; data rates may apply. Message frequency varies. Carriers are not liable for delayed or undelivered messages. Text HELP for help. You can reply STOP to unsubscribe at any time.</span>
+            </div>
+            <div class="sms-consent" style="margin-bottom:18px;">
+              <input type="checkbox" id="marketingConsent" />
+              <span>By checking this box I agree to receive occasional marketing and promotional messages from Ascend Benefits as outlined in our <a href="/terms" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>.</span>
+            </div>
+            <p style="font-size:0.72rem;color:#6b7c99;line-height:1.5;margin-bottom:16px;">By submitting this form you agree to our <a href="/privacy" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a> and <a href="/terms" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>. We do not sell or share your information.</p>
+
+            <button class="btn-primary form-submit" id="submitBtn" onclick="handleSubmit()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              Request My Free Benefits Analysis
+            </button>
+          </div>
         </div>
 
         <!-- SIDEBAR -->
