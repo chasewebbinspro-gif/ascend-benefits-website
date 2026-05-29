@@ -313,8 +313,8 @@
             </div>
 
             <div class="sms-consent">
-              <input type="checkbox" id="smsConsent" required />
-              <span><strong style="color:#e53e3e;">* Required — </strong>By checking this box I consent to receive SMS messages from Ascend Benefits Group Health Plans and Supplement Insurance. Message &amp; data rates may apply. Message frequency varies. Carriers are not liable for delayed or undelivered messages. Text HELP for help. You can reply STOP to unsubscribe at any time.</span>
+              <input type="checkbox" id="smsConsent" />
+              <span>By checking this box I consent to receive SMS messages from Ascend Benefits Group Health Plans and Supplement Insurance. Message &amp; data rates may apply. Message frequency varies. Carriers are not liable for delayed or undelivered messages. Text HELP for help. You can reply STOP to unsubscribe at any time.</span>
             </div>
             <div class="sms-consent" style="margin-bottom:18px;">
               <input type="checkbox" id="marketingConsent" />
@@ -438,13 +438,7 @@
     document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
     function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
     function handleSubmit(){
-      const smsCheck=document.getElementById('smsConsent');
-      if(!smsCheck.checked){
-        smsCheck.closest('.sms-consent').style.outline='2px solid #e53e3e';
-        smsCheck.closest('.sms-consent').style.borderRadius='6px';
-        smsCheck.scrollIntoView({behavior:'smooth',block:'center'});
-        return;
-      } else { smsCheck.closest('.sms-consent').style.outline=''; }
+
       const required=['firstName','lastName','phone','email','company','employees'];
       let valid=true;
       required.forEach(id=>{
