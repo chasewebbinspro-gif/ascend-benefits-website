@@ -272,7 +272,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label>Phone Number *</label>
+              <label>Phone Number <span style="font-weight:400;color:#6b7c99;">(Optional)</span></label>
               <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
             </div>
             <div class="form-group">
@@ -314,18 +314,18 @@
 
             <div class="sms-consent">
               <input type="checkbox" id="smsConsent" />
-              <span>By checking this box I consent to receive SMS messages from Ascend Benefits Consulting Group LLC regarding benefits consultations, appointment confirmations, and follow-up communications. Message &amp; data rates may apply. Message frequency varies. Carriers are not liable for delayed or undelivered messages. Text HELP for help. Reply STOP to unsubscribe at any time.</span>
+              <span>I consent to receive non-marketing text messages from Ascend Benefits Consulting Group LLC regarding appointment confirmation, appointment reminders, and follow-up. Message frequency varies. Message &amp; data rates may apply. Reply HELP for assistance, reply STOP to opt out.</span>
             </div>
             <div class="sms-consent" style="margin-bottom:18px;">
               <input type="checkbox" id="marketingConsent" />
-              <span>By checking this box I agree to receive occasional marketing and promotional messages from Ascend Benefits as outlined in our <a href="/terms" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>.</span>
+              <span>I consent to receive marketing text messages from Ascend Benefits Consulting Group LLC regarding special offers, discounts, and service updates. Message frequency varies. Message &amp; data rates may apply. Reply HELP for assistance, reply STOP to opt out.</span>
             </div>
-            <p style="font-size:0.72rem;color:#6b7c99;line-height:1.5;margin-bottom:16px;">By submitting this form you agree to our <a href="/privacy" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a> and <a href="/terms" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>. We do not sell or share your information.</p>
 
             <button class="btn-primary form-submit" id="submitBtn" onclick="handleSubmit()">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
               Request My Free Benefits Analysis
             </button>
+            <p style="font-size:0.72rem;color:#6b7c99;line-height:1.5;margin-top:14px;">By submitting this form you agree to our <a href="/privacy" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a> and <a href="/terms" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>. We do not sell or share your information.</p>
           </div>
         </div>
 
@@ -439,7 +439,7 @@
     function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
     function handleSubmit(){
 
-      const required=['firstName','lastName','phone','email','company','employees'];
+      const required=['firstName','lastName','email','company','employees'];
       let valid=true;
       required.forEach(id=>{
         const el=document.getElementById(id);
