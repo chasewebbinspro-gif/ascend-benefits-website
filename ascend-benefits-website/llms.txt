@@ -1,11 +1,11 @@
 # Ascend Benefits Consulting Group
-
+ 
 Ascend Benefits Consulting Group is an independent employee benefits consulting firm specializing in level-funded and self-funded ERISA health plans, reference-based pricing strategies, and preventive care programs for employers with 2-250 employees across Tennessee and all 50 states.
-
+ 
 ## Pages
-
+ 
 - [Home](https://ascendbenefitscg.com/)
-- [Level Funded/Self Funded Plans](https://ascendbenefitscg.com/employer-coverage)
+- [Benefit Packages](https://ascendbenefitscg.com/employer-coverage)
 - [Reference-Based Pricing](https://ascendbenefitscg.com/reference-based-pricing)
 - [Preventive Care](https://ascendbenefitscg.com/preventive-care)
 - [About](https://ascendbenefitscg.com/about)
