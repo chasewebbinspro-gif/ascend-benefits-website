@@ -22,74 +22,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Schema Markup: Organization + LocalBusiness -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": ["LocalBusiness", "InsuranceAgency"],
-  "@id": "https://ascendbenefitscg.com/#organization",
-  "name": "Ascend Benefits Consulting Group",
-  "alternateName": "Ascend Benefits",
-  "description": "Independent employee benefits broker helping small businesses with 2–250 employees save up to 30% through level-funded and self-funded ERISA health plans.",
-  "url": "https://ascendbenefitscg.com",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Cottontown",
-    "addressRegion": "TN",
-    "postalCode": "37048",
-    "addressCountry": "US"
-  },
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://ascendbenefitscg.com/logo-512x512.png",
-    "width": 512,
-    "height": 512
-  },
-  "image": "https://ascendbenefitscg.com/logo-512x512.png",
-  "telephone": "+12513797042",
-  "email": "info@ascendbenefitscg.com",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+12513797042",
-    "contactType": "customer service",
-    "email": "info@ascendbenefitscg.com",
-    "areaServed": ["TN","AL","GA","FL","TX","SC","NC","MS","LA","US"],
-    "availableLanguage": "English"
-  },
-  "founder": {
-    "@type": "Person",
-    "name": "Chase Webb",
-    "jobTitle": "Director of Benefit Strategies"
-  },
-  "areaServed": [
-    {"@type": "State", "name": "Tennessee"},
-    {"@type": "State", "name": "Alabama"},
-    {"@type": "State", "name": "Georgia"},
-    {"@type": "State", "name": "Florida"},
-    {"@type": "State", "name": "Texas"},
-    {"@type": "State", "name": "South Carolina"},
-    {"@type": "State", "name": "North Carolina"},
-    {"@type": "State", "name": "Mississippi"},
-    {"@type": "State", "name": "Louisiana"},
-    {"@type": "Country", "name": "United States"}
-  ],
-  "serviceType": [
-    "Employee Benefits Consulting",
-    "Level-Funded Health Plans",
-    "Self-Funded ERISA Plans",
-    "Reference-Based Pricing Plans",
-    "Stop-Loss Insurance",
-    "Preventive Care Management Programs",
-    "Group Dental and Vision Insurance",
-    "Group Life and Disability Insurance"
-  ],
-  "slogan": "Smarter Benefits. Stronger Businesses.",
-  "sameAs": []
-}
-</script>
-
   <style>
     :root {
       --navy:#0D1F3C; --navy-mid:#162d56; --navy-light:#1e3d72;
@@ -109,11 +41,13 @@
     .btn-outline:hover{border-color:var(--gold);color:var(--gold);}
     .section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
     h2.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px;}
+
     /* TICKER */
     .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
     .ticker-track{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap;}
     .ticker-track span{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
     @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
     /* HEADER */
     header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(13,31,60,0.08);box-shadow:0 2px 20px rgba(13,31,60,0.07);}
     .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
@@ -136,6 +70,7 @@
     .mobile-nav.open{display:flex;}
     .mobile-nav a{font-size:1rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--off-white);}
     .mobile-nav .btn-primary{margin-top:16px;justify-content:center;}
+
     /* ── HERO WITH PHOTO BACKGROUND ── */
     .hero{position:relative;overflow:hidden;padding:0;min-height:620px;display:flex;align-items:center;}
     .hero-photo-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80');background-size:cover;background-position:center top;z-index:0;}
@@ -153,13 +88,16 @@
     .hero-stat-label{font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:4px;}
     .hero-card{background:rgba(255,255,255,0.97);border-radius:12px;padding:36px 32px;box-shadow:0 24px 80px rgba(0,0,0,0.35);position:relative;backdrop-filter:blur(4px);}
     .hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:12px 12px 0 0;}
+
     /* TRUST BAR */
     .trust-bar{background:var(--off-white);border-bottom:1px solid rgba(13,31,60,0.08);padding:20px 0;}
     .trust-bar-inner{display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;}
     .trust-item{display:flex;align-items:center;gap:9px;font-size:0.83rem;font-weight:500;color:var(--text-mid);}
     .trust-item svg{color:var(--gold);flex-shrink:0;}
+
     /* PPO BAR */
     .ppo-bar{background:var(--white);border-bottom:1px solid rgba(13,31,60,0.08);padding:36px 0;}
+
     /* ── PHOTO FEATURE: PROBLEM SECTION ── */
     .problem-section{padding:88px 0;background:var(--white);}
     .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
@@ -177,6 +115,7 @@
     .problem-icon svg{width:20px;height:20px;color:var(--gold);}
     .problem-card h4{font-size:0.95rem;font-weight:600;color:var(--navy);margin-bottom:4px;}
     .problem-card p{font-size:0.83rem;color:var(--text-light);line-height:1.5;}
+
     /* HOW IT WORKS */
     .how-section{padding:88px 0;background:var(--navy);position:relative;overflow:hidden;}
     .how-bg-photo{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&q=80');background-size:cover;background-position:center;opacity:0.07;}
@@ -189,6 +128,7 @@
     .step-num{width:56px;height:56px;border-radius:50%;background:var(--navy);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--gold);}
     .how-step h4{font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:8px;}
     .how-step p{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;}
+
     /* ── SERVICES WITH PHOTO CARDS ── */
     .services-section{padding:88px 0;background:var(--off-white);}
     .services-header{text-align:center;margin-bottom:52px;}
@@ -206,6 +146,7 @@
     .service-card h3{font-size:1.05rem;font-weight:600;color:var(--navy);margin-bottom:10px;}
     .service-card p{font-size:0.85rem;color:var(--text-light);line-height:1.65;}
     .service-tag{display:inline-block;margin-top:14px;background:var(--gold-pale);color:var(--navy);font-size:0.72rem;font-weight:600;letter-spacing:0.05em;padding:4px 10px;border-radius:100px;text-transform:uppercase;}
+
     /* ── WHY ASCEND PHOTO SPLIT ── */
     .why-section{padding:88px 0;background:var(--white);}
     .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border-radius:20px;overflow:hidden;box-shadow:0 20px 80px rgba(13,31,60,0.15);}
@@ -223,6 +164,7 @@
     .why-point-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:rgba(201,168,76,0.3);line-height:1;flex-shrink:0;width:36px;}
     .why-point h4{font-size:1rem;font-weight:600;color:var(--white);margin-bottom:6px;}
     .why-point p{font-size:0.86rem;color:rgba(255,255,255,0.6);line-height:1.65;}
+
     /* ── PHOTO TESTIMONIAL / SOCIAL PROOF STRIP ── */
     .social-strip{padding:64px 0;background:var(--off-white);border-top:1px solid rgba(13,31,60,0.07);}
     .social-strip-inner{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:center;}
@@ -234,8 +176,10 @@
     .stat-box{background:var(--white);border-radius:10px;padding:20px;text-align:center;box-shadow:0 2px 12px rgba(13,31,60,0.07);}
     .stat-box-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold);}
     .stat-box-label{font-size:0.78rem;color:var(--text-light);margin-top:4px;line-height:1.4;}
+
     /* ── SOUTHEAST STATES ── */
     .states-section{padding:56px 0;background:var(--white);border-top:1px solid rgba(13,31,60,0.07);}
+
     /* CTA */
     .cta-banner{position:relative;padding:0;overflow:hidden;}
     .cta-photo-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80');background-size:cover;background-position:center;}
@@ -245,6 +189,7 @@
     .cta-banner h2 em{color:var(--gold);font-style:normal;}
     .cta-banner p{font-size:1.05rem;color:rgba(255,255,255,0.75);margin-bottom:36px;}
     .cta-banner-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
     /* FOOTER */
     footer{background:#080f1e;padding:56px 0 28px;}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
@@ -260,8 +205,10 @@
     .footer-bottom-links{display:flex;gap:20px;}
     .footer-bottom-links a{font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
     .footer-bottom-links a:hover{color:var(--gold);}
+
     .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
     .fade-up.visible{opacity:1;transform:translateY(0);}
+
     @media(max-width:1024px){
       .hero-inner{grid-template-columns:1fr;}
       .hero-card{max-width:480px;}
@@ -291,6 +238,7 @@
   </style>
 </head>
 <body>
+
   <!-- TICKER -->
   <div class="ticker">
     <div class="ticker-track">
@@ -306,6 +254,7 @@
       <span>Independent &amp; Unbiased Consulting</span><span>★</span>
     </div>
   </div>
+
   <!-- HEADER -->
   <header>
     <div class="container">
@@ -321,7 +270,7 @@
         </a>
         <nav>
           <a href="/">Home</a>
-          <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
+          <a href="/employer-coverage">Benefit Packages</a>
           <a href="/reference-based-pricing">RBP Plans</a>
           <a href="/preventive-care">Preventive Care</a>
           <a href="/about">About</a>
@@ -329,6 +278,7 @@
           <a href="/contact">Contact</a>
         </nav>
         <div class="header-cta">
+          
           <a href="/contact" class="btn-primary">Get Free Analysis</a>
         </div>
         <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -336,14 +286,16 @@
     </div>
     <div class="mobile-nav" id="mobileNav">
       <a href="/">Home</a>
-      <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
+      <a href="/employer-coverage">Benefit Packages</a>
       <a href="/reference-based-pricing">RBP Plans</a>
       <a href="/preventive-care">Preventive Care</a>
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
+      
       <a href="/contact" class="btn-primary">Get Free Benefits Analysis</a>
     </div>
   </header>
+
   <!-- ── HERO: PHOTO BACKGROUND ── -->
   <section class="hero">
     <div class="hero-photo-bg"></div>
@@ -382,12 +334,14 @@
           <p style="font-size:0.95rem;color:var(--text-mid);line-height:1.7;">Find out exactly how much your business could save. No obligation — just clear answers from an independent benefits consultant with 15 years of experience.</p>
           <div style="display:flex;flex-direction:column;gap:12px;width:100%;">
             <a href="/contact" class="btn-primary" style="justify-content:center;font-size:1rem;padding:16px;">Request Free Analysis →</a>
+            
           </div>
           <p style="font-size:0.78rem;color:var(--text-light);">🔒 No spam. No obligation. We respond within 1 business day.</p>
         </div>
       </div>
     </div>
   </section>
+
   <!-- TRUST BAR -->
   <div class="trust-bar">
     <div class="container">
@@ -400,6 +354,7 @@
       </div>
     </div>
   </div>
+
   <!-- PPO NETWORK BAR -->
   <div class="ppo-bar">
     <div class="container">
@@ -420,6 +375,7 @@
       </div>
     </div>
   </div>
+
   <!-- ── PROBLEM SECTION: PHOTO + CARDS ── -->
   <section class="problem-section">
     <div class="container">
@@ -428,42 +384,63 @@
         <div class="problem-photo-col fade-up">
           <div class="problem-photo" style="background:var(--navy);display:flex;align-items:center;justify-content:center;padding:32px 24px;">
             <svg viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+              <!-- Grid lines -->
               <line x1="50" y1="20" x2="50" y2="220" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
               <line x1="50" y1="220" x2="400" y2="220" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
               <line x1="50" y1="170" x2="400" y2="170" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4,4"/>
               <line x1="50" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4,4"/>
               <line x1="50" y1="70"  x2="400" y2="70"  stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="4,4"/>
+
+              <!-- Y-axis labels -->
               <text x="42" y="224" fill="rgba(255,255,255,0.4)" font-size="10" text-anchor="end" font-family="DM Sans,sans-serif">$10k</text>
               <text x="42" y="174" fill="rgba(255,255,255,0.4)" font-size="10" text-anchor="end" font-family="DM Sans,sans-serif">$14k</text>
               <text x="42" y="124" fill="rgba(255,255,255,0.4)" font-size="10" text-anchor="end" font-family="DM Sans,sans-serif">$18k</text>
               <text x="42" y="74"  fill="rgba(255,255,255,0.4)" font-size="10" text-anchor="end" font-family="DM Sans,sans-serif">$22k</text>
+
+              <!-- Shaded area under line -->
               <polygon points="80,210 140,195 200,175 260,148 320,115 380,75 380,220 80,220" fill="rgba(229,62,62,0.12)"/>
+
+              <!-- Rising cost line (red — traditional) -->
               <polyline points="80,210 140,195 200,175 260,148 320,115 380,75" fill="none" stroke="#e53e3e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- Data point dots — traditional -->
               <circle cx="80"  cy="210" r="5" fill="#e53e3e" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="140" cy="195" r="5" fill="#e53e3e" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="200" cy="175" r="5" fill="#e53e3e" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="260" cy="148" r="5" fill="#e53e3e" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="320" cy="115" r="5" fill="#e53e3e" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="380" cy="75"  r="5" fill="#e53e3e" stroke="var(--navy)" stroke-width="2"/>
+
+              <!-- Level-funded flat/lower line (gold) -->
               <polyline points="80,210 140,200 200,192 260,185 320,178 380,170" fill="none" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6,3"/>
+
+              <!-- Data point dots — level funded -->
               <circle cx="80"  cy="210" r="4" fill="#C9A84C" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="140" cy="200" r="4" fill="#C9A84C" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="200" cy="192" r="4" fill="#C9A84C" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="260" cy="185" r="4" fill="#C9A84C" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="320" cy="178" r="4" fill="#C9A84C" stroke="var(--navy)" stroke-width="2"/>
               <circle cx="380" cy="170" r="4" fill="#C9A84C" stroke="var(--navy)" stroke-width="2"/>
+
+              <!-- X-axis year labels -->
               <text x="80"  y="238" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2019</text>
               <text x="140" y="238" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2020</text>
               <text x="200" y="238" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2021</text>
               <text x="260" y="238" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2022</text>
               <text x="320" y="238" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2023</text>
               <text x="380" y="238" fill="rgba(255,255,255,0.5)" font-size="10" text-anchor="middle" font-family="DM Sans,sans-serif">2024</text>
+
+              <!-- "↑ 11% avg renewal" callout on red line -->
               <rect x="285" y="88" width="110" height="32" rx="6" fill="rgba(229,62,62,0.2)" stroke="#e53e3e" stroke-width="1"/>
               <text x="340" y="102" fill="#e53e3e" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">↑ ~11% avg renewal</text>
               <text x="340" y="114" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Traditional Insurance</text>
+
+              <!-- Gold label -->
               <rect x="88" y="152" width="108" height="32" rx="6" fill="rgba(201,168,76,0.15)" stroke="#C9A84C" stroke-width="1"/>
               <text x="142" y="166" fill="#C9A84C" font-size="10" font-weight="700" text-anchor="middle" font-family="DM Sans,sans-serif">Controlled &amp; Predictable</text>
               <text x="142" y="178" fill="rgba(255,255,255,0.6)" font-size="9" text-anchor="middle" font-family="DM Sans,sans-serif">Level-Funded Plan</text>
+
+              <!-- Chart title -->
               <text x="225" y="14" fill="rgba(255,255,255,0.7)" font-size="11" font-weight="600" text-anchor="middle" font-family="DM Sans,sans-serif">Annual Premium Cost Per Employee</text>
             </svg>
           </div>
@@ -478,7 +455,7 @@
           <h2 class="section-title">Traditional Group Insurance Is Costing You More Than It Should</h2>
           <p>Most brokers default to fully-insured plans because they're simple to sell — not because they're the best option. As a result, <strong>employers with 2–250 employees overpay by thousands of dollars per year</strong> without ever knowing there's a better way.</p>
           <p>Ascend specializes in <strong>level-funded and self-funded ERISA strategies</strong> — the same strategies large corporations have used for decades — now accessible to companies your size.</p>
-          <a href="/employer-coverage" class="btn-primary" style="margin-top:8px;background:var(--navy);color:var(--white);">See How Level Funded/Self Funded Plans Works →</a>
+          <a href="/employer-coverage" class="btn-primary" style="margin-top:8px;background:var(--navy);color:var(--white);">See Our Benefit Packages →</a>
           <div class="problem-cards">
             <div class="problem-card">
               <div class="problem-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
@@ -497,6 +474,7 @@
       </div>
     </div>
   </section>
+
   <!-- ── HOW IT WORKS: PHOTO BG ── -->
   <section class="how-section">
     <div class="how-bg-photo"></div>
@@ -530,6 +508,7 @@
       </div>
     </div>
   </section>
+
   <!-- ── SERVICES WITH PHOTO CARDS ── -->
   <section class="services-section">
     <div class="container">
@@ -539,6 +518,7 @@
         <p>Everything your employees need — structured to save your business money and give your team real value.</p>
       </div>
       <div class="services-grid">
+
         <div class="service-card fade-up">
           <div class="service-card-photo">
             <img src="/savings-jar.jpg" alt="Level funded health plans" loading="lazy" />
@@ -552,6 +532,7 @@
             <a href="/employer-coverage" style="display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-size:0.8rem;font-weight:600;color:var(--gold);text-decoration:none;">Learn about Level Funded Plans →</a>
           </div>
         </div>
+
         <div class="service-card fade-up">
           <div class="service-card-photo">
             <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" alt="Self funded ERISA plans" loading="lazy" />
@@ -565,6 +546,7 @@
             <a href="/reference-based-pricing" style="display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-size:0.8rem;font-weight:600;color:var(--gold);text-decoration:none;">Learn about RBP Plans →</a>
           </div>
         </div>
+
         <div class="service-card fade-up">
           <div class="service-card-photo">
             <img src="/stop-loss.jpg" alt="Stop loss insurance protection" loading="lazy" />
@@ -577,6 +559,7 @@
             <span class="service-tag">Risk Protection</span>
           </div>
         </div>
+
         <div class="service-card fade-up">
           <div class="service-card-photo">
             <img src="/dental-office.jpg" alt="Woman smiling with glasses - dental and vision benefits" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" />
@@ -589,6 +572,7 @@
             <span class="service-tag">Employee Favorite</span>
           </div>
         </div>
+
         <div class="service-card fade-up">
           <div class="service-card-photo">
             <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=600&q=80" alt="Employee wellness program" loading="lazy" />
@@ -601,6 +585,7 @@
             <span class="service-tag">Retention Booster</span>
           </div>
         </div>
+
         <div class="service-card fade-up">
           <div class="service-card-photo">
             <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Life and disability insurance" loading="lazy" />
@@ -613,9 +598,11 @@
             <span class="service-tag">Core Coverage</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
+
   <!-- ── WHY ASCEND: PHOTO SPLIT ── -->
   <section class="why-section">
     <div class="container">
@@ -667,6 +654,7 @@
       </div>
     </div>
   </section>
+
   <!-- ── SOCIAL PROOF STRIP ── -->
   <section class="social-strip">
     <div class="container">
@@ -697,6 +685,7 @@
       </div>
     </div>
   </section>
+
   <!-- CTA WITH PHOTO BG -->
   <section class="cta-banner">
     <div class="cta-photo-bg"></div>
@@ -711,6 +700,7 @@
       </div>
     </div>
   </section>
+
   <!-- STATES -->
   <section class="states-section">
     <div class="container">
@@ -733,6 +723,7 @@
       <p style="text-align:center;font-size:0.85rem;color:var(--text-light);">Also licensed in all remaining U.S. states. <a href="/contact" style="color:var(--gold);font-weight:600;text-decoration:none;">Contact us</a> wherever you're located.</p>
     </div>
   </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -743,8 +734,9 @@
             <div class="logo-text"><span class="logo-name" style="color:var(--white);">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
           </a>
           <p>Smarter Benefits. Stronger Businesses. We help employers with 2–250 employees access level-funded and self-funded ERISA plans that reduce costs and improve coverage.</p>
+          
         </div>
-        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
+        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Benefit Packages</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
         <div class="footer-col"><h5>Services</h5><a href="/employer-coverage">Level-Funded Plans</a><a href="/employer-coverage">Self-Funded / ERISA</a><a href="/employer-coverage">Stop-Loss Insurance</a><a href="/employer-coverage">Dental &amp; Vision</a><a href="/employer-coverage">Life &amp; Disability</a><a href="/employer-coverage">Gap Coverage</a></div>
         <div class="footer-col"><h5>Resources</h5><a href="/blog/">Small Business Benefits Blog</a><a href="/employer-coverage">What is Level-Funding?</a><a href="/employer-coverage">ERISA Plan Guide</a><a href="/contact">Free Benefits Analysis</a><a href="/contact">Schedule Consultation</a></div>
       </div>
@@ -754,6 +746,7 @@
       </div>
     </div>
   </footer>
+
   <script>
     function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
     const observer = new IntersectionObserver((entries) => {
