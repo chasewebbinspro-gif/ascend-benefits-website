@@ -506,14 +506,66 @@
       </div>
 
       <!-- TABS -->
-      <div style="display:flex;gap:0;justify-content:center;margin-bottom:40px;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(13,31,60,0.1);max-width:600px;margin-left:auto;margin-right:auto;">
-        <button onclick="showPackage('essential')" id="tab-essential" style="flex:1;padding:16px 20px;background:var(--navy);color:#C9A84C;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.2s;border-right:1px solid rgba(201,168,76,0.2);">10–50 Employees<br><span style="font-size:0.75rem;font-weight:400;opacity:0.8;">Ascend Essential</span></button>
+      <div style="display:flex;gap:0;justify-content:center;margin-bottom:40px;border-radius:10px;overflow:hidden;box-shadow:0 2px 12px rgba(13,31,60,0.1);max-width:800px;margin-left:auto;margin-right:auto;">
+        <button onclick="showPackage('starter')" id="tab-starter" style="flex:1;padding:16px 20px;background:var(--navy);color:#C9A84C;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.2s;border-right:1px solid rgba(201,168,76,0.2);">2–9 Employees<br><span style="font-size:0.75rem;font-weight:400;opacity:0.8;">Ascend Starter</span></button>
+        <button onclick="showPackage('essential')" id="tab-essential" style="flex:1;padding:16px 20px;background:rgba(13,31,60,0.06);color:var(--text-mid);font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.2s;border-right:1px solid rgba(13,31,60,0.1);">10–50 Employees<br><span style="font-size:0.75rem;font-weight:400;opacity:0.8;">Ascend Essential</span></button>
         <button onclick="showPackage('advantage')" id="tab-advantage" style="flex:1;padding:16px 20px;background:rgba(13,31,60,0.06);color:var(--text-mid);font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.2s;border-right:1px solid rgba(13,31,60,0.1);">51–100 Employees<br><span style="font-size:0.75rem;font-weight:400;opacity:0.8;">Ascend Advantage</span></button>
         <button onclick="showPackage('elite')" id="tab-elite" style="flex:1;padding:16px 20px;background:rgba(13,31,60,0.06);color:var(--text-mid);font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.9rem;border:none;cursor:pointer;transition:all 0.2s;">101+ Employees<br><span style="font-size:0.75rem;font-weight:400;opacity:0.8;">Ascend Elite</span></button>
       </div>
 
+      <!-- STARTER (2-9) -->
+      <div id="pkg-starter" style="display:block;">
+        <div style="background:#fff;border-radius:16px;box-shadow:0 4px 32px rgba(13,31,60,0.1);overflow:hidden;border-top:4px solid #C9A84C;">
+          <div style="background:linear-gradient(135deg,#0D1F3C,#162d56);padding:40px 48px;">
+            <div style="display:inline-block;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:#C9A84C;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:16px;">Ascend Starter</div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:#fff;margin-bottom:8px;">Affordable Group Coverage for Small Teams</h3>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.95rem;">For businesses with 2 to 9 W2 employees working 30 or more hours per week.</p>
+          </div>
+          <div style="padding:40px 48px;">
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:40px;">
+              <div style="background:#F8F6F1;border-radius:8px;padding:18px;border-left:3px solid #C9A84C;"><div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;margin-bottom:4px;">Plan Type</div><div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#0D1F3C;">Level Funded</div><div style="font-size:0.8rem;color:#6b7c99;">Predictable monthly costs</div></div>
+              <div style="background:#F8F6F1;border-radius:8px;padding:18px;border-left:3px solid #C9A84C;"><div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;margin-bottom:4px;">Employees</div><div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#0D1F3C;">2–9</div><div style="font-size:0.8rem;color:#6b7c99;">W2, 30+ hours/week</div></div>
+              <div style="background:#F8F6F1;border-radius:8px;padding:18px;border-left:3px solid #C9A84C;"><div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;margin-bottom:4px;">Available</div><div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#0D1F3C;">All 50 States</div><div style="font-size:0.8rem;color:#6b7c99;">Plan availability varies by state</div></div>
+            </div>
+
+            <h4 style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#0D1F3C;margin-bottom:16px;">What's Included — 2 Layers</h4>
+
+            <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:32px;">
+
+              <!-- Layer 1: Level Funded Health Plan -->
+              <div style="border:1px solid rgba(13,31,60,0.1);border-radius:10px;padding:24px;background:#fff;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:32px;height:32px;background:#0D1F3C;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C9A84C;font-family:'Playfair Display',serif;font-weight:700;font-size:0.9rem;flex-shrink:0;">1</div><h5 style="font-size:1rem;font-weight:700;color:#0D1F3C;margin:0;">Level Funded Health Plan</h5></div>
+                <p style="font-size:0.88rem;color:#4b5563;line-height:1.7;margin:0 0 16px;">Group health coverage built for micro-businesses — no participation minimums that lock most carriers out. You pay a fixed monthly amount split between a claims fund, stop-loss insurance, and admin fees. If your group has a healthy year, you may receive a refund on unused claims fund dollars at year end.</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:16px;">
+                  <div style="display:flex;align-items:flex-start;gap:8px;"><span style="color:#C9A84C;font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.85rem;color:#4b5563;"><strong>Stop-loss protection</strong> — caps your maximum claims exposure from day one</span></div>
+                  <div style="display:flex;align-items:flex-start;gap:8px;"><span style="color:#C9A84C;font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.85rem;color:#4b5563;"><strong>Potential surplus refund</strong> — unused claims fund dollars returned at year end</span></div>
+                  <div style="display:flex;align-items:flex-start;gap:8px;"><span style="color:#C9A84C;font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.85rem;color:#4b5563;"><strong>Same PPO access</strong> as traditional insurance — same doctors, same hospitals</span></div>
+                </div>
+              </div>
+
+              <!-- Layer 2: Voluntary Benefits -->
+              <div style="border:1px solid rgba(13,31,60,0.1);border-radius:10px;padding:24px;background:#fff;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;"><div style="width:32px;height:32px;background:#0D1F3C;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#C9A84C;font-family:'Playfair Display',serif;font-weight:700;font-size:0.9rem;flex-shrink:0;">2</div><h5 style="font-size:1rem;font-weight:700;color:#0D1F3C;margin:0;">Voluntary Benefits</h5></div>
+                <p style="font-size:0.88rem;color:#4b5563;line-height:1.7;margin:0 0 14px;">Employee-paid supplemental coverage that rounds out your benefits package — helping you compete for talent without adding employer cost. Available options include:</p>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
+                  <div style="display:flex;align-items:flex-start;gap:8px;"><span style="color:#C9A84C;font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.85rem;color:#4b5563;"><strong>Dental &amp; Vision</strong></span></div>
+                  <div style="display:flex;align-items:flex-start;gap:8px;"><span style="color:#C9A84C;font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.85rem;color:#4b5563;"><strong>Life &amp; Disability</strong> — term life, short &amp; long-term disability</span></div>
+                  <div style="display:flex;align-items:flex-start;gap:8px;"><span style="color:#C9A84C;font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.85rem;color:#4b5563;"><strong>Accident &amp; Critical Illness</strong></span></div>
+                  <div style="display:flex;align-items:flex-start;gap:8px;"><span style="color:#C9A84C;font-weight:700;flex-shrink:0;">✓</span><span style="font-size:0.85rem;color:#4b5563;"><strong>Hospital Indemnity</strong></span></div>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="/contact" style="display:inline-flex;align-items:center;gap:8px;background:#C9A84C;color:#0D1F3C;font-weight:700;font-size:0.95rem;padding:14px 28px;border-radius:6px;text-decoration:none;">Get a Free Analysis for My Business &rarr;</a>
+
+          </div>
+        </div>
+      </div>
+
       <!-- ESSENTIAL (10-50) -->
-      <div id="pkg-essential" style="display:block;">
+      <div id="pkg-essential" style="display:none;">
         <div style="background:#fff;border-radius:16px;box-shadow:0 4px 32px rgba(13,31,60,0.1);overflow:hidden;border-top:4px solid #C9A84C;">
           <div style="background:linear-gradient(135deg,#0D1F3C,#162d56);padding:40px 48px;">
             <div style="display:inline-block;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:#C9A84C;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:16px;">Ascend Essential</div>
@@ -643,7 +695,7 @@
 
   <script>
     function showPackage(pkg) {
-      ['essential','advantage','elite'].forEach(p => {
+      ['starter','essential','advantage','elite'].forEach(p => {
         document.getElementById('pkg-' + p).style.display = 'none';
         const tab = document.getElementById('tab-' + p);
         tab.style.background = 'rgba(13,31,60,0.06)';
