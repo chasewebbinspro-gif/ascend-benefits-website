@@ -4,6 +4,7 @@ export interface EmployeeRow {
   dob: string
   gender: string
   state: string
+  zip: string
   ftPt: string
   dependents: string
 }
@@ -100,7 +101,7 @@ export const initialFormData: FormData = {
   payrollContactName: '',
 
   employees: [
-    { firstName: '', lastName: '', dob: '', gender: '', state: '', ftPt: '', dependents: '' },
+    { firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '' },
   ],
   fullTimeCount: '',
   partTimeCount: '',

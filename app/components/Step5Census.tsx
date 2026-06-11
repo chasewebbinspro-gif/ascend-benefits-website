@@ -18,7 +18,7 @@ interface Props {
 }
 
 const emptyRow = (): EmployeeRow => ({
-  firstName: '', lastName: '', dob: '', gender: '', state: '', ftPt: '', dependents: '',
+  firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '',
 })
 
 export default function Step5Census({ formData, onChange, errors }: Props) {
@@ -121,20 +121,21 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
           <p className="text-xs text-gray-400">Or enter manually below</p>
         </div>
 
-        <div className="min-w-[700px]">
+        <div className="min-w-[800px]">
           {/* Header */}
-          <div className="grid grid-cols-7 gap-1.5 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wide px-1">
+          <div className="grid grid-cols-8 gap-1.5 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wide px-1">
             <div>First Name</div>
             <div>Last Name</div>
             <div>DOB</div>
             <div>Gender</div>
             <div>State</div>
+            <div>ZIP</div>
             <div>FT/PT</div>
             <div>Dependents</div>
           </div>
 
           {formData.employees.map((row, i) => (
-            <div key={i} className="grid grid-cols-7 gap-1.5 mb-1.5 items-center group">
+            <div key={i} className="grid grid-cols-8 gap-1.5 mb-1.5 items-center group">
               <input
                 type="text"
                 className="form-input text-xs py-1.5"
@@ -175,6 +176,14 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
                   <option key={s} value={s}>{s}</option>
                 ))}
               </select>
+              <input
+                type="text"
+                className="form-input text-xs py-1.5"
+                placeholder="ZIP"
+                maxLength={10}
+                value={row.zip}
+                onChange={(e) => updateRow(i, 'zip', e.target.value)}
+              />
               <select
                 className="form-select text-xs py-1.5"
                 value={row.ftPt}

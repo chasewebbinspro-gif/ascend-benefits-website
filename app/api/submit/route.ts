@@ -86,6 +86,7 @@ function buildEmailHtml(data: Record<string, unknown>): string {
         <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.dob || '—'}</td>
         <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.gender || '—'}</td>
         <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.state || '—'}</td>
+        <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.zip || '—'}</td>
         <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.ftPt || '—'}</td>
         <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.dependents || '0'}</td>
       </tr>`
@@ -104,6 +105,7 @@ function buildEmailHtml(data: Record<string, unknown>): string {
               <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">DOB</th>
               <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">Gender</th>
               <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">State</th>
+              <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">ZIP</th>
               <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">FT/PT</th>
               <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">Deps.</th>
             </tr>
@@ -192,7 +194,7 @@ function csvEscape(value: string | undefined): string {
 function buildCensusCsv(data: Record<string, unknown>): string {
   const header = [
     'First Name', 'Last Name', 'Date of Birth', 'Gender',
-    'State', 'Employment Type', 'Number of Dependents', 'Email', 'Phone',
+    'State', 'Zip Code', 'Employment Type', 'Number of Dependents', 'Email', 'Phone',
   ].join(',')
 
   const employees = data.employees as Array<Record<string, string>>
@@ -206,6 +208,7 @@ function buildCensusCsv(data: Record<string, unknown>): string {
         csvEscape(e.dob),
         csvEscape(e.gender),
         csvEscape(e.state),
+        csvEscape(e.zip),
         csvEscape(employmentType),
         csvEscape(e.dependents || '0'),
         '',
