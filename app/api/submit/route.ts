@@ -181,6 +181,89 @@ function buildEmailHtml(data: Record<string, unknown>): string {
 </html>`
 }
 
+function csvEscape(value: string | undefined): string {
+  const str = (value ?? '').toString()
+  if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+    return `"${str.replace(/"/g, '""')}"`
+  }
+  return str
+}
+
+function buildCensusCsv(data: Record<string, unknown>): string {
+  const header = [
+    'First Name', 'Last Name', 'Date of Birth', 'Gender',
+    'State', 'Employment Type', 'Number of Dependents', 'Email', 'Phone',
+  ].join(',')
+
+  const employees = data.employees as Array<Record<string, string>>
+  const rows = employees
+    .filter((e) => e.firstName || e.lastName)
+    .map((e) => {
+      const employmentType = e.ftPt === 'FT' ? 'Full Time' : e.ftPt === 'PT' ? 'Part Time' : ''
+      return [
+        csvEscape(e.firstName),
+        csvEscape(e.lastName),
+        csvEscape(e.dob),
+        csvEscape(e.gender),
+        csvEscape(e.state),
+        csvEscape(employmentType),
+        csvEscape(e.dependents || '0'),
+        '',
+        '',
+      ].join(',')
+    })
+
+  return [header, ...rows].join('\r\n')
+}
+
+function buildCompanyInfoCsv(data: Record<string, unknown>): string {
+  const header = 'Field,Value'
+
+  const payrollName = data.payrollProvider === 'Other'
+    ? `Other: ${data.payrollProviderOther}`
+    : (data.payrollProvider as string) ?? ''
+
+  const fields: Array<[string, string]> = [
+    ['Company Name', data.legalName as string],
+    ['DBA', data.dba as string],
+    ['Address', data.streetAddress as string],
+    ['City/State/ZIP', `${data.city}, ${data.state} ${data.zip}`],
+    ['Industry', data.industry as string],
+    ['Total Employees', data.totalW2Employees as string],
+    ['EIN', data.federalEIN as string],
+    ['Business Phone', data.businessPhone as string],
+    ['SID Code', data.sidCode as string],
+    ['Owner Name', `${data.ownerFirstName} ${data.ownerLastName}`],
+    ['Owner Title', data.ownerTitle as string],
+    ['Owner Phone', data.ownerPhone as string],
+    ['Owner Email', data.ownerEmail as string],
+    ['HR Contact Name', data.hrName as string],
+    ['HR Contact Email', data.hrEmail as string],
+    ['Preferred Contact Method', data.preferredContact as string],
+    ['Current Health Insurance', data.hasHealthInsurance as string],
+    ['Current Carriers', formatList(data.currentCarriers as string[])],
+    ['Monthly Premium', data.monthlyEmployerPremium ? `$${data.monthlyEmployerPremium}` : ''],
+    ['Renewal Month', data.planRenewalMonth as string],
+    ['Other Benefits', formatList(data.otherBenefits as string[])],
+    ['Payroll Provider', payrollName],
+    ['Pay Frequency', data.payFrequency as string],
+    ['Pay Type', data.employeePayType as string],
+    ['Avg Salary', data.salaryAmount ? `$${data.salaryAmount}` : ''],
+    ['Avg Hourly Rate', data.hourlyRate ? `$${data.hourlyRate}/hr` : ''],
+    ['Payroll Contact', data.payrollContactName as string],
+    ['Full Time Count', data.fullTimeCount as string],
+    ['Part Time Count', data.partTimeCount as string],
+    ['Goals/Priorities', formatList(data.priorities as string[])],
+    ['Biggest Frustration', data.biggestFrustration as string],
+    ['Additional Notes', data.anythingElse as string],
+    ['Referral Source', data.howHeardAboutUs as string],
+    ['Best Time to Connect', data.bestTimeToConnect as string],
+  ]
+
+  const rows = fields.map(([field, value]) => `${csvEscape(field)},${csvEscape(value)}`)
+  return [header, ...rows].join('\r\n')
+}
+
 export async function POST(request: NextRequest) {
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
@@ -189,8 +272,22 @@ export async function POST(request: NextRequest) {
     const companyName = data.legalName || 'Unknown Company'
     const htmlContent = buildEmailHtml(data)
 
-    // Build attachments — include census file if uploaded
-    const attachments: Array<{ filename: string; content: string }> = []
+    // Always attach both generated CSVs
+    const censusCsv = buildCensusCsv(data)
+    const companyInfoCsv = buildCompanyInfoCsv(data)
+
+    const attachments: Array<{ filename: string; content: string }> = [
+      {
+        filename: `${companyName.replace(/[^a-zA-Z0-9]/g, '_')}_employee-census.csv`,
+        content: Buffer.from(censusCsv, 'utf-8').toString('base64'),
+      },
+      {
+        filename: `${companyName.replace(/[^a-zA-Z0-9]/g, '_')}_company-info.csv`,
+        content: Buffer.from(companyInfoCsv, 'utf-8').toString('base64'),
+      },
+    ]
+
+    // Also attach the uploaded census file if provided
     if (data.censusFileBase64 && data.censusFileName) {
       const base64Data = (data.censusFileBase64 as string).split(',')[1]
       if (base64Data) {
@@ -207,7 +304,7 @@ export async function POST(request: NextRequest) {
       to: ['info@ascendbenefitscg.com'],
       subject: `New Client Submission: ${companyName}`,
       html: htmlContent,
-      ...(attachments.length > 0 && { attachments }),
+      attachments,
     })
 
     if (emailResult.error) {
