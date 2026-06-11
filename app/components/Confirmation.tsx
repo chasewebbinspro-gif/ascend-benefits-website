@@ -74,36 +74,6 @@ export default function Confirmation({ formData }: Props) {
         </div>
       </div>
 
-      {/* Contact Card */}
-      <div
-        className="rounded-xl p-6 max-w-lg mx-auto text-white"
-        style={{ background: 'linear-gradient(135deg, #0A1F44 0%, #1a3a6b 100%)' }}
-      >
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center flex-shrink-0">
-            <span className="text-white font-bold text-sm">CW</span>
-          </div>
-          <div className="text-left">
-            <p className="font-bold text-base" style={{ fontFamily: 'Georgia, serif' }}>Chase Webb</p>
-            <p className="text-gold text-xs">Benefits Consultant</p>
-          </div>
-        </div>
-        <p className="text-sm text-blue-100 mb-3 text-left">
-          Questions before we reach out? Feel free to call or text Chase directly:
-        </p>
-        <a
-          href="tel:2513797042"
-          className="block text-center bg-gold text-white font-bold text-lg py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          (251) 379-7042
-        </a>
-      </div>
-
-      <p className="text-xs text-gray-400 mt-6">
-        A confirmation email has been sent to{' '}
-        <span className="font-medium text-navy">{formData.ownerEmail}</span>
-      </p>
     </div>
   )
 }
