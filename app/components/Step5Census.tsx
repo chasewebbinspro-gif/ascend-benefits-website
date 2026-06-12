@@ -18,7 +18,7 @@ interface Props {
 }
 
 const emptyRow = (): EmployeeRow => ({
-  firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '',
+  coverageTier: '', firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '',
 })
 
 export default function Step5Census({ formData, onChange, errors }: Props) {
@@ -121,9 +121,10 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
           <p className="text-xs text-gray-400">Or enter manually below</p>
         </div>
 
-        <div className="min-w-[800px]">
+        <div className="min-w-[900px]">
           {/* Header */}
-          <div className="grid grid-cols-8 gap-1.5 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wide px-1">
+          <div className="grid grid-cols-9 gap-1.5 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wide px-1">
+            <div>Tier</div>
             <div>First Name</div>
             <div>Last Name</div>
             <div>DOB</div>
@@ -135,7 +136,17 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
           </div>
 
           {formData.employees.map((row, i) => (
-            <div key={i} className="grid grid-cols-8 gap-1.5 mb-1.5 items-center group">
+            <div key={i} className="grid grid-cols-9 gap-1.5 mb-1.5 items-center group">
+              <select
+                className="form-select text-xs py-1.5"
+                value={row.coverageTier}
+                onChange={(e) => updateRow(i, 'coverageTier', e.target.value)}
+              >
+                <option value="">—</option>
+                <option value="EE">EE</option>
+                <option value="SP">SP</option>
+                <option value="Ch">Ch</option>
+              </select>
               <input
                 type="text"
                 className="form-input text-xs py-1.5"

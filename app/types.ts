@@ -1,4 +1,5 @@
 export interface EmployeeRow {
+  coverageTier: string
   firstName: string
   lastName: string
   dob: string
@@ -101,7 +102,7 @@ export const initialFormData: FormData = {
   payrollContactName: '',
 
   employees: [
-    { firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '' },
+    { coverageTier: '', firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '' },
   ],
   fullTimeCount: '',
   partTimeCount: '',

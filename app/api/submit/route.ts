@@ -82,6 +82,7 @@ function buildEmailHtml(data: Record<string, unknown>): string {
     .filter((e) => e.firstName || e.lastName)
     .map((e, i) =>
       `<tr style="background:${i % 2 === 0 ? '#fff' : '#f8f9fb'}">
+        <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.coverageTier || '—'}</td>
         <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.firstName} ${e.lastName}</td>
         <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.dob || '—'}</td>
         <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.gender || '—'}</td>
@@ -101,6 +102,7 @@ function buildEmailHtml(data: Record<string, unknown>): string {
         <table style="width:100%;border-collapse:collapse;border:1px solid #e5e7eb;border-top:none;">
           <thead>
             <tr style="background:#f0f2f7;">
+              <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">Tier</th>
               <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">Name</th>
               <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">DOB</th>
               <th style="padding:8px 10px;font-size:12px;text-align:left;font-family:'Trebuchet MS',sans-serif;color:#0A1F44;border-bottom:2px solid #e5e7eb;">Gender</th>
@@ -193,7 +195,7 @@ function csvEscape(value: string | undefined): string {
 
 function buildCensusCsv(data: Record<string, unknown>): string {
   const header = [
-    'First Name', 'Last Name', 'Date of Birth', 'Gender',
+    'Coverage Tier', 'First Name', 'Last Name', 'Date of Birth', 'Gender',
     'State', 'Zip Code', 'Employment Type', 'Number of Dependents', 'Email', 'Phone',
   ].join(',')
 
@@ -203,6 +205,7 @@ function buildCensusCsv(data: Record<string, unknown>): string {
     .map((e) => {
       const employmentType = e.ftPt === 'FT' ? 'Full Time' : e.ftPt === 'PT' ? 'Part Time' : ''
       return [
+        csvEscape(e.coverageTier),
         csvEscape(e.firstName),
         csvEscape(e.lastName),
         csvEscape(e.dob),
