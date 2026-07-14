@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9VGCHC0H1">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Z9VGCHC0H1');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preventive Care Management Program | Ascend Benefits Consulting Group</title>
-  <meta name="description" content="The EHP Preventive Care Management Program gives employees free primary care, urgent care, mental health, and pharmacy — at zero net cost to the employer or employee. Save up to $1,120 per employee per year in FICA taxes." />
+  <title>Preventive Care Options | Ascend Benefits Consulting Group</title>
+  <meta name="description" content="Ascend Benefits offers two Preventive Care Management options for small business employees: EHP, a $0-net-cost program funded through FICA tax savings, and WellthCare, a Health-to-Wealth benefit system with $0-copay care and automatic Pension contributions." />
   <link rel="canonical" href="https://ascendbenefitscg.com/preventive-care" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,7 +17,7 @@
       --white:#FFFFFF; --off-white:#F8F6F1;
       --text-dark:#0D1F3C; --text-mid:#3a4a63; --text-light:#6b7c99;
       --border:rgba(201,168,76,0.2); --shadow:0 4px 32px rgba(13,31,60,0.12);
-      --green:#22c55e;
+      --green:#22c55e; --teal:#035F5E;
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
@@ -61,9 +51,6 @@
     nav a{font-size:0.78rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:6px 8px;border-radius:4px;transition:color 0.2s,background 0.2s;}
     nav a:hover,nav a.active{color:var(--navy);background:var(--off-white);}
     .header-cta{display:flex;align-items:center;gap:10px;}
-    .header-phone{display:flex;align-items:center;gap:5px;font-size:0.82rem;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap;}
-    .header-phone svg{color:var(--gold);}
-    .header-phone:hover{color:var(--gold);}
     .btn-nav{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.82rem;padding:9px 16px;border-radius:4px;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
     .btn-nav:hover{background:var(--gold-light);}
     .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
@@ -74,28 +61,42 @@
     .mobile-nav .btn-primary{margin-top:16px;justify-content:center;}
 
     /* HERO */
-    .page-hero{position:relative;overflow:hidden;min-height:560px;display:flex;align-items:center;}
+    .page-hero{position:relative;overflow:hidden;min-height:460px;display:flex;align-items:center;}
     .hero-photo-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600&q=80');background-size:cover;background-position:center;}
     .hero-photo-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(13,31,60,0.95) 0%,rgba(13,31,60,0.85) 55%,rgba(13,31,60,0.6) 100%);}
     .hero-grid-bg{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(201,168,76,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,1) 1px,transparent 1px);background-size:60px 60px;z-index:1;}
-    .hero-inner{position:relative;z-index:2;padding:80px 0 72px;max-width:780px;}
+    .hero-inner{position:relative;z-index:2;padding:76px 0 64px;max-width:800px;}
     .page-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);border-radius:100px;padding:6px 14px;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;}
     .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:20px;}
     .page-hero h1 em{color:var(--gold);font-style:normal;}
-    .page-hero-sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.82);line-height:1.75;margin-bottom:36px;max-width:640px;}
-    .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:48px;}
-    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;}
-    .hero-stat{background:rgba(255,255,255,0.06);padding:22px 20px;text-align:center;}
-    .hero-stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:800;color:var(--gold);line-height:1;}
-    .hero-stat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:6px;line-height:1.4;}
+    .page-hero-sub{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.82);line-height:1.75;margin-bottom:36px;max-width:680px;}
+    .hero-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+
+    /* PROGRAM SELECTOR */
+    .program-select{background:var(--off-white);border-bottom:1px solid rgba(13,31,60,0.08);padding:32px 0;}
+    .program-select-label{text-align:center;margin-bottom:18px;}
+    .program-tabs{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    .program-tab-btn{display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:320px;max-width:100%;padding:20px 26px;border-radius:12px;border:2px solid rgba(13,31,60,0.1);background:var(--white);cursor:pointer;transition:all .2s;text-align:left;font-family:'DM Sans',sans-serif;}
+    .program-tab-btn:hover{border-color:rgba(201,168,76,0.5);}
+    .program-tab-btn .ptab-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+    .program-tab-btn .ptab-name{font-family:'Playfair Display',serif;font-weight:700;font-size:1.15rem;color:var(--navy);}
+    .program-tab-btn .ptab-desc{font-size:0.82rem;color:var(--text-light);line-height:1.5;}
+    .program-tab-btn.active{border-color:var(--gold);background:var(--navy);box-shadow:0 10px 30px rgba(13,31,60,.18);}
+    .program-tab-btn.active .ptab-name{color:var(--gold);}
+    .program-tab-btn.active .ptab-eyebrow{color:var(--gold-light);}
+    .program-tab-btn.active .ptab-desc{color:rgba(255,255,255,.68);}
+    .program-panel{display:none;}
+    .program-panel.active{display:block;}
 
     /* COMPLIANCE BAR */
     .compliance-bar{background:var(--gold);padding:14px 0;}
+    .compliance-bar.teal-bar{background:var(--teal);}
     .compliance-inner{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;}
     .compliance-item{display:flex;align-items:center;gap:7px;font-size:0.8rem;font-weight:700;color:var(--navy);letter-spacing:0.04em;}
     .compliance-item svg{width:14px;height:14px;}
+    .compliance-item.light{color:var(--white);}
 
-    /* WHAT IS EHP */
+    /* WHAT IS / TWO-COL GRID */
     .what-section{padding:88px 0;background:var(--white);}
     .what-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;border-radius:20px;overflow:hidden;box-shadow:0 20px 80px rgba(13,31,60,0.12);}
     .what-photo-col{position:relative;min-height:500px;}
@@ -113,7 +114,7 @@
     .highlight-item p{font-size:0.84rem;color:var(--text-mid);line-height:1.55;}
     .highlight-item p strong{color:var(--navy);}
 
-    /* ACA / LAW SECTION */
+    /* LAW / DARK SECTION */
     .law-section{padding:88px 0;background:var(--navy);position:relative;overflow:hidden;}
     .law-photo-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80');background-size:cover;background-position:center;opacity:0.07;}
     .law-inner{position:relative;z-index:1;}
@@ -129,6 +130,9 @@
     .law-step h4{font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:6px;}
     .law-step p{font-size:0.86rem;color:rgba(255,255,255,0.65);line-height:1.65;}
     .law-footnote{font-size:0.78rem;color:rgba(255,255,255,0.35);line-height:1.7;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.08);}
+    .law-quote{background:rgba(255,255,255,0.05);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:24px 28px;margin-top:28px;}
+    .law-quote p{font-size:0.92rem;color:rgba(255,255,255,0.85);line-height:1.7;font-style:italic;}
+    .law-quote cite{display:block;margin-top:12px;font-size:0.78rem;color:var(--gold);font-style:normal;}
 
     /* HOW IT WORKS */
     .how-section{padding:88px 0;background:var(--off-white);}
@@ -146,7 +150,7 @@
     .how-step h5{font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:5px;}
     .how-step p{font-size:0.72rem;color:var(--text-light);line-height:1.5;}
 
-    /* QUALIFY */
+    /* QUALIFY / NUMBERED CARDS */
     .qualify-section{padding:88px 0;background:var(--white);}
     .qualify-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
     .qualify-cards{display:flex;flex-direction:column;gap:16px;}
@@ -180,7 +184,7 @@
     .sat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--gold);}
     .sat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:6px;line-height:1.4;}
 
-    /* PAYCHECK */
+    /* PAYCHECK / TABS */
     .paycheck-section{padding:88px 0;background:var(--white);}
     .paycheck-header{text-align:center;margin-bottom:48px;}
     .paycheck-header p{font-size:1rem;color:var(--text-mid);max-width:640px;margin:12px auto 0;}
@@ -229,7 +233,7 @@
     .savings-table tr:nth-child(even) td{background:var(--off-white);}
     .savings-table td.label{font-weight:600;color:var(--navy);}
 
-    /* WHO PAYS */
+    /* WHO PAYS / DARK FLOW */
     .whopays-section{padding:88px 0;background:var(--navy);position:relative;overflow:hidden;}
     .whopays-photo-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80');background-size:cover;background-position:center;opacity:0.07;}
     .whopays-inner{position:relative;z-index:1;}
@@ -247,7 +251,7 @@
     .whopays-summary p{font-size:1rem;color:rgba(255,255,255,0.8);line-height:1.8;}
     .whopays-summary strong{color:var(--gold);}
 
-    /* VOLUNTARY BENEFITS */
+    /* VOLUNTARY / TABLE SECTION */
     .voluntary-section{padding:88px 0;background:var(--off-white);}
     .voluntary-header{text-align:center;margin-bottom:36px;}
     .voluntary-header p{font-size:1rem;color:var(--text-mid);max-width:600px;margin:12px auto 0;}
@@ -261,7 +265,7 @@
     .vol-table td.benefit-name{font-weight:600;color:var(--navy);}
     .vol-note{font-size:0.75rem;color:var(--text-light);text-align:center;margin-top:12px;font-style:italic;}
 
-    /* ADVANTAGES */
+    /* ADVANTAGES / TWO-COL */
     .advantages-section{padding:88px 0;background:var(--white);}
     .advantages-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
     .advantage-col{background:var(--off-white);border-radius:12px;padding:32px 28px;border-top:3px solid var(--gold);}
@@ -292,6 +296,7 @@
     .cta-banner h2 em{color:var(--gold);font-style:normal;}
     .cta-banner p{font-size:1.05rem;color:rgba(255,255,255,0.75);margin-bottom:36px;}
     .cta-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+    .cta-fineprint{font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:24px;}
 
     /* FOOTER */
     footer{background:#080f1e;padding:56px 0 28px;}
@@ -310,7 +315,7 @@
     .footer-bottom-links a:hover{color:var(--gold);}
 
     @media(max-width:1024px){.what-grid{grid-template-columns:1fr;}.what-photo-col{min-height:280px;}.savings-grid,.qualify-grid{grid-template-columns:1fr;gap:48px;}.advantages-grid{grid-template-columns:1fr;}.how-components,.services-grid{grid-template-columns:repeat(2,1fr);}.onboarding-steps{grid-template-columns:repeat(2,1fr);}.whopays-flow{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
-    @media(max-width:768px){nav,.header-phone{display:none;}.hamburger{display:flex;}.hero-stats,.how-components,.services-grid,.onboarding-steps{grid-template-columns:1fr;}.how-flow{flex-direction:column;}.how-step{border-right:none;border-bottom:1px solid rgba(13,31,60,0.06);}.how-step:last-child{border-bottom:none;}.satisfaction-bar{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.how-components,.services-grid,.onboarding-steps{grid-template-columns:1fr;}.how-flow{flex-direction:column;}.how-step{border-right:none;border-bottom:1px solid rgba(13,31,60,0.06);}.how-step:last-child{border-bottom:none;}.satisfaction-bar{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.program-tab-btn{width:100%;}}
     @media(max-width:480px){.hero-actions,.cta-actions{flex-direction:column;align-items:stretch;}.paycheck-tabs{flex-direction:column;align-items:center;}}
   </style>
 </head>
@@ -319,16 +324,14 @@
   <!-- TICKER -->
   <div class="ticker">
     <div class="ticker-track">
-      <span>Preventive Care Management Program</span><span>★</span>
-      <span>EHP Wellness — Zero Net Cost to Employer or Employee</span><span>★</span>
+      <span>Two Preventive Care Options for Small Business Employees</span><span>★</span>
+      <span>EHP — FICA Tax-Funded PCMP, $0 Net Cost</span><span>★</span>
+      <span>WellthCare — Health-to-Wealth™ System</span><span>★</span>
       <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
-      <span>Up to $1,120 FICA Savings Per Employee Per Year</span><span>★</span>
-      <span>Built Into the Law — Not a Loophole</span><span>★</span>
-      <span>Preventive Care Management Program</span><span>★</span>
-      <span>EHP Wellness — Zero Net Cost to Employer or Employee</span><span>★</span>
+      <span>Two Preventive Care Options for Small Business Employees</span><span>★</span>
+      <span>EHP — FICA Tax-Funded PCMP, $0 Net Cost</span><span>★</span>
+      <span>WellthCare — Health-to-Wealth™ System</span><span>★</span>
       <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
-      <span>Up to $1,120 FICA Savings Per Employee Per Year</span><span>★</span>
-      <span>Built Into the Law — Not a Loophole</span><span>★</span>
     </div>
   </div>
 
@@ -350,7 +353,6 @@
           <a href="/contact">Contact</a>
         </nav>
         <div class="header-cta">
-          
           <a href="/contact" class="btn-nav">Get Free Analysis</a>
         </div>
         <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -358,7 +360,6 @@
     </div>
     <div class="mobile-nav" id="mobileNav">
       <a href="/">Home</a><a href="/employer-coverage">Benefit Packages</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About</a><a href="/contact">Contact</a>
-      
       <a href="/contact" class="btn-primary">Get Free Benefits Analysis</a>
     </div>
   </header>
@@ -371,452 +372,726 @@
       <div class="hero-inner">
         <div class="page-hero-eyebrow">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          EHP Preventive Care Management Program
+          Preventive Care Options — 2 to 250 Employees
         </div>
-        <h1>Preventive Care Management Program <em>for Small Business Employees</em></h1>
-        <p class="page-hero-sub">The EHP Preventive Care Management Program pairs with any group health insurance to give employees free primary care, urgent care, mental health, and pharmacy — funded entirely through employee tax savings. No new budget. No change to take-home pay. This is not a loophole. Congress built this into the law.</p>
+        <h1>Preventive Care, Built <em>Two Ways</em></h1>
+        <p class="page-hero-sub">Ascend Benefits offers two distinct Preventive Care Management options for small business employees — both funded through the same Section 125 / FICA tax savings mechanism, at $0 net cost. <strong style="color:var(--gold);">EHP</strong> delivers wellness benefits through Revive Health. <strong style="color:var(--gold);">WellthCare</strong> adds $0-copay care, automatic Pension contributions, and Store rewards on top of the same tax structure. Compare both below and choose the fit for your team.</p>
         <div class="hero-actions">
-          <a href="/contact" class="btn-primary">See What Your Business Can Save</a>
-          
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat"><div class="hero-stat-num">$1,120</div><div class="hero-stat-label">Employer FICA savings per employee, per year</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">85–90%</div><div class="hero-stat-label">Average employee participation rate</div></div>
-          <div class="hero-stat"><div class="hero-stat-num">4M+</div><div class="hero-stat-label">Members enrolled nationwide</div></div>
+          <a href="#programs" class="btn-primary">Compare Both Programs</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMPLIANCE BAR -->
-  <div class="compliance-bar">
+  <!-- PROGRAM SELECTOR -->
+  <section class="program-select" id="programs">
     <div class="container">
-      <div class="compliance-inner">
-        <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>IRS Compliant</div>
-        <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>HIPAA Compliant</div>
-        <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ERISA Compliant</div>
-        <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ACA Compliant</div>
-        <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full Audit Protection Included</div>
+      <div class="program-select-label fade-up">
+        <span class="section-label" style="margin-bottom:4px;">Choose a Program to Explore</span>
       </div>
-    </div>
-  </div>
-
-  <!-- WHAT IS EHP -->
-  <section class="what-section">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:48px;" class="fade-up">
-        <span class="section-label">What Is EHP?</span>
-        <h2 class="section-title">A Stand-Alone Wellness Program That Pays for Itself</h2>
-      </div>
-      <div class="what-grid fade-up">
-        <div class="what-photo-col">
-          <img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=800&q=80" alt="Doctor consulting with patient via telehealth" loading="lazy" />
-          <div class="what-photo-overlay">
-            <div class="what-stat-big">$0</div>
-            <div class="what-stat-label">Net cost to employer<br>or employee</div>
-          </div>
-        </div>
-        <div class="what-content-col">
-          <p>EHP — The Employer's Choice — is a <strong>Preventive Care Management Program (PCMP)</strong> designed specifically for small business employees. It is a comprehensive, stand-alone wellness solution that pairs with any existing group health insurance plan — and can be implemented at any time, with no open enrollment or carrier change required.</p>
-          <p>Unlike traditional health benefits that cost the employer money, <strong>EHP is funded entirely through employee tax savings</strong> generated by routing the wellness program cost through a pre-tax Section 125 Cafeteria Plan using the pre-tax wellness benefit deduction. The result is improved health outcomes for your team — with zero net cost to the organization.</p>
-          <p>The long term impact is significant: employee health improves, everyday claims stay off your major medical plan, and the employer retains FICA payroll tax savings of up to <strong>$1,120 per enrolled employee per year</strong>. Better health benefits — funded entirely by tax savings that were already leaving your business every pay period.</p>
-          <div class="highlight-list">
-            <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Stand-alone program</strong> — pairs with any existing group health insurance</p></div>
-            <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Employees <strong>do not need to be on the company health plan</strong> to participate</p></div>
-            <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Employee take-home pay is unchanged</strong> — and in practice increases due to lower taxes</p></div>
-            <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>2,000+ employer clients</strong> | 4 million+ members enrolled nationwide</p></div>
-          </div>
-        </div>
+      <div class="program-tabs fade-up">
+        <button class="program-tab-btn active" onclick="showProgram('ehp')">
+          <span class="ptab-eyebrow">Option 1 — Tax-Funded PCMP</span>
+          <span class="ptab-name">EHP Preventive Care</span>
+          <span class="ptab-desc">$0 net cost, funded through FICA tax savings. Pairs with any group health plan via Revive Health.</span>
+        </button>
+        <button class="program-tab-btn" onclick="showProgram('wellthcare')">
+          <span class="ptab-eyebrow">Option 2 — Health-to-Wealth™</span>
+          <span class="ptab-name">WellthCare</span>
+          <span class="ptab-desc">Same Section 125 / FICA tax funding as EHP, plus $0 copay/deductible care, automatic Pension, and Store rewards.</span>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- ACA / LAW SECTION -->
-  <section class="law-section">
-    <div class="law-photo-bg"></div>
-    <div class="container">
-      <div class="law-inner">
-        <div class="law-header fade-up">
-          <span class="section-label" style="color:var(--gold);">Built Into the Law</span>
-          <h2 class="section-title">Not a Loophole. <em>The ACA Created This.</em></h2>
-          <h3>How Is This Legal?</h3>
-          <p>One of the most common questions employers ask is: "How is this legal?" The answer is simple: Congress built this into the law when the Affordable Care Act was passed. The ACA included a specific provision that allows employers who implement a qualifying Preventive Care Program to use a special pre-tax benefit structure to fund it.</p>
+  <!-- ══════════════════════ PROGRAM 1: EHP ══════════════════════ -->
+  <div class="program-panel active" id="panel-ehp">
+
+    <!-- COMPLIANCE BAR -->
+    <div class="compliance-bar">
+      <div class="container">
+        <div class="compliance-inner">
+          <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>IRS Compliant</div>
+          <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>HIPAA Compliant</div>
+          <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ERISA Compliant</div>
+          <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ACA Compliant</div>
+          <div class="compliance-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full Audit Protection Included</div>
         </div>
-        <div class="law-callout fade-up">
-          <h3>In Plain Terms — Here Is What the ACA Provision Means for Your Business</h3>
-          <div class="law-steps">
-            <div class="law-step">
-              <div class="law-step-num">1</div>
-              <div>
-                <h4>Implement a qualifying Preventive Care Program (Revive Health)</h4>
-                <p>That is the only requirement to unlock this pre-tax benefit structure. The moment you offer your employees access to a compliant preventive care program, the ACA permits you to run its cost through a pre-tax deduction.</p>
-              </div>
+      </div>
+    </div>
+
+    <!-- WHAT IS EHP -->
+    <section class="what-section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;" class="fade-up">
+          <span class="section-label">What Is EHP?</span>
+          <h2 class="section-title">A Stand-Alone Wellness Program That Pays for Itself</h2>
+        </div>
+        <div class="what-grid fade-up">
+          <div class="what-photo-col">
+            <img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=800&q=80" alt="Doctor consulting with patient via telehealth" loading="lazy" />
+            <div class="what-photo-overlay">
+              <div class="what-stat-big">$0</div>
+              <div class="what-stat-label">Net cost to employer<br>or employee</div>
             </div>
-            <div class="law-step">
-              <div class="law-step-num">2</div>
-              <div>
-                <h4>The pre-tax wellness benefit deduction reduces taxable income</h4>
-                <p>That reduction lowers the employee's tax bill and lowers your FICA match as the employer. Both sides pay less to the government — legally, because the ACA says you can.</p>
-              </div>
-            </div>
-            <div class="law-step">
-              <div class="law-step-num">3</div>
-              <div>
-                <h4>The tax savings funds benefits</h4>
-                <p>The money saved on taxes — money that was already going to the government every pay period — is redirected into health coverage and voluntary benefits like dental, vision, disability, and life insurance. The employee keeps more. You save more. Nobody pays anything extra.</p>
-              </div>
+          </div>
+          <div class="what-content-col">
+            <p>EHP — The Employer's Choice — is a <strong>Preventive Care Management Program (PCMP)</strong> designed specifically for small business employees. It is a comprehensive, stand-alone wellness solution that pairs with any existing group health insurance plan — and can be implemented at any time, with no open enrollment or carrier change required.</p>
+            <p>Unlike traditional health benefits that cost the employer money, <strong>EHP is funded entirely through FICA payroll tax savings</strong> generated by routing the wellness program cost through a pre-tax Section 125 Cafeteria Plan using the WIMPER deduction. The result is improved health outcomes for your team — with zero net cost to the organization.</p>
+            <p>The long term impact is significant: employee health improves, everyday claims stay off your major medical plan, and the employer retains FICA payroll tax savings of up to <strong>$1,120 per enrolled employee per year</strong>. Better health benefits — funded entirely by tax savings that were already leaving your business every pay period.</p>
+            <div class="highlight-list">
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Stand-alone program</strong> — pairs with any existing group health insurance</p></div>
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Employees <strong>do not need to be on the company health plan</strong> to participate</p></div>
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Employee take-home pay is unchanged</strong> — and in practice increases due to lower taxes</p></div>
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>2,000+ employer clients</strong> | 4 million+ members enrolled nationwide</p></div>
             </div>
           </div>
         </div>
-        <p class="law-footnote fade-up">The program is administered under ACA Federal Register Vol. 78, June 3, 2013, and is fully supported by IRS Office of Chief Counsel Memorandum 201703013. It complies with IRC Sections 105, 106, and 125, as well as ERISA, HIPAA, and ADA requirements. Full audit protection and compliance documentation are included at no additional charge.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="how-section">
-    <div class="container">
-      <div class="how-header fade-up">
-        <span class="section-label">How It Works</span>
-        <h2 class="section-title">Three Components. One Seamless Program.</h2>
-        <p>EHP operates through three integrated components that work together to create tax savings for both the employer and employee while funding comprehensive wellness benefits.</p>
-      </div>
-      <div class="how-components">
-        <div class="how-card fade-up">
-          <div class="how-card-label">Component 01</div>
-          <h4>PCMP Plan Documents</h4>
-          <p>Specifies all IRC 213(d)-compliant wellness benefits provided under the program — primary care, urgent care, mental health, pharmacy, and more. These are the benefits the employee receives.</p>
-        </div>
-        <div class="how-card fade-up">
-          <div class="how-card-label">Component 02</div>
-          <h4>Section 125 Cafeteria Plan</h4>
-          <p>Funded under IRC 106(a), enabling pre-tax deductions for eligible medical expenses. The wellness program cost is routed through this plan, reducing the employee's taxable income and generating FICA savings for both parties.</p>
-        </div>
-        <div class="how-card fade-up">
-          <div class="how-card-label">Component 03</div>
-          <h4>SIMERP</h4>
-          <p>The Self-Insured Medical Expense Reimbursement Plan reimburses employees dollar-for-dollar for the pre-tax wellness benefit deduction after taxes are calculated — ensuring zero reduction in take-home pay. Because taxes dropped, net pay is actually higher.</p>
-        </div>
-      </div>
-      <div class="how-flow fade-up">
-        <div class="how-step"><div class="how-step-num">1</div><h5>Gross Pay Same</h5><p>Employee's gross pay is unchanged</p></div>
-        <div class="how-step"><div class="how-step-num">2</div><h5>Pre-Tax Deduction Applied</h5><p>Wellness benefit value deducted pre-tax</p></div>
-        <div class="how-step"><div class="how-step-num">3</div><h5>Taxes Drop</h5><p>Lower taxable income = less FICA for both</p></div>
-        <div class="how-step"><div class="how-step-num">4</div><h5>SIMERP Reimburses</h5><p>Full deduction amount added back after tax</p></div>
-        <div class="how-step"><div class="how-step-num">5</div><h5>Net Pay Higher</h5><p>Tax savings funds Revive + voluntary benefits</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO QUALIFIES -->
-  <section class="qualify-section">
-    <div class="container">
-      <div class="qualify-grid">
-        <div class="fade-up">
-          <span class="section-label">Who Qualifies</span>
-          <h2 class="section-title">Simple Eligibility Requirements</h2>
-          <p style="font-size:0.96rem;line-height:1.8;color:var(--text-mid);margin-bottom:20px;">EHP is designed to be as accessible as possible. Employees <strong>do not need to be enrolled in the company group health plan</strong> to participate.</p>
-          <div class="qualify-cards">
-            <div class="qualify-card"><div class="qual-num">01</div><div><h4>W-2 Employee</h4><p>Must be a W-2 employee of the participating company.</p></div></div>
-            <div class="qualify-card"><div class="qual-num">02</div><div><h4>Major Medical Coverage</h4><p>Must carry qualifying coverage — employer plan, spouse's plan, individual marketplace policy, or other qualifying insurance.</p></div></div>
-            <div class="qualify-card"><div class="qual-num">03</div><div><h4>Full-Time Status</h4><p>Must work 30 or more hours per week. Employer must have a minimum of 10 full-time W-2 employees to qualify.</p></div></div>
+    <!-- ACA / LAW SECTION -->
+    <section class="law-section">
+      <div class="law-photo-bg"></div>
+      <div class="container">
+        <div class="law-inner">
+          <div class="law-header fade-up">
+            <span class="section-label" style="color:var(--gold);">Built Into the Law</span>
+            <h2 class="section-title">Not a Loophole. <em>The ACA Created This.</em></h2>
+            <h3>How Is This Legal?</h3>
+            <p>One of the most common questions employers ask is: "How is this legal?" The answer is simple: Congress built this into the law when the Affordable Care Act was passed. The ACA included a specific provision that allows employers who implement a qualifying Preventive Care Program to use a special pre-tax tax structure — the WIMPER — to fund it.</p>
           </div>
-          <div class="qualify-note"><strong>No company group plan?</strong> Employers without a company-sponsored health plan can still offer EHP, provided each participating employee carries their own qualifying major medical coverage.</div>
-        </div>
-        <div class="qualify-photo fade-up">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Employer team meeting discussing benefits" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services-section">
-    <div class="container">
-      <div class="services-header fade-up">
-        <span class="section-label">What Employees Receive</span>
-        <h2 class="section-title">Full-Service Wellness Through Revive Health</h2>
-        <p>All services delivered through the Revive Health platform — accessible 24/7 via web or mobile app. No co-pays, deductibles, or additional charges.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card fade-up">
-          <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Primary care doctor" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
-          <div class="service-card-body"><h4>Primary Care</h4><p>Nationwide access to board-certified physicians, Mon–Fri. Most consultations within 1–3 days. Covers chronic conditions: hypertension, diabetes, allergies, and cholesterol. No copay or deductible.</p></div>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Urgent care telehealth" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
-          <div class="service-card-body"><h4>Urgent Care (24/7)</h4><p>Connect with a provider from anywhere in the U.S. at any time. Eliminates costly ER visits for non-emergency needs.</p><span class="service-stat">90%+ of consults within 3 minutes</span></div>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&q=80" alt="Mental health therapy" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
-          <div class="service-card-body"><h4>Mental Health</h4><p>24/7 access to master's-level clinicians, matched within 5 days. Includes the Revive &amp; Thrive app with live group sessions, AI coaching, and self-assessments.</p><span class="service-stat">88% first-session attendance vs. 30–40% for EAPs</span></div>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Weight health fitness" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
-          <div class="service-card-body"><h4>Weight Management</h4><p>Physician-supervised weight management with GLP-1 medication access, personalized coaching, and FitOn fitness content. Oral GLP-1 from $85/first month; Injectable Semaglutide $90–$210; Tirzepatide $155–$400.</p></div>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Pharmacy medications" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
-          <div class="service-card-body"><h4>Pharmacy</h4><p>1,000+ maintenance and 70+ acute formulary medications delivered to the home at no cost. Discount card for off-formulary medications. Pharmacist consultations included.</p></div>
-        </div>
-        <div class="service-card fade-up">
-          <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Analytics reporting" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
-          <div class="service-card-body"><h4>Reporting &amp; Analytics</h4><p>Monthly Virtual Clinic Reports with utilization rates, savings data, venue redirection metrics, satisfaction scores, and top diagnosis trends.</p></div>
-        </div>
-      </div>
-      <div class="satisfaction-bar fade-up">
-        <div class="sat-item"><div class="sat-num">98.45%</div><div class="sat-label">Would use services again</div></div>
-        <div class="sat-item"><div class="sat-num">98.16%</div><div class="sat-label">Would recommend to family &amp; friends</div></div>
-        <div class="sat-item"><div class="sat-num">92.5%</div><div class="sat-label">Physician callbacks within 20 minutes</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PAYCHECK COMPARISON -->
-  <section class="paycheck-section">
-    <div class="container">
-      <div class="paycheck-header fade-up">
-        <span class="section-label">See the Numbers</span>
-        <h2 class="section-title">How the Program Pays for Itself</h2>
-        <p>The money that funds EHP is not new money. It is tax dollars already leaving the employee's paycheck — redirected to create better benefits. Select your pay frequency below.</p>
-      </div>
-      <div class="disclaimer-box fade-up">
-        <p><strong>Illustrative Example Only.</strong> Figures below are based on a hypothetical employee earning $44,460/year in Virginia, filing single, with $500/month in health insurance. Every employee's actual savings will differ based on salary, state, filing status, and existing deductions. A customized proposal with real figures for your group is available at no cost.</p>
-      </div>
-
-      <div class="paycheck-tabs fade-up">
-        <button class="tab-btn active" onclick="showTab('weekly')">Weekly Pay</button>
-        <button class="tab-btn" onclick="showTab('biweekly')">Bi-Weekly Pay</button>
-      </div>
-
-      <!-- WEEKLY -->
-      <div class="tab-content active" id="tab-weekly">
-        <div class="paycheck-table-wrap">
-          <table class="paycheck-table">
-            <thead><tr><th>Weekly Paycheck</th><th>Without EHP</th><th class="gold-col">With EHP</th></tr></thead>
-            <tbody>
-              <tr><td class="label">Gross Pay</td><td>$855.00</td><td>$855.00</td></tr>
-              <tr><td class="label">Health Insurance (Pre-Tax)</td><td>−$115.38</td><td>−$115.38</td></tr>
-              <tr><td class="label">Pre-Tax Wellness Benefit Deduction</td><td>—</td><td class="gold-text">−$281.54</td></tr>
-              <tr class="highlight"><td class="label">Taxable Income</td><td>$739.62</td><td>$458.08</td></tr>
-              <tr><td class="label">Federal Withholding</td><td>−$88.75</td><td class="green">−$55.93</td></tr>
-              <tr><td class="label">VA State Withholding</td><td>−$43.00</td><td class="green">−$26.82</td></tr>
-              <tr><td class="label">Social Security (6.2%)</td><td>−$45.86</td><td class="green">−$28.40</td></tr>
-              <tr><td class="label">Medicare (1.45%)</td><td>−$10.72</td><td class="green">−$6.64</td></tr>
-              <tr class="highlight"><td class="label">Total Taxes</td><td>−$188.33</td><td class="green">−$117.79</td></tr>
-              <tr><td class="label">SIMERP Reimbursement (added back after tax)</td><td>—</td><td class="gold-text">+$281.54</td></tr>
-              <tr class="highlight"><td class="label">Net Take-Home Pay</td><td>$551.29</td><td class="green">$622.37 ↑</td></tr>
-              <tr class="highlight"><td class="label">Increase in Net Pay (Tax Savings)</td><td>—</td><td class="gold-text">+$71.08 / week</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="reserve-box fade-up">
-          <h4>Where the Weekly Tax Savings Goes</h4>
-          <div class="reserve-row"><span>Tax savings generated</span><span>+$71.08 / week</span></div>
-          <div class="reserve-row"><span>Less: Revive Health platform fee</span><span>−$29.77 / week</span></div>
-          <div class="reserve-row"><span>Remaining reserve available for voluntary benefits</span><span>$41.31 / week</span></div>
-        </div>
-      </div>
-
-      <!-- BI-WEEKLY -->
-      <div class="tab-content" id="tab-biweekly">
-        <div class="paycheck-table-wrap">
-          <table class="paycheck-table">
-            <thead><tr><th>Bi-Weekly Paycheck</th><th>Without EHP</th><th class="gold-col">With EHP</th></tr></thead>
-            <tbody>
-              <tr><td class="label">Gross Pay</td><td>$1,710.00</td><td>$1,710.00</td></tr>
-              <tr><td class="label">Health Insurance (Pre-Tax)</td><td>−$230.77</td><td>−$230.77</td></tr>
-              <tr><td class="label">Pre-Tax Wellness Benefit Deduction</td><td>—</td><td class="gold-text">−$563.08</td></tr>
-              <tr class="highlight"><td class="label">Taxable Income</td><td>$1,479.23</td><td>$916.15</td></tr>
-              <tr><td class="label">Federal Withholding</td><td>−$177.50</td><td class="green">−$111.86</td></tr>
-              <tr><td class="label">VA State Withholding</td><td>−$86.00</td><td class="green">−$53.64</td></tr>
-              <tr><td class="label">Social Security (6.2%)</td><td>−$91.72</td><td class="green">−$56.80</td></tr>
-              <tr><td class="label">Medicare (1.45%)</td><td>−$21.44</td><td class="green">−$13.28</td></tr>
-              <tr class="highlight"><td class="label">Total Taxes</td><td>−$376.66</td><td class="green">−$235.58</td></tr>
-              <tr><td class="label">SIMERP Reimbursement (added back after tax)</td><td>—</td><td class="gold-text">+$563.08</td></tr>
-              <tr class="highlight"><td class="label">Net Take-Home Pay</td><td>$1,102.57</td><td class="green">$1,244.73 ↑</td></tr>
-              <tr class="highlight"><td class="label">Increase in Net Pay (Tax Savings)</td><td>—</td><td class="gold-text">+$142.16 / bi-weekly</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="reserve-box fade-up">
-          <h4>Where the Bi-Weekly Tax Savings Goes</h4>
-          <div class="reserve-row"><span>Tax savings generated</span><span>+$142.16 / bi-weekly</span></div>
-          <div class="reserve-row"><span>Less: Revive Health platform fee</span><span>−$59.54 / bi-weekly</span></div>
-          <div class="reserve-row"><span>Remaining reserve available for voluntary benefits</span><span>$82.62 / bi-weekly</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EMPLOYER SAVINGS -->
-  <section class="savings-section">
-    <div class="container">
-      <div class="savings-grid">
-        <div class="fade-up" style="position:relative;padding-bottom:32px;">
-          <div class="savings-photo">
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Employer reviewing FICA savings" loading="lazy" />
+          <div class="law-callout fade-up">
+            <h3>In Plain Terms — Here Is What the ACA Provision Means for Your Business</h3>
+            <div class="law-steps">
+              <div class="law-step">
+                <div class="law-step-num">1</div>
+                <div>
+                  <h4>Implement a qualifying Preventive Care Program (Revive Health)</h4>
+                  <p>That is the only requirement to unlock the WIMPER tax structure. The moment you offer your employees access to a compliant preventive care program, the ACA permits you to run its cost through a pre-tax deduction.</p>
+                </div>
+              </div>
+              <div class="law-step">
+                <div class="law-step-num">2</div>
+                <div>
+                  <h4>The WIMPER deduction reduces taxable income</h4>
+                  <p>That reduction lowers the employee's tax bill and lowers your FICA match as the employer. Both sides pay less to the government — legally, because the ACA says you can.</p>
+                </div>
+              </div>
+              <div class="law-step">
+                <div class="law-step-num">3</div>
+                <div>
+                  <h4>The tax savings funds benefits</h4>
+                  <p>The money saved on taxes — money that was already going to the government every pay period — is redirected into health coverage and voluntary benefits like dental, vision, disability, and life insurance. The employee keeps more. You save more. Nobody pays anything extra.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="savings-photo-badge">
-            <div class="badge-num">$1,120</div>
-            <div class="badge-label">Annual FICA savings<br>per employee</div>
+          <p class="law-footnote fade-up">The program is administered under ACA Federal Register Vol. 78, June 3, 2013, and is fully supported by IRS Office of Chief Counsel Memorandum 201703013. It complies with IRC Sections 105, 106, and 125, as well as ERISA, HIPAA, and ADA requirements. Full audit protection and compliance documentation are included at no additional charge.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+      <div class="container">
+        <div class="how-header fade-up">
+          <span class="section-label">How It Works</span>
+          <h2 class="section-title">Three Components. One Seamless Program.</h2>
+          <p>EHP operates through three integrated components that work together to create tax savings for both the employer and employee while funding comprehensive wellness benefits.</p>
+        </div>
+        <div class="how-components">
+          <div class="how-card fade-up">
+            <div class="how-card-label">Component 01</div>
+            <h4>PCMP Plan Documents</h4>
+            <p>Specifies all IRC 213(d)-compliant wellness benefits provided under the program — primary care, urgent care, mental health, pharmacy, and more. These are the benefits the employee receives.</p>
+          </div>
+          <div class="how-card fade-up">
+            <div class="how-card-label">Component 02</div>
+            <h4>Section 125 Cafeteria Plan</h4>
+            <p>Funded under IRC 106(a), enabling pre-tax deductions for eligible medical expenses. The wellness program cost is routed through this plan, reducing the employee's taxable income and generating FICA savings for both parties.</p>
+          </div>
+          <div class="how-card fade-up">
+            <div class="how-card-label">Component 03</div>
+            <h4>SIMERP</h4>
+            <p>The Self-Insured Medical Expense Reimbursement Plan reimburses employees dollar-for-dollar for the WIMPER deduction after taxes are calculated — ensuring zero reduction in take-home pay. Because taxes dropped, net pay is actually higher.</p>
           </div>
         </div>
-        <div class="savings-content fade-up">
-          <span class="section-label">What the Employer Saves</span>
-          <h2>Your FICA Match Drops the Moment Taxable Wages Drop</h2>
-          <p>When the pre-tax wellness benefit deduction reduces an employee's taxable income, your FICA tax match is reduced by the same proportion. As the employer, you pay 6.2% Social Security and 1.45% Medicare on each employee's taxable wages. <strong>When taxable wages drop, so does your matching obligation.</strong></p>
-          <p>That difference is money you no longer owe the government — and it adds up quickly across your workforce.</p>
-          <div class="savings-table-wrap">
-            <table class="savings-table">
-              <thead>
-                <tr><th>Employer FICA Savings</th><th class="gold-col">Per Employee</th><th class="gold-col">10 Employees</th></tr>
-              </thead>
+        <div class="how-flow fade-up">
+          <div class="how-step"><div class="how-step-num">1</div><h5>Gross Pay Same</h5><p>Employee's gross pay is unchanged</p></div>
+          <div class="how-step"><div class="how-step-num">2</div><h5>WIMPER Applied</h5><p>Wellness benefit value deducted pre-tax</p></div>
+          <div class="how-step"><div class="how-step-num">3</div><h5>Taxes Drop</h5><p>Lower taxable income = less FICA for both</p></div>
+          <div class="how-step"><div class="how-step-num">4</div><h5>SIMERP Reimburses</h5><p>Full WIMPER amount added back after tax</p></div>
+          <div class="how-step"><div class="how-step-num">5</div><h5>Net Pay Higher</h5><p>Tax savings funds Revive + voluntary benefits</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO QUALIFIES -->
+    <section class="qualify-section">
+      <div class="container">
+        <div class="qualify-grid">
+          <div class="fade-up">
+            <span class="section-label">Who Qualifies</span>
+            <h2 class="section-title">Simple Eligibility Requirements</h2>
+            <p style="font-size:0.96rem;line-height:1.8;color:var(--text-mid);margin-bottom:20px;">EHP is designed to be as accessible as possible. Employees <strong>do not need to be enrolled in the company group health plan</strong> to participate.</p>
+            <div class="qualify-cards">
+              <div class="qualify-card"><div class="qual-num">01</div><div><h4>W-2 Employee</h4><p>Must be a W-2 employee of the participating company.</p></div></div>
+              <div class="qualify-card"><div class="qual-num">02</div><div><h4>Major Medical Coverage</h4><p>Must carry qualifying coverage — employer plan, spouse's plan, individual marketplace policy, or other qualifying insurance.</p></div></div>
+              <div class="qualify-card"><div class="qual-num">03</div><div><h4>Full-Time Status</h4><p>Must work 30 or more hours per week. Employer must have a minimum of 10 full-time W-2 employees to qualify.</p></div></div>
+            </div>
+            <div class="qualify-note"><strong>No company group plan?</strong> Employers without a company-sponsored health plan can still offer EHP, provided each participating employee carries their own qualifying major medical coverage.</div>
+          </div>
+          <div class="qualify-photo fade-up">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Employer team meeting discussing benefits" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section">
+      <div class="container">
+        <div class="services-header fade-up">
+          <span class="section-label">What Employees Receive</span>
+          <h2 class="section-title">Full-Service Wellness Through Revive Health</h2>
+          <p>All services delivered through the Revive Health platform — accessible 24/7 via web or mobile app. No co-pays, deductibles, or additional charges.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Primary care doctor" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Primary Care</h4><p>Nationwide access to board-certified physicians, Mon–Fri. Most consultations within 1–3 days. Covers chronic conditions: hypertension, diabetes, allergies, and cholesterol. No copay or deductible.</p></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="Urgent care telehealth" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Urgent Care (24/7)</h4><p>Connect with a provider from anywhere in the U.S. at any time. Eliminates costly ER visits for non-emergency needs.</p><span class="service-stat">90%+ of consults within 3 minutes</span></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=600&q=80" alt="Mental health therapy" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Mental Health</h4><p>24/7 access to master's-level clinicians, matched within 5 days. Includes the Revive &amp; Thrive app with live group sessions, AI coaching, and self-assessments.</p><span class="service-stat">88% first-session attendance vs. 30–40% for EAPs</span></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Weight health fitness" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Weight Management</h4><p>Physician-supervised weight management with GLP-1 medication access, personalized coaching, and FitOn fitness content. Oral GLP-1 from $85/first month; Injectable Semaglutide $90–$210; Tirzepatide $155–$400.</p></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Pharmacy medications" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Pharmacy</h4><p>1,000+ maintenance and 70+ acute formulary medications delivered to the home at no cost. Discount card for off-formulary medications. Pharmacist consultations included.</p></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Analytics reporting" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Reporting &amp; Analytics</h4><p>Monthly Virtual Clinic Reports with utilization rates, savings data, venue redirection metrics, satisfaction scores, and top diagnosis trends.</p></div>
+          </div>
+        </div>
+        <div class="satisfaction-bar fade-up">
+          <div class="sat-item"><div class="sat-num">98.45%</div><div class="sat-label">Would use services again</div></div>
+          <div class="sat-item"><div class="sat-num">98.16%</div><div class="sat-label">Would recommend to family &amp; friends</div></div>
+          <div class="sat-item"><div class="sat-num">92.5%</div><div class="sat-label">Physician callbacks within 20 minutes</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAYCHECK COMPARISON -->
+    <section class="paycheck-section">
+      <div class="container">
+        <div class="paycheck-header fade-up">
+          <span class="section-label">See the Numbers</span>
+          <h2 class="section-title">How the Program Pays for Itself</h2>
+          <p>The money that funds EHP is not new money. It is tax dollars already leaving the employee's paycheck — redirected to create better benefits. Select your pay frequency below.</p>
+        </div>
+        <div class="disclaimer-box fade-up">
+          <p><strong>Illustrative Example Only.</strong> Figures below are based on a hypothetical employee earning $44,460/year in Virginia, filing single, with $500/month in health insurance. Every employee's actual savings will differ based on salary, state, filing status, and existing deductions. A customized proposal with real figures for your group is available at no cost.</p>
+        </div>
+
+        <div class="paycheck-tabs fade-up">
+          <button class="tab-btn active" onclick="showTab('weekly')">Weekly Pay</button>
+          <button class="tab-btn" onclick="showTab('biweekly')">Bi-Weekly Pay</button>
+        </div>
+
+        <!-- WEEKLY -->
+        <div class="tab-content active" id="tab-weekly">
+          <div class="paycheck-table-wrap">
+            <table class="paycheck-table">
+              <thead><tr><th>Weekly Paycheck</th><th>Without EHP</th><th class="gold-col">With EHP</th></tr></thead>
               <tbody>
-                <tr><td class="label">Per Paycheck — Weekly</td><td>$21.54</td><td>$215.40</td></tr>
-                <tr><td class="label">Per Paycheck — Bi-Weekly</td><td>$43.08</td><td>$430.80</td></tr>
-                <tr><td class="label">Per Month</td><td>$93.33</td><td>$933.30</td></tr>
-                <tr><td class="label">Per Year</td><td>$1,120.00</td><td>$11,200.00</td></tr>
+                <tr><td class="label">Gross Pay</td><td>$855.00</td><td>$855.00</td></tr>
+                <tr><td class="label">Health Insurance (Pre-Tax)</td><td>−$115.38</td><td>−$115.38</td></tr>
+                <tr><td class="label">WIMPER Deduction (wellness benefit value)</td><td>—</td><td class="gold-text">−$281.54</td></tr>
+                <tr class="highlight"><td class="label">Taxable Income</td><td>$739.62</td><td>$458.08</td></tr>
+                <tr><td class="label">Federal Withholding</td><td>−$88.75</td><td class="green">−$55.93</td></tr>
+                <tr><td class="label">VA State Withholding</td><td>−$43.00</td><td class="green">−$26.82</td></tr>
+                <tr><td class="label">Social Security (6.2%)</td><td>−$45.86</td><td class="green">−$28.40</td></tr>
+                <tr><td class="label">Medicare (1.45%)</td><td>−$10.72</td><td class="green">−$6.64</td></tr>
+                <tr class="highlight"><td class="label">Total Taxes</td><td>−$188.33</td><td class="green">−$117.79</td></tr>
+                <tr><td class="label">SIMERP Reimbursement (added back after tax)</td><td>—</td><td class="gold-text">+$281.54</td></tr>
+                <tr class="highlight"><td class="label">Net Take-Home Pay</td><td>$551.29</td><td class="green">$622.37 ↑</td></tr>
+                <tr class="highlight"><td class="label">Increase in Net Pay (Tax Savings)</td><td>—</td><td class="gold-text">+$71.08 / week</td></tr>
               </tbody>
             </table>
           </div>
+          <div class="reserve-box fade-up">
+            <h4>Where the Weekly Tax Savings Goes</h4>
+            <div class="reserve-row"><span>Tax savings generated</span><span>+$71.08 / week</span></div>
+            <div class="reserve-row"><span>Less: Revive Health platform fee</span><span>−$29.77 / week</span></div>
+            <div class="reserve-row"><span>Remaining reserve available for voluntary benefits</span><span>$41.31 / week</span></div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- WHO IS ACTUALLY PAYING -->
-  <section class="whopays-section">
-    <div class="whopays-photo-bg"></div>
-    <div class="container">
-      <div class="whopays-inner">
-        <div class="whopays-header fade-up">
-          <span class="section-label" style="color:var(--gold);">The Real Story</span>
-          <h2 class="section-title">Who Is <em>Actually Paying</em> for the Benefits?</h2>
-          <p>The employees are — using money that was already leaving their paychecks as taxes. The employer contributes nothing additional.</p>
-        </div>
-        <div class="whopays-flow fade-up">
-          <div class="whopays-card">
-            <div class="whopays-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-            <h4>The Pre-Tax Wellness Benefit Deduction Reduces Taxable Income</h4>
-            <p>The dollar value of the wellness benefits is applied as a pre-tax deduction before taxes are calculated — reducing how much the employee and employer both owe the government.</p>
+        <!-- BI-WEEKLY -->
+        <div class="tab-content" id="tab-biweekly">
+          <div class="paycheck-table-wrap">
+            <table class="paycheck-table">
+              <thead><tr><th>Bi-Weekly Paycheck</th><th>Without EHP</th><th class="gold-col">With EHP</th></tr></thead>
+              <tbody>
+                <tr><td class="label">Gross Pay</td><td>$1,710.00</td><td>$1,710.00</td></tr>
+                <tr><td class="label">Health Insurance (Pre-Tax)</td><td>−$230.77</td><td>−$230.77</td></tr>
+                <tr><td class="label">WIMPER Deduction (wellness benefit value)</td><td>—</td><td class="gold-text">−$563.08</td></tr>
+                <tr class="highlight"><td class="label">Taxable Income</td><td>$1,479.23</td><td>$916.15</td></tr>
+                <tr><td class="label">Federal Withholding</td><td>−$177.50</td><td class="green">−$111.86</td></tr>
+                <tr><td class="label">VA State Withholding</td><td>−$86.00</td><td class="green">−$53.64</td></tr>
+                <tr><td class="label">Social Security (6.2%)</td><td>−$91.72</td><td class="green">−$56.80</td></tr>
+                <tr><td class="label">Medicare (1.45%)</td><td>−$21.44</td><td class="green">−$13.28</td></tr>
+                <tr class="highlight"><td class="label">Total Taxes</td><td>−$376.66</td><td class="green">−$235.58</td></tr>
+                <tr><td class="label">SIMERP Reimbursement (added back after tax)</td><td>—</td><td class="gold-text">+$563.08</td></tr>
+                <tr class="highlight"><td class="label">Net Take-Home Pay</td><td>$1,102.57</td><td class="green">$1,244.73 ↑</td></tr>
+                <tr class="highlight"><td class="label">Increase in Net Pay (Tax Savings)</td><td>—</td><td class="gold-text">+$142.16 / bi-weekly</td></tr>
+              </tbody>
+            </table>
           </div>
-          <div class="whopays-card">
-            <div class="whopays-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-            <h4>The Tax Savings Funds the Benefits</h4>
-            <p>Money that was going to the IRS every pay period is now available to cover the Revive Health platform fee and fund voluntary benefit elections — dental, vision, disability, life insurance.</p>
-          </div>
-          <div class="whopays-card">
-            <div class="whopays-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-            <h4>The Employer's Role Is Payroll Structure</h4>
-            <p>The employer does not contribute any additional dollars toward those benefits. The employer's role is to run the payroll structure correctly. The tax code does the rest.</p>
-          </div>
-        </div>
-        <div class="whopays-summary fade-up">
-          <p><strong>Money that was going to the IRS is redirected into benefits — and both sides save.</strong> The employee keeps more take-home pay. The employer keeps the FICA savings. Nobody pays anything extra. The tax code is working exactly as Congress designed it.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VOLUNTARY BENEFITS -->
-  <section class="voluntary-section">
-    <div class="container">
-      <div class="voluntary-header fade-up">
-        <span class="section-label">Putting Tax Savings to Work</span>
-        <h2 class="section-title">The Remaining Reserve Funds Additional Coverage</h2>
-        <p style="font-size:1rem;color:var(--text-mid);max-width:640px;margin:12px auto 0;">Once the Revive Health fee is covered by the employee's tax savings, the remaining reserve funds voluntary supplemental coverage — with no reduction in take-home pay and no additional cost to the employer. <strong style="color:var(--navy);">GAP coverage is the most popular first election</strong>, covering deductibles, copays, and coinsurance so employees walk away from claims with little to nothing out of pocket.</p>
-      </div>
-      <div class="vol-table-wrap fade-up">
-        <table class="vol-table">
-          <thead><tr><th>Voluntary Benefit</th><th class="gold-col">Sample Monthly Cost</th><th>What It Covers</th></tr></thead>
-          <tbody>
-            <tr><td class="benefit-name">Short-Term Disability</td><td>$26.87</td><td>Bridges gap to 72% income replacement if unable to work</td></tr>
-            <tr><td class="benefit-name">Critical Illness / Cancer</td><td>$9.78</td><td>$10,000 lump sum on diagnosis — guaranteed issue</td></tr>
-            <tr><td class="benefit-name">Hospital Indemnity</td><td>$30.50</td><td>$2,000 admission + $200/day confinement benefit</td></tr>
-            <tr><td class="benefit-name">Accident Insurance</td><td>$18.11</td><td>24/7 on/off-job coverage; $2,000 hospital + $500/day ICU</td></tr>
-            <tr><td class="benefit-name">Whole Life Insurance</td><td>$112.68</td><td>Guaranteed issue life to age 95; builds cash value</td></tr>
-            <tr><td class="benefit-name">Dental</td><td>$30.50</td><td>100-80-50 coinsurance; $1,000–$2,000 annual maximum</td></tr>
-            <tr><td class="benefit-name">Vision</td><td>$13.78</td><td>VSP network; frames, contacts, and Rx savings card</td></tr>
-            <tr><td class="benefit-name">Example: STD + Critical Illness + Hospital Indemnity + Whole Life</td><td>~$179.83/mo</td><td>Covered entirely by tax savings — no change to paycheck!</td></tr>
-          </tbody>
-        </table>
-        <p class="vol-note">All figures are examples only. Actual costs vary by age, plan design, coverage amount, and state. Individual quotes provided during enrollment.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM SUMMARY / ADVANTAGES -->
-  <section class="advantages-section">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:48px;" class="fade-up">
-        <span class="section-label">Program Summary</span>
-        <h2 class="section-title">A Win for Employers. A Win for Employees.</h2>
-      </div>
-      <div class="advantages-grid fade-up">
-        <div class="advantage-col">
-          <h3>For the Employer</h3>
-          <div class="advantage-list">
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>$0 net cost</strong> to implement</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Saves <strong>~$1,120 per enrolled employee per year</strong> in FICA taxes</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>No disruption</strong> to existing health plan</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Can start <strong>any time</strong> — no open enrollment required</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Reduces major medical claims by <strong>shifting everyday care to Revive</strong></p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Fewer claims = <strong>lower risk of premium increases</strong> at renewal</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Full compliance documentation</strong> and audit protection included</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Payroll integration</strong> handled by EHP</p></div>
-          </div>
-        </div>
-        <div class="advantage-col">
-          <h3>For the Employee</h3>
-          <div class="advantage-list">
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Net take-home pay increases</strong> — taxes dropped</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Free <strong>primary care with no copay or deductible</strong></p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>24/7 urgent care</strong> — connect in under 3 minutes</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Mental health support</strong> available around the clock</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>1,000+ prescriptions delivered</strong> to their home at no cost</p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access to <strong>weight management and GLP-1 medications</strong></p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Tax savings reserve <strong>funds supplemental insurance elections</strong></p></div>
-            <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Coverage <strong>does not require enrollment</strong> in company health plan</p></div>
+          <div class="reserve-box fade-up">
+            <h4>Where the Bi-Weekly Tax Savings Goes</h4>
+            <div class="reserve-row"><span>Tax savings generated</span><span>+$142.16 / bi-weekly</span></div>
+            <div class="reserve-row"><span>Less: Revive Health platform fee</span><span>−$59.54 / bi-weekly</span></div>
+            <div class="reserve-row"><span>Remaining reserve available for voluntary benefits</span><span>$82.62 / bi-weekly</span></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- GETTING STARTED / ONBOARDING -->
-  <section class="onboarding-section">
-    <div class="container">
-      <div class="onboarding-header fade-up">
-        <span class="section-label">Getting Started</span>
-        <h2 class="section-title">Up and Running Quickly — Minimal Admin Burden</h2>
-        <p>EHP's onboarding process gets employers and employees up and running fast, with dedicated support at every step.</p>
+    <!-- EMPLOYER SAVINGS -->
+    <section class="savings-section">
+      <div class="container">
+        <div class="savings-grid">
+          <div class="fade-up" style="position:relative;padding-bottom:32px;">
+            <div class="savings-photo">
+              <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Employer reviewing FICA savings" loading="lazy" />
+            </div>
+            <div class="savings-photo-badge">
+              <div class="badge-num">$1,120</div>
+              <div class="badge-label">Annual FICA savings<br>per employee</div>
+            </div>
+          </div>
+          <div class="savings-content fade-up">
+            <span class="section-label">What the Employer Saves</span>
+            <h2>Your FICA Match Drops the Moment Taxable Wages Drop</h2>
+            <p>When the WIMPER deduction reduces an employee's taxable income, your FICA tax match is reduced by the same proportion. As the employer, you pay 6.2% Social Security and 1.45% Medicare on each employee's taxable wages. <strong>When taxable wages drop, so does your matching obligation.</strong></p>
+            <p>That difference is money you no longer owe the government — and it adds up quickly across your workforce.</p>
+            <div class="savings-table-wrap">
+              <table class="savings-table">
+                <thead>
+                  <tr><th>Employer FICA Savings</th><th class="gold-col">Per Employee</th><th class="gold-col">10 Employees</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="label">Per Paycheck — Weekly</td><td>$21.54</td><td>$215.40</td></tr>
+                  <tr><td class="label">Per Paycheck — Bi-Weekly</td><td>$43.08</td><td>$430.80</td></tr>
+                  <tr><td class="label">Per Month</td><td>$93.33</td><td>$933.30</td></tr>
+                  <tr><td class="label">Per Year</td><td>$1,120.00</td><td>$11,200.00</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="onboarding-steps">
-        <div class="onboarding-step fade-up"><div class="onboarding-step-num">01</div><h4>Discovery Call</h4><p>We walk through the program, demonstrate FICA savings potential, and show how voluntary benefits can provide comprehensive coverage at no net cost — typically up to $1,120 per employee per year.</p></div>
-        <div class="onboarding-step fade-up"><div class="onboarding-step-num">02</div><h4>Census Collection</h4><p>EHP's in-house CPA team assists with collecting the employee census via email and phone outreach — completely hands-off for the employer.</p></div>
-        <div class="onboarding-step fade-up"><div class="onboarding-step-num">03</div><h4>Proposal</h4><p>Within 24 hours of receiving the census, EHP presents employer FICA savings and individual employee tax allocations with real numbers tailored to your group — at no cost.</p></div>
-        <div class="onboarding-step fade-up"><div class="onboarding-step-num">04</div><h4>Enrollment</h4><p>Flexible enrollment options — virtual, onsite, or self-enrollment — with EHP managing all employee education and communication to achieve 85–90% participation.</p></div>
-        <div class="onboarding-step fade-up"><div class="onboarding-step-num">05</div><h4>Program Launch</h4><p>EHP's onboarding team coordinates the launch date, ensures seamless payroll integration, and confirms all plan documents and policies are in place.</p></div>
-        <div class="onboarding-step fade-up"><div class="onboarding-step-num">06</div><h4>Ongoing Support</h4><p>Continued customer service, mid-year employee additions, and monthly reporting so you always know the program is performing.</p></div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta-banner">
-    <div class="cta-photo-bg"></div>
-    <div class="container">
-      <div class="cta-inner">
-        <h2>Ready to Add <em>Better Benefits at Zero Cost?</em></h2>
-        <p>Contact Ascend Benefits today for a free, no-obligation proposal — with real numbers tailored to your group.</p>
-        <div class="cta-actions">
-          <a href="/contact" class="btn-primary" style="font-size:1rem;padding:16px 32px;">Get My Free Proposal</a>
-          
+    <!-- WHO IS ACTUALLY PAYING -->
+    <section class="whopays-section">
+      <div class="whopays-photo-bg"></div>
+      <div class="container">
+        <div class="whopays-inner">
+          <div class="whopays-header fade-up">
+            <span class="section-label" style="color:var(--gold);">The Real Story</span>
+            <h2 class="section-title">Who Is <em>Actually Paying</em> for the Benefits?</h2>
+            <p>The employees are — using money that was already leaving their paychecks as taxes. The employer contributes nothing additional.</p>
+          </div>
+          <div class="whopays-flow fade-up">
+            <div class="whopays-card">
+              <div class="whopays-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              <h4>The WIMPER Deduction Reduces Taxable Income</h4>
+              <p>The dollar value of the wellness benefits is applied as a pre-tax deduction before taxes are calculated — reducing how much the employee and employer both owe the government.</p>
+            </div>
+            <div class="whopays-card">
+              <div class="whopays-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+              <h4>The Tax Savings Funds the Benefits</h4>
+              <p>Money that was going to the IRS every pay period is now available to cover the Revive Health platform fee and fund voluntary benefit elections — dental, vision, disability, life insurance.</p>
+            </div>
+            <div class="whopays-card">
+              <div class="whopays-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+              <h4>The Employer's Role Is Payroll Structure</h4>
+              <p>The employer does not contribute any additional dollars toward those benefits. The employer's role is to run the payroll structure correctly. The tax code does the rest.</p>
+            </div>
+          </div>
+          <div class="whopays-summary fade-up">
+            <p><strong>Money that was going to the IRS is redirected into benefits — and both sides save.</strong> The employee keeps more take-home pay. The employer keeps the FICA savings. Nobody pays anything extra. The tax code is working exactly as Congress designed it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTARY BENEFITS -->
+    <section class="voluntary-section">
+      <div class="container">
+        <div class="voluntary-header fade-up">
+          <span class="section-label">Putting Tax Savings to Work</span>
+          <h2 class="section-title">The Remaining Reserve Funds Additional Coverage</h2>
+          <p style="font-size:1rem;color:var(--text-mid);max-width:640px;margin:12px auto 0;">Once the Revive Health fee is covered by the employee's tax savings, the remaining reserve funds voluntary supplemental coverage — with no reduction in take-home pay and no additional cost to the employer.</p>
+        </div>
+        <div class="vol-table-wrap fade-up">
+          <table class="vol-table">
+            <thead><tr><th>Voluntary Benefit</th><th class="gold-col">Sample Monthly Cost</th><th>What It Covers</th></tr></thead>
+            <tbody>
+              <tr><td class="benefit-name">Short-Term Disability</td><td>$26.87</td><td>Bridges gap to 72% income replacement if unable to work</td></tr>
+              <tr><td class="benefit-name">Critical Illness / Cancer</td><td>$9.78</td><td>$10,000 lump sum on diagnosis — guaranteed issue</td></tr>
+              <tr><td class="benefit-name">Hospital Indemnity</td><td>$30.50</td><td>$2,000 admission + $200/day confinement benefit</td></tr>
+              <tr><td class="benefit-name">Accident Insurance</td><td>$18.11</td><td>24/7 on/off-job coverage; $2,000 hospital + $500/day ICU</td></tr>
+              <tr><td class="benefit-name">Whole Life Insurance</td><td>$112.68</td><td>Guaranteed issue life to age 95; builds cash value</td></tr>
+              <tr><td class="benefit-name">Dental</td><td>$30.50</td><td>100-80-50 coinsurance; $1,000–$2,000 annual maximum</td></tr>
+              <tr><td class="benefit-name">Vision</td><td>$13.78</td><td>VSP network; frames, contacts, and Rx savings card</td></tr>
+              <tr><td class="benefit-name">Example: STD + Critical Illness + Hospital Indemnity + Whole Life</td><td>~$179.83/mo</td><td>Covered entirely by tax savings — no change to paycheck!</td></tr>
+            </tbody>
+          </table>
+          <p class="vol-note">All figures are examples only. Actual costs vary by age, plan design, coverage amount, and state. Individual quotes provided during enrollment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAM SUMMARY / ADVANTAGES -->
+    <section class="advantages-section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;" class="fade-up">
+          <span class="section-label">Program Summary</span>
+          <h2 class="section-title">A Win for Employers. A Win for Employees.</h2>
+        </div>
+        <div class="advantages-grid fade-up">
+          <div class="advantage-col">
+            <h3>For the Employer</h3>
+            <div class="advantage-list">
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>$0 net cost</strong> to implement</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Saves <strong>~$1,120 per enrolled employee per year</strong> in FICA taxes</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>No disruption</strong> to existing health plan</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Can start <strong>any time</strong> — no open enrollment required</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Reduces major medical claims by <strong>shifting everyday care to Revive</strong></p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Fewer claims = <strong>lower risk of premium increases</strong> at renewal</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Full compliance documentation</strong> and audit protection included</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Payroll integration</strong> handled by EHP</p></div>
+            </div>
+          </div>
+          <div class="advantage-col">
+            <h3>For the Employee</h3>
+            <div class="advantage-list">
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Net take-home pay increases</strong> — taxes dropped</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Free <strong>primary care with no copay or deductible</strong></p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>24/7 urgent care</strong> — connect in under 3 minutes</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Mental health support</strong> available around the clock</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>1,000+ prescriptions delivered</strong> to their home at no cost</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Access to <strong>weight management and GLP-1 medications</strong></p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Tax savings reserve <strong>funds supplemental insurance elections</strong></p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Coverage <strong>does not require enrollment</strong> in company health plan</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GETTING STARTED / ONBOARDING -->
+    <section class="onboarding-section">
+      <div class="container">
+        <div class="onboarding-header fade-up">
+          <span class="section-label">Getting Started</span>
+          <h2 class="section-title">Up and Running Quickly — Minimal Admin Burden</h2>
+          <p>EHP's onboarding process gets employers and employees up and running fast, with dedicated support at every step.</p>
+        </div>
+        <div class="onboarding-steps">
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">01</div><h4>Discovery Call</h4><p>We walk through the program, demonstrate FICA savings potential, and show how voluntary benefits can provide comprehensive coverage at no net cost — typically up to $1,120 per employee per year.</p></div>
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">02</div><h4>Census Collection</h4><p>EHP's in-house CPA team assists with collecting the employee census via email and phone outreach — completely hands-off for the employer.</p></div>
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">03</div><h4>Proposal</h4><p>Within 24 hours of receiving the census, EHP presents employer FICA savings and individual employee tax allocations with real numbers tailored to your group — at no cost.</p></div>
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">04</div><h4>Enrollment</h4><p>Flexible enrollment options — virtual, onsite, or self-enrollment — with EHP managing all employee education and communication to achieve 85–90% participation.</p></div>
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">05</div><h4>Program Launch</h4><p>EHP's onboarding team coordinates the launch date, ensures seamless payroll integration, and confirms all plan documents and policies are in place.</p></div>
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">06</div><h4>Ongoing Support</h4><p>Continued customer service, mid-year employee additions, and monthly reporting so you always know the program is performing.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA (EHP) -->
+    <section class="cta-banner">
+      <div class="cta-photo-bg"></div>
+      <div class="container">
+        <div class="cta-inner">
+          <h2>Ready to Add <em>Better Benefits at Zero Cost?</em></h2>
+          <p>Contact Ascend Benefits today for a free, no-obligation proposal — with real numbers tailored to your group.</p>
+          <div class="cta-actions">
+            <a href="/contact" class="btn-primary" style="font-size:1rem;padding:16px 32px;">Get My Free Proposal</a>
+            <a href="#programs" class="btn-outline">Compare to WellthCare</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- ══════════════════════ END PROGRAM 1: EHP ══════════════════════ -->
+
+  <!-- ══════════════════════ PROGRAM 2: WELLTHCARE ══════════════════════ -->
+  <div class="program-panel" id="panel-wellthcare">
+
+    <!-- COMPLIANCE / TRUST BAR -->
+    <div class="compliance-bar teal-bar">
+      <div class="container">
+        <div class="compliance-inner">
+          <div class="compliance-item light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>$0 Net Cost — Section 125 / FICA Funded</div>
+          <div class="compliance-item light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Patent-Pending Technology</div>
+          <div class="compliance-item light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ERISA-Compliant</div>
+          <div class="compliance-item light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Works With or Without Major Medical</div>
+          <div class="compliance-item light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Zero Disruption to Current Plans</div>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- WHAT IS WELLTHCARE -->
+    <section class="what-section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;" class="fade-up">
+          <span class="section-label">What Is WellthCare?</span>
+          <h2 class="section-title">Healthcare That Pays You Back</h2>
+        </div>
+        <div class="what-grid fade-up">
+          <div class="what-photo-col">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Employee reviewing WellthCare Health-to-Wealth benefits" loading="lazy" />
+            <div class="what-photo-overlay">
+              <div class="what-stat-big">$0</div>
+              <div class="what-stat-label">Copay &amp; deductible<br>on covered care</div>
+            </div>
+          </div>
+          <div class="what-content-col">
+            <p>WellthCare is a <strong>patent-pending Health-to-Wealth™ benefit system</strong> that gives employees $0-copay, $0-deductible urgent care, primary care, prescriptions, labs, and mental health support — while automatically funding a <strong>Pension</strong> and a rewards balance every time an employee takes a verified preventive action.</p>
+            <p>Like EHP, WellthCare is funded through the <strong>same Section 125 Cafeteria Plan / FICA tax savings mechanism</strong> — the pre-tax wellness deduction lowers taxable income for the employee, which lowers the employer's FICA match, and that tax savings is what funds the $0-copay care, Pension contributions, and Store rewards. WellthCare's own marketing materials don't lead with this explanation, but the underlying tax structure is the same one that funds EHP.</p>
+            <p>Employees are supported by nurse practitioners and a dedicated care team; hospital bills for WellthCare members are reduced by an average of <strong>70%</strong>. Behind the scenes, the platform tracks <strong>77+ verified preventive actions</strong> mapped to validated CPT codes, and automatically funds each employee's Pension and Store balance in real time — with full audit-ready compliance records.</p>
+            <div class="highlight-list">
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Funded the same way as EHP</strong> — pre-tax Section 125 / FICA savings, at $0 net cost</p></div>
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Works with or without major medical</strong> — fits employers who can't afford traditional insurance too</p></div>
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Zero disruption</strong> to any existing healthcare or retirement plan</p></div>
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>HR handles <strong>zero care or billing questions</strong> — WellthCare's team manages it directly</p></div>
+              <div class="highlight-item"><div class="hi-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>ERISA-reviewed by outside counsel; audit-ready reporting included</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY IT EXISTS -->
+    <section class="law-section">
+      <div class="law-photo-bg"></div>
+      <div class="container">
+        <div class="law-inner">
+          <div class="law-header fade-up">
+            <span class="section-label" style="color:var(--gold);">Why WellthCare Exists</span>
+            <h2 class="section-title">Three Broken Systems. <em>One Aligned Solution.</em></h2>
+            <p>Traditional healthcare pays only after people get sick. High deductibles cause employees to delay care until it's more expensive. WellthCare flips that incentive — rewarding preventive action before claims happen.</p>
+          </div>
+          <div class="law-callout fade-up">
+            <h3>How the Pieces Connect</h3>
+            <div class="law-steps">
+              <div class="law-step">
+                <div class="law-step-num">1</div>
+                <div>
+                  <h4>Preventive actions reduce future claims</h4>
+                  <p>Employees use $0-copay care first instead of avoiding it or triggering major medical claims later.</p>
+                </div>
+              </div>
+              <div class="law-step">
+                <div class="law-step-num">2</div>
+                <div>
+                  <h4>Lower claims create real savings</h4>
+                  <p>Fewer, cheaper claims mean less waste and, over time, better renewal outcomes on the major medical plan.</p>
+                </div>
+              </div>
+              <div class="law-step">
+                <div class="law-step-num">3</div>
+                <div>
+                  <h4>Savings convert into employee wealth</h4>
+                  <p>Store rewards and Pension contributions turn preventive health behavior into visible, tax-advantaged financial security — without increasing employer costs.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="law-quote fade-up">
+            <p>"WellthCare™ is fully compliant and unique. It addresses medical care needs not covered under traditional coverage and it includes wealth accumulation features."</p>
+            <cite>— Darcy L. Hitesman, Founder, Hitesman Law, P.A. · Co-author, ERISA Compliance for Health &amp; Welfare Plans</cite>
+          </div>
+          <p class="law-footnote fade-up">WellthCare is a third-party Health-to-Wealth™ benefit platform, funded through the same Section 125 Cafeteria Plan / FICA tax savings structure as EHP — WellthCare's own marketing materials don't explain this mechanism, but Ascend administers it the same way. Program features and figures on this page reflect WellthCare's published program materials; a personalized proposal with real numbers for your group is available during your consultation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+      <div class="container">
+        <div class="how-header fade-up">
+          <span class="section-label">How It Works</span>
+          <h2 class="section-title">The Same Tax Engine — More Built On Top</h2>
+          <p>WellthCare runs on the same pre-tax Section 125 / FICA structure that funds EHP, then layers healthcare, prevention, and retirement on top of it. Employees never see the complexity — they just use the app, take care of themselves, and watch their benefits grow.</p>
+        </div>
+        <div class="how-components">
+          <div class="how-card fade-up">
+            <div class="how-card-label">Component 01</div>
+            <h4>Section 125 / FICA Funding</h4>
+            <p>The same pre-tax Cafeteria Plan structure used by EHP. The wellness benefit value is deducted pre-tax, lowering taxable income for the employee and the employer's FICA match — at $0 net cost to either side.</p>
+          </div>
+          <div class="how-card fade-up">
+            <div class="how-card-label">Component 02</div>
+            <h4>WellthCare Store™</h4>
+            <p>Instant, real-dollar rewards deposited every time an employee completes a verified preventive action — free money employees can spend, funded by the tax savings, not a new employer expense.</p>
+          </div>
+          <div class="how-card fade-up">
+            <div class="how-card-label">Component 03</div>
+            <h4>Automatic Pension</h4>
+            <p>Every verified preventive action also contributes to the employee's Pension — turning everyday health habits into long-term retirement savings.</p>
+          </div>
+          <div class="how-card fade-up">
+            <div class="how-card-label">Component 04</div>
+            <h4>Readiness Index™</h4>
+            <p>A proprietary, patent-pending report that shows employers real utilization data and tells them if — and when — switching or adding plans makes financial sense. No assumptions, just data.</p>
+          </div>
+        </div>
+        <div class="how-flow fade-up">
+          <div class="how-step"><div class="how-step-num">1</div><h5>Employee Takes Action</h5><p>Preventive care, screening, or check-in</p></div>
+          <div class="how-step"><div class="how-step-num">2</div><h5>Action Verified</h5><p>Matched to 1 of 77+ validated CPT codes</p></div>
+          <div class="how-step"><div class="how-step-num">3</div><h5>Store + Pension Fund</h5><p>Reward and retirement balance update automatically</p></div>
+          <div class="how-step"><div class="how-step-num">4</div><h5>Data Rolls Up</h5><p>Utilization feeds the Readiness Index™</p></div>
+          <div class="how-step"><div class="how-step-num">5</div><h5>Employer Sees Savings</h5><p>Clarity on renewal decisions — no pressure</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWO EMPLOYER REALITIES -->
+    <section class="qualify-section" style="padding-bottom:0;">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;" class="fade-up">
+          <span class="section-label">Who It's For</span>
+          <h2 class="section-title">Two Employer Realities. One System That Works for Both.</h2>
+        </div>
+        <div class="advantages-grid fade-up">
+          <div class="advantage-col">
+            <h3>Employers Without Major Medical</h3>
+            <p style="font-size:0.86rem;color:var(--text-mid);line-height:1.65;margin-bottom:16px;">When traditional insurance isn't affordable, WellthCare delivers healthcare and retirement benefits employees will actually use — without BUCA-level cost.</p>
+            <div class="advantage-list">
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>$0 copay, $0 deductible</strong> urgent care, primary care, prescriptions, labs, and mental health support</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Automatic Pension contributions</strong> for every enrolled employee</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Free money</strong> in the WellthCare Store™</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>Zero out-of-pocket</strong> — a real hiring edge without a BUCA plan</p></div>
+            </div>
+          </div>
+          <div class="advantage-col">
+            <h3>Employers With Major Medical</h3>
+            <p style="font-size:0.86rem;color:var(--text-mid);line-height:1.65;margin-bottom:16px;">When premiums keep rising, WellthCare works alongside your existing plan with no disruption — capturing the everyday care employees currently avoid.</p>
+            <div class="advantage-list">
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p><strong>$0-copay care</strong> gets used first — instead of delayed until it becomes a major medical claim</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Leads to <strong>fewer claims, less waste, healthier employees</strong>, and better retention</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>Over time, <strong>Readiness Index™ data</strong> shows real savings and whether switching plans makes sense</p></div>
+              <div class="advantage-item"><div class="adv-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><p>"80% of physicians report patients delay or refuse care due to cost" — <em>Physicians Advocacy Institute</em></p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT EMPLOYEES RECEIVE -->
+    <section class="services-section">
+      <div class="container">
+        <div class="services-header fade-up">
+          <span class="section-label">What Employees Receive</span>
+          <h2 class="section-title">Benefits They Actually Use — and Feel Good About</h2>
+          <p>Personalized care plans, supported by nurse practitioners, plus the Store and Pension rewards that make prevention pay off.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Primary and urgent care" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>$0 Copay, $0 Deductible Care</h4><p>Urgent care, primary care, prescriptions, labs, and mental health support — personalized care plans supported by nurse practitioners.</p></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80" alt="Automatic pension savings" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Automatic Pension</h4><p>Every verified preventive action contributes toward a Pension — turning everyday health habits into long-term retirement security.</p></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80" alt="WellthCare Store rewards" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>WellthCare Store™</h4><p>Instant, real-dollar rewards for preventive actions — free money employees can spend, tracked automatically by the platform.</p></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&q=80" alt="Vibrix pharmacy" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>WellthCare Rx™, by Vibrix</h4><p>Transparent, pass-through pharmacy pricing with home delivery and no spread pricing — no PBM middlemen.</p><span class="service-stat">Typically 20–40% lower than traditional PBM pricing</span></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=600&q=80" alt="Nurse practitioner support" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Nurse Practitioner Support</h4><p>Personalized care navigation from a dedicated clinical team — WellthCare handles care and billing questions so HR doesn't have to.</p></div>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-card-photo"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80" alt="Hospital bill reduction" loading="lazy" /><div class="service-card-photo-overlay"></div></div>
+            <div class="service-card-body"><h4>Hospital Bill Reduction</h4><p>When hospital care is needed, WellthCare's navigation and bill-review process reduces the resulting bill.</p><span class="service-stat">70% average reduction</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE ECOSYSTEM -->
+    <section class="qualify-section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:48px;" class="fade-up">
+          <span class="section-label">The WellthCare Ecosystem™</span>
+          <h2 class="section-title">One Platform. Multiple Problems Solved.</h2>
+        </div>
+        <div class="qualify-cards fade-up" style="max-width:820px;margin:0 auto;">
+          <div class="qualify-card"><div class="qual-num">01</div><div><h4>WellthCare Store™</h4><p>Instant, real-dollar rewards for verified preventive actions.</p></div></div>
+          <div class="qualify-card"><div class="qual-num">02</div><div><h4>Readiness Index™ (Patent-Pending)</h4><p>Converts real employee usage data into a report on when — and if — switching or adding plans makes sense.</p></div></div>
+          <div class="qualify-card"><div class="qual-num">03</div><div><h4>WellthCare Medicare™</h4><p>Lets Medicare-eligible employees keep their Store rewards and Pension while the employer sheds high-cost, high-risk lives from the group plan.</p></div></div>
+          <div class="qualify-card"><div class="qual-num">04</div><div><h4>WellthCare Complete™</h4><p>An optional, fully integrated self-funded alternative to BUCA — available once Readiness Index™ data supports the move. Typically 30–45% lower cost vs. BUCA.</p></div></div>
+        </div>
+        <div class="qualify-note fade-up" style="max-width:820px;margin:24px auto 0;text-align:center;"><strong>Not ready to switch plans?</strong> Start with WellthCare at no out-of-pocket cost and no plan disruption — the Readiness Index™ will show you if and when switching makes sense.</div>
+      </div>
+    </section>
+
+    <!-- GETTING STARTED -->
+    <section class="onboarding-section">
+      <div class="container">
+        <div class="onboarding-header fade-up">
+          <span class="section-label">Getting Started</span>
+          <h2 class="section-title">No Disruption. No Pressure. Just Clarity.</h2>
+          <p>WellthCare's onboarding is designed to prove value before asking for anything to change.</p>
+        </div>
+        <div class="onboarding-steps">
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">01</div><h4>30-Minute Consultation</h4><p>We walk through how WellthCare fits your current plan (or fills the gap if you don't have one), with personalized Pension and Store projections for your group.</p></div>
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">02</div><h4>Employees Start Using It</h4><p>No open enrollment disruption — employees get access to $0-copay care, Store rewards, and Pension contributions right away.</p></div>
+          <div class="onboarding-step fade-up"><div class="onboarding-step-num">03</div><h4>Readiness Index™ at Renewal</h4><p>Once real usage data is in, WellthCare shows you exactly what you're saving — and whether Medicare, Pharmacy, or Complete make sense for your group next.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA (WELLTHCARE) -->
+    <section class="cta-banner">
+      <div class="cta-photo-bg"></div>
+      <div class="container">
+        <div class="cta-inner">
+          <h2>This Isn't <em>Insurance as Usual.</em></h2>
+          <p>Schedule a 30-minute consultation for personalized Pension &amp; Store projections — with no disruption to your current plan.</p>
+          <div class="cta-actions">
+            <a href="https://reps.wellthcare.com/#988ef669feee4201b0007c1cb10859b2" target="_blank" rel="noopener" class="btn-primary" style="font-size:1rem;padding:16px 32px;">Schedule a Consultation</a>
+            <a href="#programs" class="btn-outline">Compare to EHP</a>
+          </div>
+          <p class="cta-fineprint">Opens WellthCare's scheduling page in a new tab · 30-minute call · No disruption to your current plan</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <!-- ══════════════════════ END PROGRAM 2: WELLTHCARE ══════════════════════ -->
 
   <!-- FOOTER -->
   <footer>
@@ -828,11 +1103,10 @@
             <div class="logo-text"><span class="logo-name" style="color:var(--white);">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
           </a>
           <p>Smarter Benefits. Stronger Businesses. Independent benefits consulting for employers with 2–250 employees across Tennessee, Alabama, Georgia, Florida, Texas, and all 50 states.</p>
-          
         </div>
-        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
+        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Benefit Packages</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
         <div class="footer-col"><h5>Services</h5><a href="/employer-coverage">Level-Funded Plans</a><a href="/employer-coverage">Self-Funded / ERISA</a><a href="/reference-based-pricing">Reference-Based Pricing</a><a href="/employer-coverage">Stop-Loss Insurance</a><a href="/employer-coverage">Dental &amp; Vision</a><a href="/employer-coverage">Life &amp; Disability</a></div>
-        <div class="footer-col"><h5>Learn More</h5><a href="/employer-coverage">What Is Level-Funding?</a><a href="/reference-based-pricing">What Is RBP?</a><a href="/preventive-care">EHP Preventive Care</a><a href="/about">About Chase Webb</a><a href="/contact">Free Analysis</a></div>
+        <div class="footer-col"><h5>Learn More</h5><a href="/employer-coverage">What Is Level-Funding?</a><a href="/reference-based-pricing">What Is RBP?</a><a href="/preventive-care">EHP &amp; WellthCare Preventive Care</a><a href="/about">About Chase Webb</a><a href="/contact">Free Analysis</a></div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Ascend Benefits Consulting Group. All rights reserved. | IRS, HIPAA, ERISA &amp; ACA Compliant</p>
@@ -848,6 +1122,13 @@
       document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
       document.querySelector('[onclick="showTab(\''+tab+'\')"]').classList.add('active');
       document.getElementById('tab-'+tab).classList.add('active');
+    }
+    function showProgram(program){
+      document.querySelectorAll('.program-tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.program-panel').forEach(p=>p.classList.remove('active'));
+      document.querySelector('[onclick="showProgram(\''+program+'\')"]').classList.add('active');
+      document.getElementById('panel-'+program).classList.add('active');
+      document.querySelectorAll('#panel-'+program+' .fade-up').forEach(el=>el.classList.add('visible'));
     }
     const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1});
     document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
