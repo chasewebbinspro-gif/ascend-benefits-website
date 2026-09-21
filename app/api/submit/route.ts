@@ -37,7 +37,7 @@ function buildEmailHtml(data: Record<string, unknown>): string {
     row('Total W-2 Employees', data.totalW2Employees as string),
     row('Federal EIN', data.federalEIN as string),
     row('Business Phone', data.businessPhone as string),
-    row('SID Code', data.sidCode as string),
+    row('SIC Code', data.sidCode as string),
   ].join(''))
 
   const s2 = section('2. Owner / HR Contact', [
@@ -94,6 +94,40 @@ function buildEmailHtml(data: Record<string, unknown>): string {
     )
     .join('')
 
+  const depRows = employees
+    .filter((e) => e.firstName || e.lastName)
+    .flatMap((e) =>
+      ((e as unknown as { dependentDetails?: Array<Record<string, string>> }).dependentDetails || []).map(
+        (d) =>
+          `<tr>
+            <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${e.firstName} ${e.lastName}</td>
+            <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${d.relationship || '—'}</td>
+            <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${d.firstName || ''} ${d.lastName || ''}</td>
+            <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${d.dob || '—'}</td>
+            <td style="padding:6px 10px;font-size:12px;border-bottom:1px solid #e5e7eb;font-family:'Trebuchet MS',sans-serif;">${d.gender || '—'}</td>
+          </tr>`
+      )
+    )
+    .join('')
+
+  const dependentsTable = depRows
+    ? `<table style="width:100%;border-collapse:collapse;border:1px solid #e5e7eb;border-top:none;">
+        <thead>
+          <tr style="background:#f0f2f7;">
+            <th colspan="5" style="padding:8px 10px;font-size:12px;text-align:left;font-family:Georgia,serif;color:#0A1F44;">Dependents</th>
+          </tr>
+          <tr style="background:#f8f9fb;">
+            <th style="padding:6px 10px;font-size:11px;text-align:left;color:#0A1F44;">Employee</th>
+            <th style="padding:6px 10px;font-size:11px;text-align:left;color:#0A1F44;">Relationship</th>
+            <th style="padding:6px 10px;font-size:11px;text-align:left;color:#0A1F44;">Dependent Name</th>
+            <th style="padding:6px 10px;font-size:11px;text-align:left;color:#0A1F44;">DOB</th>
+            <th style="padding:6px 10px;font-size:11px;text-align:left;color:#0A1F44;">Gender</th>
+          </tr>
+        </thead>
+        <tbody>${depRows}</tbody>
+      </table>`
+    : ''
+
   const censusTable = employees.filter((e) => e.firstName || e.lastName).length > 0
     ? `<div style="margin-bottom:28px;">
         <div style="background:#0A1F44;padding:10px 16px;border-radius:6px 6px 0 0;">
@@ -114,6 +148,7 @@ function buildEmailHtml(data: Record<string, unknown>): string {
           </thead>
           <tbody>${employeeRows}</tbody>
         </table>
+        ${dependentsTable}
         <table style="width:100%;border-collapse:collapse;border:1px solid #e5e7eb;border-top:none;">
           <tbody>
             ${row('Full-Time Count', data.fullTimeCount as string)}
@@ -222,6 +257,26 @@ function buildCensusCsv(data: Record<string, unknown>): string {
   return [header, ...rows].join('\r\n')
 }
 
+function buildDependentsCsv(data: Record<string, unknown>): string {
+  const header = [
+    'Employee First Name', 'Employee Last Name', 'Relationship',
+    'Dependent First Name', 'Dependent Last Name', 'Date of Birth', 'Gender',
+  ].join(',')
+  const employees = data.employees as Array<Record<string, unknown>>
+  const rows = employees
+    .filter((e) => e.firstName || e.lastName)
+    .flatMap((e) =>
+      ((e.dependentDetails as Array<Record<string, string>>) || []).map((d) =>
+        [
+          csvEscape(e.firstName as string), csvEscape(e.lastName as string),
+          csvEscape(d.relationship), csvEscape(d.firstName), csvEscape(d.lastName),
+          csvEscape(d.dob), csvEscape(d.gender),
+        ].join(',')
+      )
+    )
+  return [header, ...rows].join('\r\n')
+}
+
 function buildCompanyInfoCsv(data: Record<string, unknown>): string {
   const header = 'Field,Value'
 
@@ -238,7 +293,7 @@ function buildCompanyInfoCsv(data: Record<string, unknown>): string {
     ['Total Employees', data.totalW2Employees as string],
     ['EIN', data.federalEIN as string],
     ['Business Phone', data.businessPhone as string],
-    ['SID Code', data.sidCode as string],
+    ['SIC Code', data.sidCode as string],
     ['Owner Name', `${data.ownerFirstName} ${data.ownerLastName}`],
     ['Owner Title', data.ownerTitle as string],
     ['Owner Phone', data.ownerPhone as string],
@@ -292,6 +347,14 @@ export async function POST(request: NextRequest) {
         content: Buffer.from(companyInfoCsv, 'utf-8').toString('base64'),
       },
     ]
+
+    const dependentsCsv = buildDependentsCsv(data)
+    if (dependentsCsv.includes('\r\n')) {
+      attachments.push({
+        filename: `${companyName.replace(/[^a-zA-Z0-9]/g, '_')}_dependents.csv`,
+        content: Buffer.from(dependentsCsv, 'utf-8').toString('base64'),
+      })
+    }
 
     // Also attach the uploaded census file if provided
     if (data.censusFileBase64 && data.censusFileName) {
