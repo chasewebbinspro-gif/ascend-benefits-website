@@ -190,7 +190,7 @@ export default function Step1CompanyInfo({ formData, onChange, errors }: Props) 
           </div>
 
           <div>
-            <label className="form-label">SID Code</label>
+            <label className="form-label">SIC Code</label>
             <input
               type="text"
               className="form-input"
