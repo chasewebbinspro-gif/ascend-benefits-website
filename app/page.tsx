@@ -46,6 +46,38 @@ function validateStep(step: number, data: FormData): Record<string, string> {
     if (!data.employeePayType) errs.employeePayType = 'Pay type is required'
   }
 
+  if (step === 5) {
+    data.employees.forEach((emp, i) => {
+      const hasData = emp.firstName.trim() || emp.lastName.trim() || emp.dob || emp.coverageTier || emp.dependents
+      if (!hasData) return
+      const n = parseInt(emp.dependents, 10) || 0
+      const who = `${emp.firstName} ${emp.lastName}`.trim() || `Employee ${i + 1}`
+
+      if ((emp.coverageTier === 'SP' || emp.coverageTier === 'Ch') && n < 1) {
+        errs[`employees.${i}.dependents`] = `${who}: coverage tier is ${emp.coverageTier}, so enter the number of dependents`
+      }
+      if (n > 0 && emp.coverageTier === 'EE') {
+        errs[`employees.${i}.coverageTier`] = `${who}: tier is EE but dependents were entered. Change the tier or set dependents to 0`
+      }
+
+      const deps = emp.dependentDetails || []
+      let spouseCount = 0
+      for (let d = 0; d < n; d++) {
+        const dep = deps[d]
+        const label = `${who}, dependent ${d + 1}`
+        if (!dep || !dep.relationship) errs[`employees.${i}.dep.${d}.relationship`] = `${label}: select Spouse or Child`
+        else if (dep.relationship === 'Spouse') spouseCount++
+        if (!dep || !dep.firstName.trim()) errs[`employees.${i}.dep.${d}.firstName`] = `${label}: first name is required`
+        if (!dep || !dep.lastName.trim()) errs[`employees.${i}.dep.${d}.lastName`] = `${label}: last name is required`
+        if (!dep || !dep.dob) errs[`employees.${i}.dep.${d}.dob`] = `${label}: date of birth is required`
+        if (!dep || !dep.gender) errs[`employees.${i}.dep.${d}.gender`] = `${label}: gender is required`
+      }
+      if (spouseCount > 1) errs[`employees.${i}.spouse`] = `${who}: only one spouse can be listed`
+    })
+    if (Object.keys(errs).length > 0)
+      errs.employees = 'Please complete the dependent information highlighted below before continuing.'
+  }
+
   if (step === 6) {
     if (data.priorities.length === 0) errs.priorities = 'Please select at least one priority'
   }
@@ -66,6 +98,9 @@ export default function Home() {
     setErrors((prev) => {
       const next = { ...prev }
       delete next[field as string]
+      if (field === 'employees') {
+        Object.keys(next).forEach((k) => { if (k.startsWith('employees.')) delete next[k] })
+      }
       return next
     })
   }
