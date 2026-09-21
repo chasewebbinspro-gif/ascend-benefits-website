@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { FormData, EmployeeRow } from '../types'
+import { FormData, EmployeeRow, DependentRow, emptyDependent } from '../types'
 
 const US_STATES = [
   'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA',
@@ -18,18 +18,44 @@ interface Props {
 }
 
 const emptyRow = (): EmployeeRow => ({
-  coverageTier: '', firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '',
+  coverageTier: '', firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '', dependentDetails: [],
 })
 
 export default function Step5Census({ formData, onChange, errors }: Props) {
   const fileRef = useRef<HTMLInputElement>(null)
 
+  const errClass = (key: string) => (errors[key] ? ' border-red-400 ring-1 ring-red-300' : '')
+
   const updateRow = (index: number, field: keyof EmployeeRow, value: string) => {
-    const updated = formData.employees.map((row, i) =>
-      i === index ? { ...row, [field]: value } : row
-    )
+    const updated = formData.employees.map((row, i) => {
+      if (i !== index) return row
+      const next = { ...row, [field]: value }
+      if (field === 'dependents') {
+        // Keep the dependent detail list in sync with the number entered
+        const n = Math.min(Math.max(parseInt(value, 10) || 0, 0), 12)
+        const current = row.dependentDetails || []
+        next.dependentDetails =
+          n <= current.length
+            ? current.slice(0, n)
+            : [...current, ...Array.from({ length: n - current.length }, emptyDependent)]
+      }
+      return next
+    })
     onChange('employees', updated)
   }
+
+  const updateDependent = (empIndex: number, depIndex: number, field: keyof DependentRow, value: string) => {
+    const updated = formData.employees.map((row, i) => {
+      if (i !== empIndex) return row
+      const deps = (row.dependentDetails || []).map((d, j) => (j === depIndex ? { ...d, [field]: value } : d))
+      return { ...row, dependentDetails: deps }
+    })
+    onChange('employees', updated)
+  }
+
+  const errorMessages = Object.entries(errors)
+    .filter(([k]) => k.startsWith('employees.'))
+    .map(([, v]) => v)
 
   const addRow = () => {
     onChange('employees', [...formData.employees, emptyRow()])
@@ -57,6 +83,15 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
       <p className="step-subheader">
         Enter employee information manually or upload a spreadsheet — either works.
       </p>
+
+      {errors.employees && (
+        <div className="mb-4 rounded-lg border border-red-300 bg-red-50 p-4">
+          <p className="text-sm font-semibold text-red-700 mb-1">{errors.employees}</p>
+          <ul className="list-disc pl-5 text-xs text-red-600 space-y-0.5">
+            {errorMessages.map((m, i) => <li key={i}>{m}</li>)}
+          </ul>
+        </div>
+      )}
 
       {/* File Upload */}
       <div className="section-card">
@@ -136,9 +171,10 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
           </div>
 
           {formData.employees.map((row, i) => (
-            <div key={i} className="grid grid-cols-9 gap-1.5 mb-1.5 items-center group">
+            <div key={i} className="mb-1.5">
+            <div className="grid grid-cols-9 gap-1.5 items-center group">
               <select
-                className="form-select text-xs py-1.5"
+                className={'form-select text-xs py-1.5' + errClass(`employees.${i}.coverageTier`)}
                 value={row.coverageTier}
                 onChange={(e) => updateRow(i, 'coverageTier', e.target.value)}
               >
@@ -207,9 +243,10 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
               <div className="flex gap-1 items-center">
                 <input
                   type="number"
-                  className="form-input text-xs py-1.5 w-full"
+                  className={'form-input text-xs py-1.5 w-full' + errClass(`employees.${i}.dependents`)}
                   placeholder="0"
                   min="0"
+                  max="12"
                   value={row.dependents}
                   onChange={(e) => updateRow(i, 'dependents', e.target.value)}
                 />
@@ -226,6 +263,70 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
                   </button>
                 )}
               </div>
+            </div>
+
+            {(parseInt(row.dependents, 10) || 0) > 0 && (
+              <div className="mt-1.5 mb-3 ml-2 rounded-lg border border-gold/50 bg-amber-50/40 p-3">
+                <p className="text-xs font-semibold text-navy mb-2">
+                  Dependent details for {`${row.firstName} ${row.lastName}`.trim() || `Employee ${i + 1}`}
+                  <span className="required-star">*</span>
+                  <span className="font-normal text-gray-500"> — spouse and/or children covered under this employee</span>
+                </p>
+                {errors[`employees.${i}.spouse`] && (
+                  <p className="error-text mb-1">{errors[`employees.${i}.spouse`]}</p>
+                )}
+                <div className="grid grid-cols-5 gap-1.5 mb-1 text-[10px] font-semibold text-gray-500 uppercase tracking-wide px-1">
+                  <div>Relationship</div>
+                  <div>First Name</div>
+                  <div>Last Name</div>
+                  <div>DOB</div>
+                  <div>Gender</div>
+                </div>
+                {(row.dependentDetails || []).map((dep, d) => (
+                  <div key={d} className="grid grid-cols-5 gap-1.5 mb-1.5 items-center">
+                    <select
+                      className={'form-select text-xs py-1.5' + errClass(`employees.${i}.dep.${d}.relationship`)}
+                      value={dep.relationship}
+                      onChange={(e) => updateDependent(i, d, 'relationship', e.target.value)}
+                    >
+                      <option value="">Select…</option>
+                      <option value="Spouse">Spouse</option>
+                      <option value="Child">Child</option>
+                    </select>
+                    <input
+                      type="text"
+                      className={'form-input text-xs py-1.5' + errClass(`employees.${i}.dep.${d}.firstName`)}
+                      placeholder="First"
+                      value={dep.firstName}
+                      onChange={(e) => updateDependent(i, d, 'firstName', e.target.value)}
+                    />
+                    <input
+                      type="text"
+                      className={'form-input text-xs py-1.5' + errClass(`employees.${i}.dep.${d}.lastName`)}
+                      placeholder="Last"
+                      value={dep.lastName}
+                      onChange={(e) => updateDependent(i, d, 'lastName', e.target.value)}
+                    />
+                    <input
+                      type="date"
+                      className={'form-input text-xs py-1.5' + errClass(`employees.${i}.dep.${d}.dob`)}
+                      value={dep.dob}
+                      onChange={(e) => updateDependent(i, d, 'dob', e.target.value)}
+                    />
+                    <select
+                      className={'form-select text-xs py-1.5' + errClass(`employees.${i}.dep.${d}.gender`)}
+                      value={dep.gender}
+                      onChange={(e) => updateDependent(i, d, 'gender', e.target.value)}
+                    >
+                      <option value="">—</option>
+                      <option value="M">M</option>
+                      <option value="F">F</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                ))}
+              </div>
+            )}
             </div>
           ))}
         </div>
