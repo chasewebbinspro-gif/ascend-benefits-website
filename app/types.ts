@@ -1,3 +1,15 @@
+export interface DependentRow {
+  relationship: string // 'Spouse' | 'Child'
+  firstName: string
+  lastName: string
+  dob: string
+  gender: string
+}
+
+export const emptyDependent = (): DependentRow => ({
+  relationship: '', firstName: '', lastName: '', dob: '', gender: '',
+})
+
 export interface EmployeeRow {
   coverageTier: string
   firstName: string
@@ -8,6 +20,7 @@ export interface EmployeeRow {
   zip: string
   ftPt: string
   dependents: string
+  dependentDetails: DependentRow[]
 }
 
 export interface FormData {
@@ -102,7 +115,7 @@ export const initialFormData: FormData = {
   payrollContactName: '',
 
   employees: [
-    { coverageTier: '', firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '' },
+    { coverageTier: '', firstName: '', lastName: '', dob: '', gender: '', state: '', zip: '', ftPt: '', dependents: '', dependentDetails: [] },
   ],
   fullTimeCount: '',
   partTimeCount: '',
