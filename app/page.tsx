@@ -47,6 +47,13 @@ function validateStep(step: number, data: FormData): Record<string, string> {
   }
 
   if (step === 5) {
+    const filledEmployees = data.employees.filter(
+      (emp) => emp.firstName.trim() || emp.lastName.trim() || emp.dob || emp.coverageTier
+    )
+    if (filledEmployees.length < 2 && !data.censusFileName) {
+      errs.employeeCount = 'Please enter at least 2 employees in the census (or upload a census file).'
+    }
+
     data.employees.forEach((emp, i) => {
       const hasData = emp.firstName.trim() || emp.lastName.trim() || emp.dob || emp.coverageTier || emp.dependents
       if (!hasData) return
@@ -74,7 +81,7 @@ function validateStep(step: number, data: FormData): Record<string, string> {
       }
       if (spouseCount > 1) errs[`employees.${i}.spouse`] = `${who}: only one spouse can be listed`
     })
-    if (Object.keys(errs).length > 0)
+    if (Object.keys(errs).length > 0 && !errs.employees)
       errs.employees = 'Please complete the dependent information highlighted below before continuing.'
   }
 
