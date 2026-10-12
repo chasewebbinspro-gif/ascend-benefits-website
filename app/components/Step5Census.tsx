@@ -81,8 +81,14 @@ export default function Step5Census({ formData, onChange, errors }: Props) {
     <div>
       <h2 className="step-header">Employee Census</h2>
       <p className="step-subheader">
-        Enter employee information manually or upload a spreadsheet — either works.
+        Enter employee information manually or upload a spreadsheet — either works. Please include at least 2 employees.
       </p>
+
+      {errors.employeeCount && (
+        <div className="mb-4 rounded-lg border border-red-300 bg-red-50 p-4">
+          <p className="text-sm font-semibold text-red-700">{errors.employeeCount}</p>
+        </div>
+      )}
 
       {errors.employees && (
         <div className="mb-4 rounded-lg border border-red-300 bg-red-50 p-4">
