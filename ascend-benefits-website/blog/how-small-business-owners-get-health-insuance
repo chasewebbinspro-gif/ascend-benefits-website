@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Do Small Business Owners Get Health Insurance? (2026 Guide)</title>
+  <meta name="description" content="Small business owners can get health insurance through a group plan, level-funded plan, RBP plan, QSEHRA or ICHRA, or individual coverage. Compare every option for 2026." />
+  <link rel="canonical" href="https://ascendbenefitscg.com/blog/how-small-business-owners-get-health-insurance" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--navy:#0D1F3C;--navy-mid:#162d56;--gold:#C9A84C;--gold-light:#e8c96a;--white:#ffffff;--off-white:#F8F6F1;--gray-50:#f8f9fc;--gray-600:#4b5563;--gray-800:#1f2937;--text-mid:#3a4a63;--border:rgba(201,168,76,0.2);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden;}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+    /* TICKER */
+    .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
+    .ticker-track{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap;}
+    .ticker-track span{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+    @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(13,31,60,0.08);box-shadow:0 2px 20px rgba(13,31,60,0.07);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-mark{width:38px;height:38px;background:#0D1F3C;border-radius:6px;display:flex;align-items:center;justify-content:center;}
+    .logo-mark svg{width:22px;height:22px;}
+    .logo-text{display:flex;flex-direction:column;}
+    .logo-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#0D1F3C;line-height:1.1;}
+    .logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;}
+    nav{display:flex;align-items:center;gap:2px;}
+    nav a{font-size:0.78rem;font-weight:500;color:#3a4a63;text-decoration:none;padding:6px 8px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    nav a:hover,nav a.active{color:#0D1F3C;background:#F8F6F1;}
+    .header-cta{display:flex;align-items:center;gap:10px;}
+    .btn-nav{display:inline-flex;align-items:center;background:#C9A84C;color:#0D1F3C;font-weight:700;font-size:0.82rem;padding:9px 16px;border-radius:4px;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+    .btn-nav:hover{background:#e2c06a;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:#0D1F3C;border-radius:2px;}
+    .mobile-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid rgba(201,168,76,0.2);padding:16px 24px 24px;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:#3a4a63;text-decoration:none;padding:12px 0;border-bottom:1px solid #F8F6F1;}
+
+    /* ARTICLE */
+    .article-hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3660 60%,#0f2847 100%);padding:72px 0 60px;}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;}
+    .breadcrumb a{color:var(--gold);text-decoration:none;}
+    .article-category{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:20px;}
+    .article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);color:var(--white);line-height:1.2;margin-bottom:20px;max-width:760px;}
+    .article-meta{font-size:14px;color:rgba(255,255,255,0.55);}
+    .article-body{padding:64px 0 80px;}
+    .article-layout{display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start;}
+    .article-content h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin:40px 0 16px;}
+    .article-content h2:first-child{margin-top:0;}
+    .article-content p{font-size:16px;color:var(--gray-600);line-height:1.8;margin-bottom:20px;}
+    .article-content ul{margin:0 0 20px 24px;}
+    .article-content li{font-size:16px;color:var(--gray-600);line-height:1.8;margin-bottom:10px;}
+    .article-content strong{color:var(--navy);font-weight:700;}
+    .callout{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-left:4px solid var(--gold);padding:24px 28px;margin:36px 0;border-radius:0 8px 8px 0;}
+    .callout p{color:rgba(255,255,255,0.9);font-size:16px;font-style:italic;line-height:1.7;margin:0 0 8px;}
+    .callout .source{color:rgba(255,255,255,0.45);font-size:13px;font-style:normal;}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;}
+    .stat-box{background:var(--gray-50);border:1px solid #e5e7eb;border-top:3px solid var(--gold);padding:20px 16px;text-align:center;border-radius:8px;}
+    .stat-box .num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700;display:block;}
+    .stat-box .label{font-size:12px;color:var(--gray-600);margin-top:6px;display:block;line-height:1.4;}
+    .sidebar{position:sticky;top:96px;}
+    .sidebar-card{background:var(--gray-50);border:1px solid #e5e7eb;border-radius:12px;padding:28px;margin-bottom:24px;}
+    .sidebar-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:12px;}
+    .sidebar-card p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:20px;}
+    .sidebar-cta{display:block;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;transition:background 0.2s;}
+    .sidebar-cta:hover{background:var(--gold-light);}
+    .sidebar-related h3{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+    .sidebar-related a{display:block;font-size:14px;color:var(--navy);text-decoration:none;padding:10px 0;border-bottom:1px solid #e5e7eb;line-height:1.4;font-weight:500;}
+    .sidebar-related a:last-child{border-bottom:none;}
+    .sidebar-related a:hover{color:var(--gold);}
+    .cta-section{padding:72px 0;background:linear-gradient(135deg,var(--navy) 0%,#1a3660 100%);text-align:center;}
+    .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);color:var(--white);margin-bottom:16px;}
+    .cta-section p{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:36px;}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--gold-light);}
+    footer{background:#080f1e;padding:48px 0 24px;}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-brand p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.7;margin-top:12px;max-width:260px;}
+    .footer-col h4{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;}
+    .footer-col a{display:block;color:rgba(255,255,255,0.6);font-size:13px;text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+    .footer-col a:hover{color:#fff;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-bottom p{color:rgba(255,255,255,0.4);font-size:12px;}
+    .answer-box{background:var(--off-white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:24px 28px;margin:0 0 32px;}
+    .answer-label{display:block;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+    .answer-box p{color:var(--navy);font-size:17px;margin:0;}
+    .article-content ol{margin:0 0 20px 24px;}
+    .article-content{min-width:0;}
+    .article-content a{color:var(--gold);font-weight:600;text-decoration:none;}
+    .article-content a:hover{text-decoration:underline;}
+    .table-wrap{overflow-x:auto;margin:24px 0 32px;}
+    .compare{width:100%;border-collapse:collapse;font-size:14px;}
+    .compare th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-weight:600;}
+    .compare td{padding:12px 14px;border-bottom:1px solid #e5e7eb;color:var(--gray-600);vertical-align:top;}
+    .compare td:first-child{font-weight:700;color:var(--navy);}
+    .compare tr:nth-child(even) td{background:var(--gray-50);}
+    .faq-item{border:1px solid #e5e7eb;border-radius:10px;padding:24px;margin-bottom:16px;background:var(--gray-50);}
+    .faq-item h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px;}
+    .faq-item p{font-size:15px;margin:0;}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;}.sidebar{position:static;}.stat-row{grid-template-columns:1fr;}}
+    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://ascendbenefitscg.com/#organization",
+    "name": "Ascend Benefits Consulting Group",
+    "legalName": "Ascend Benefits Consulting Group LLC",
+    "url": "https://ascendbenefitscg.com/",
+    "logo": "https://ascendbenefitscg.com/logo-512x512.png",
+    "image": "https://ascendbenefitscg.com/logo-512x512.png",
+    "email": "info@ascendbenefitscg.com",
+    "description": "Ascend Benefits Consulting Group is an independent, virtual employee benefits broker for employers with 2–250 employees. We specialize in level-funded health plans (up to 30% savings) and Reference Based Pricing (RBP) plans (20–40% potential savings), plus GAP, dental, vision, life, and disability coverage. Licensed in all 50 states, with a primary focus on the Southeast.",
+    "slogan": "Smarter Benefits. Stronger Businesses.",
+    "founder": {
+      "@type": "Person",
+      "name": "Chase Webb",
+      "jobTitle": "Director of Benefit Strategies",
+      "worksFor": { "@id": "https://ascendbenefitscg.com/#organization" }
+    },
+    "areaServed": [
+      { "@type": "State", "name": "Tennessee" },
+      { "@type": "State", "name": "Alabama" },
+      { "@type": "State", "name": "Georgia" },
+      { "@type": "State", "name": "Florida" },
+      { "@type": "State", "name": "Texas" },
+      { "@type": "State", "name": "South Carolina" },
+      { "@type": "State", "name": "North Carolina" },
+      { "@type": "State", "name": "Mississippi" },
+      { "@type": "State", "name": "Louisiana" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "knowsAbout": [
+      "Employee benefits",
+      "Small business group health insurance",
+      "Level-funded health plans",
+      "Self-funded ERISA health plans",
+      "Reference Based Pricing (RBP) health plans",
+      "Stop-loss insurance",
+      "GAP insurance",
+      "Group dental and vision insurance",
+      "Group life and disability insurance",
+      "Individual health insurance for self-employed and 1099 contractors"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Employee Benefits Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Level-Funded Health Plans", "url": "https://ascendbenefitscg.com/employer-coverage" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reference Based Pricing (RBP) Plans", "url": "https://ascendbenefitscg.com/reference-based-pricing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive Care Plans", "url": "https://ascendbenefitscg.com/preventive-care" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Free Benefits Analysis", "url": "https://ascendbenefitscg.com/contact" } }
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/ascend-benefits-consulting-group/",
+      "https://www.facebook.com/profile.php?id=61572073336199"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many employees do you need to get group health insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most carriers require at least one eligible employee who isn't the owner or the owner's spouse. Many level-funded plans start at 2 enrolled employees. Owner-only businesses typically use individual coverage instead."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does small business health insurance cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your location, the ages of your employees, the plan design, and the funding structure you choose. Family coverage through employer plans averages nearly $27,000 a year nationally, but level-funded plans can cut costs by up to 30% and RBP plans by 20–40% for the right group. A free census-based analysis is the only way to get real numbers for your business."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a small business owner be covered on the company plan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. As long as the business has at least one eligible non-owner employee enrolled, owners can typically be covered on the group plan along with their employees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is health insurance tax deductible for a small business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Generally, yes. Employer contributions to employee health premiums are typically a deductible business expense, and self-employed owners can often deduct their own premiums. Confirm the details for your situation with your tax advisor."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How Do Small Business Owners Get Health Insurance? A 2026 Guide to Every Option",
+    "description": "Small business owners can get health insurance through a group plan, level-funded plan, RBP plan, QSEHRA or ICHRA, or individual coverage. Compare every option for 2026.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ascendbenefitscg.com/blog/how-small-business-owners-get-health-insurance"
+    },
+    "url": "https://ascendbenefitscg.com/blog/how-small-business-owners-get-health-insurance",
+    "datePublished": "2026-10-15",
+    "inLanguage": "en-US",
+    "author": {
+      "@type": "Person",
+      "@id": "https://ascendbenefitscg.com/about#chase-webb",
+      "name": "Chase Webb",
+      "jobTitle": "Director of Benefit Strategies",
+      "url": "https://ascendbenefitscg.com/about",
+      "worksFor": {
+        "@id": "https://ascendbenefitscg.com/#organization"
+      }
+    },
+    "publisher": {
+      "@id": "https://ascendbenefitscg.com/#organization"
+    },
+    "image": "https://ascendbenefitscg.com/logo-512x512.png"
+  }
+  </script>
+</head>
+<body>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Small Business Health Insurance Options</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Fortune 500 Strategies for Small Business</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+      <span>Small Business Health Insurance Options</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Fortune 500 Strategies for Small Business</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+          <div class="logo-text"><span class="logo-name">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
+          <a href="/reference-based-pricing">RBP Plans</a>
+          <a href="/preventive-care">Preventive Care</a>
+          <a href="/about">About</a>
+          <a href="/blog/" class="active">Blog</a>
+          <a href="/contact">Contact</a>
+        </nav>
+        <div class="header-cta"><a href="/contact" class="btn-nav">Get Free Analysis</a></div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About</a><a href="/blog/">Blog</a><a href="/contact">Contact</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/blog/">Blog</a> &rsaquo; Employee Benefits Education</div>
+      <div class="article-category">★ Employee Benefits Education</div>
+      <h1>How Do Small Business Owners Get Health Insurance? A 2026 Guide to Every Option</h1>
+      <div class="article-meta">By Chase Webb, Director of Benefit Strategies &nbsp;·&nbsp; October 2026 &nbsp;·&nbsp; 9 min read</div>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="article-layout">
+        <div class="article-content">
+
+          <div class="answer-box">
+            <span class="answer-label">The Short Answer</span>
+            <p>Small business owners get health insurance in one of five ways: a traditional small group plan, a level-funded plan, a Reference Based Pricing (RBP) plan, a health reimbursement arrangement (QSEHRA or ICHRA), or — for owners with no employees — an individual plan. Businesses with fewer than 50 full-time employees aren't required to offer coverage, but most growing companies do to compete for talent. The right option depends on your headcount, budget, and how healthy your group is.</p>
+          </div>
+
+          <p>If you're asking this question, you're probably in one of two spots: you've never offered benefits and want to start, or you've been offering a traditional plan and the renewals keep getting worse. Either way, most business owners have only ever been shown one or two options. There are more — and the differences in cost can be significant.</p>
+          <p>Here's a plain-English breakdown of every path, who each one fits, and how to decide.</p>
+
+          <h2>Do Small Businesses Have to Offer Health Insurance?</h2>
+          <p><strong>No — not if you have fewer than 50 full-time equivalent employees.</strong> Under the Affordable Care Act, the employer mandate only applies to businesses with 50 or more full-time equivalents. Below that, offering coverage is a choice, not a requirement.</p>
+          <p>That said, it's a choice most growing businesses end up making. Health coverage is consistently one of the top benefits employees look for, and family coverage through an employer plan now averages nearly $27,000 a year according to KFF — which is exactly why employees value it and why employers need to buy it smart.</p>
+
+          <h2>Option 1: Traditional Fully Insured Small Group Plan</h2>
+          <p>This is what most brokers default to. You pay a fixed monthly premium to a carrier, and the carrier pays all claims. It's simple and familiar.</p>
+          <p>The downside: the carrier keeps every dollar left over when your employees stay healthy, you get almost no visibility into your claims data, and your renewal goes up based on market trends you can't control. Carriers also commonly require a minimum share of eligible employees to enroll and a minimum employer contribution toward employee premiums.</p>
+          <p><strong>Best for:</strong> very small groups or groups with significant ongoing health needs, where predictability matters more than savings.</p>
+
+          <h2>Option 2: Level-Funded Health Plan</h2>
+          <p>A <a href="/employer-coverage">level-funded plan</a> still gives you one fixed monthly payment, but that payment is split into a claims fund, stop-loss insurance, and admin fees. If your group's claims come in lower than expected, <strong>you can get money back at the end of the year.</strong> If claims run high, stop-loss insurance caps your exposure.</p>
+          <p>Employees use the same major PPO networks they're used to, and you get real claims reporting. For healthy groups, level-funded plans can save up to 30% compared to traditional coverage.</p>
+          <p><strong>Best for:</strong> businesses with roughly 2–250 employees and a reasonably healthy workforce. Our <a href="/blog/level-funded-health-plan-guide">plain-English guide to level-funded plans</a> goes deeper.</p>
+
+          <h2>Option 3: Reference Based Pricing (RBP) Plan</h2>
+          <p>A <a href="/reference-based-pricing">Reference Based Pricing plan</a> skips the traditional PPO network entirely. Instead of paying a "discount" off inflated hospital prices, the plan pays providers a fair, transparent multiple of what Medicare pays. Employees can see any provider that accepts the plan, with no in-network or out-of-network restrictions.</p>
+          <p>RBP plans can save 20–40% compared to traditional coverage. The trade-off is that employees need some upfront education on how the plan works.</p>
+          <p><strong>Best for:</strong> employers focused on maximum long-term cost reduction who are willing to walk their team through a new approach.</p>
+
+          <h2>Option 4: Health Reimbursement Arrangements (QSEHRA and ICHRA)</h2>
+          <p>With an HRA, you don't buy a group plan at all. Employees buy their own individual coverage, and you reimburse them tax-free up to an amount you set.</p>
+          <ul>
+            <li><strong>QSEHRA</strong> (Qualified Small Employer HRA) is for businesses with fewer than 50 employees that don't offer a group plan. For 2026, reimbursements are capped at <strong>$6,450 for self-only coverage and $13,100 for family coverage</strong>.</li>
+            <li><strong>ICHRA</strong> (Individual Coverage HRA) works for any size business, has no annual cap, and lets you set different allowances for different classes of employees — for example, full-time vs. part-time.</li>
+          </ul>
+          <p><strong>Best for:</strong> businesses that want a fixed, predictable benefits budget, or teams spread across many states.</p>
+
+          <h2>Option 5: Owner-Only? Look at Individual Coverage</h2>
+          <p>If it's just you — a solo owner, a 1099 contractor, or a husband-and-wife business with no other employees — you generally won't qualify for a traditional group plan. Your path is individual coverage, either through the ACA Marketplace or through private individual plans.</p>
+          <p>The good news: if you're self-employed and show a profit, you can usually deduct your health insurance premiums on your personal return through the self-employed health insurance deduction. Talk to your tax advisor about how it applies to you. You can also <a href="https://private.ascendbenefitscg.com/">compare private individual plans here</a>.</p>
+
+          <div class="callout">
+            <p>Most business owners have only ever been shown a traditional fully insured plan. That's not because it's the best option. It's because it's the easiest one to sell.</p>
+          </div>
+
+          <h2>Don't Forget the Small Business Health Care Tax Credit</h2>
+          <p>If you have fewer than 25 full-time equivalent employees with relatively modest average wages, pay at least half of their premiums, and buy coverage through the SHOP Marketplace, you may qualify for a federal tax credit of up to <strong>50% of the premiums you pay</strong> (35% for tax-exempt employers). The credit is available for two consecutive years. Average-wage limits change annually, so check the current IRS Form 8941 instructions or ask your CPA.</p>
+
+          <h2>Side-by-Side: Which Option Fits Your Business?</h2>
+          <div class="table-wrap">
+            <table class="compare">
+              <thead><tr><th>Option</th><th>Who it fits</th><th>Cost control</th><th>Key trade-off</th></tr></thead>
+              <tbody>
+                <tr><td>Traditional fully insured</td><td>Small groups, high ongoing claims</td><td>Low — carrier sets renewals</td><td>No refunds, no claims data</td></tr>
+                <tr><td>Level-funded</td><td>2–250 employees, healthy group</td><td>High — up to 30% savings + refunds</td><td>Pricing depends on group health</td></tr>
+                <tr><td>Reference Based Pricing</td><td>Groups open to a new approach</td><td>Highest — 20–40% savings</td><td>Requires employee education</td></tr>
+                <tr><td>QSEHRA / ICHRA</td><td>Fixed budgets, multi-state teams</td><td>Fixed allowance you set</td><td>Employees shop their own plans</td></tr>
+                <tr><td>Individual coverage</td><td>Solo owners, 1099s, no employees</td><td>Varies by plan</td><td>Not a group plan</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>How to Get Started</h2>
+          <ol>
+            <li><strong>Count your employees.</strong> Headcount determines which options are on the table.</li>
+            <li><strong>Set a budget.</strong> Decide what you can contribute per employee per month.</li>
+            <li><strong>Gather a census.</strong> A simple list of employees with ages and ZIP codes is all a consultant needs to run quotes.</li>
+            <li><strong>Compare more than one structure.</strong> Ask to see traditional, level-funded, and RBP side by side — not just three carriers selling the same product.</li>
+            <li><strong>Work with an independent consultant.</strong> Someone who isn't tied to one carrier can show you every option honestly.</li>
+          </ol>
+
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>How many employees do you need to get group health insurance?</h3>
+            <p>Most carriers require at least one eligible employee who isn't the owner or the owner's spouse. Many level-funded plans start at 2 enrolled employees. Owner-only businesses typically use individual coverage instead.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How much does small business health insurance cost?</h3>
+            <p>It depends on your location, the ages of your employees, the plan design, and the funding structure you choose. Family coverage through employer plans averages nearly $27,000 a year nationally, but level-funded plans can cut costs by up to 30% and RBP plans by 20–40% for the right group. A free census-based analysis is the only way to get real numbers for your business.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can a small business owner be covered on the company plan?</h3>
+            <p>Yes. As long as the business has at least one eligible non-owner employee enrolled, owners can typically be covered on the group plan along with their employees.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is health insurance tax deductible for a small business?</h3>
+            <p>Generally, yes. Employer contributions to employee health premiums are typically a deductible business expense, and self-employed owners can often deduct their own premiums. Confirm the details for your situation with your tax advisor.</p>
+          </div>
+
+          <h2>The Bottom Line</h2>
+          <p>There's no single right answer — but there is a right answer for <em>your</em> business, and it's rarely the first plan a traditional broker puts in front of you. Getting two or three structures quoted side by side is the fastest way to see what you're actually leaving on the table.</p>
+
+        </div>
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <h3>See Which Option Fits Your Business</h3>
+            <p>15 years of experience. Independent advice. No carrier bias. Serving employers across Tennessee and the Southeast.</p>
+            <a href="/contact" class="sidebar-cta">Get Your Free Analysis →</a>
+          </div>
+          <div class="sidebar-card sidebar-related">
+            <h3>Related Articles</h3>
+            <a href="/blog/level-funded-health-plan-guide.html">What Is a Level-Funded Health Plan? A Plain-English Guide</a>
+            <a href="/blog/erisa-plans-explained.html">ERISA Plans Explained: How Small Businesses Access Fortune 500 Strategies</a>
+            <a href="/blog/why-premiums-keep-rising.html">Why Your Premiums Keep Going Up — And What You Can Do About It</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to See What You've Been Missing?</h2>
+      <p>A free analysis takes 30 minutes and could save your company thousands per year.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-primary">Get Your Free Analysis</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+            <div class="logo-text"><span class="logo-name" style="color:#fff;">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+          </a>
+          <p>Independent employee benefits consulting for employers with 2–250 employees. Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; all 50 states.</p>
+        </div>
+        <div class="footer-col"><h4>Services</h4><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care Program</a><a href="/blog/">Blog &amp; Resources</a><a href="/contact">Free Benefits Analysis</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/contact">Contact Us</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ascend Benefits Consulting Group. All rights reserved.</p>
+        <p>Independent &amp; Unbiased · No Carrier Bias · Serving All 50 States</p>
+      </div>
+    </div>
+  </footer>
+  <script>function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
+</body>
+</html>
