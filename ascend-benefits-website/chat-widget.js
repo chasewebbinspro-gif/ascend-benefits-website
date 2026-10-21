@@ -332,7 +332,7 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            model: 'claude-sonnet-5-5',
+          model: 'claude-sonnet-5-5',
           max_tokens: 1000,
           system: SYSTEM_PROMPT,
           messages: messages.filter(m => m.role !== 'system')
