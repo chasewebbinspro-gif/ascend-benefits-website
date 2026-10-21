@@ -10,7 +10,7 @@ KEY FACTS ABOUT ASCEND BENEFITS:
 - Also offers the Employee Health Program (EHP) — a preventive care supplemental benefit
 - EHP requires employer to have at least 10 full-time W-2 employees
 - Independent and unbiased — not tied to any single carrier
-- Phone: (615) 559-9387
+- Phone: (888) 820-9027
 - Website: ascendbenefitscg.com
 
 YOUR PERSONALITY:
@@ -332,17 +332,17 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
+            model: 'claude-sonnet-5-5',
           max_tokens: 1000,
           system: SYSTEM_PROMPT,
           messages: messages.filter(m => m.role !== 'system')
         })
       });
       const data = await response.json();
-      const reply = data.content && data.content[0] ? data.content[0].text : "I'm having trouble connecting right now. Please call us at (615) 559-9387.";
+      const reply = data.content && data.content[0] ? data.content[0].text : "I'm having trouble connecting right now. Please call us at (888) 820-9027.";
       addBotMessage(reply);
     } catch (err) {
-      addBotMessage("I'm having trouble connecting right now. Please call us at (615) 559-9387 or use the contact form.");
+      addBotMessage("I'm having trouble connecting right now. Please call us at (888) 820-9027 or use the contact form.");
     }
   }
 
