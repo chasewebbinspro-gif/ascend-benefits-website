@@ -339,7 +339,8 @@ IMPORTANT: Never make up specific numbers, savings amounts, or plan details that
         })
       });
       const data = await response.json();
-      const reply = data.content && data.content[0] ? data.content[0].text : "I'm having trouble connecting right now. Please call us at (888) 820-9027.";
+      const textBlock = Array.isArray(data.content) ? data.content.find(b => b.type === 'text' && b.text) : null;
+      const reply = textBlock ? textBlock.text : "I'm having trouble connecting right now. Please call us at (888) 820-9027.";
       addBotMessage(reply);
     } catch (err) {
       addBotMessage("I'm having trouble connecting right now. Please call us at (888) 820-9027 or use the contact form.");
