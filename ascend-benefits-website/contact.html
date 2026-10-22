@@ -86,28 +86,8 @@
     .form-card{background:var(--white);border-radius:14px;padding:48px;box-shadow:var(--shadow);border:1px solid rgba(13,31,60,0.06);}
     .form-card h2{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
     .form-card p{font-size:0.9rem;color:var(--text-light);margin-bottom:32px;line-height:1.6;}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-    .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
-    .form-group label{font-size:0.82rem;font-weight:600;color:var(--navy);letter-spacing:0.03em;}
-    .form-group label span{color:var(--gold);margin-left:2px;}
-    .form-group input,.form-group select,.form-group textarea{font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--text-dark);background:var(--off-white);border:1.5px solid rgba(13,31,60,0.12);border-radius:6px;padding:12px 16px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;width:100%;}
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.12);background:var(--white);}
-    .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-light);opacity:0.7;}
-    .form-group textarea{resize:vertical;min-height:120px;}
-    .form-group select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7c99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer;}
-    .form-submit{width:100%;padding:16px;font-size:1rem;border-radius:6px;margin-top:8px;}
-    .form-note{font-size:0.78rem;color:var(--text-light);text-align:center;margin-top:12px;line-height:1.5;}
-    .sms-consent{display:flex;align-items:flex-start;gap:10px;margin-bottom:18px;}
-    .sms-consent input[type="checkbox"]{width:16px;height:16px;margin-top:2px;flex-shrink:0;accent-color:var(--gold);cursor:pointer;}
-    .sms-consent span{font-size:0.78rem;color:var(--text-mid);line-height:1.55;}
-
-    /* SUCCESS */
-    .form-success{display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;gap:16px;}
-    .form-success.visible{display:flex;}
-    .success-icon{width:72px;height:72px;background:rgba(34,197,94,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;}
-    .success-icon svg{width:36px;height:36px;color:var(--success);}
-    .form-success h3{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--navy);}
-    .form-success p{font-size:0.95rem;color:var(--text-mid);line-height:1.65;max-width:360px;}
+    .ghl-form-wrap{width:100%;}
+    .ghl-form-wrap iframe{display:block;width:100%;min-height:1585px;}
 
     /* SIDEBAR */
     .contact-sidebar{display:flex;flex-direction:column;gap:20px;}
@@ -161,7 +141,7 @@
     .fade-up.visible{opacity:1;transform:translateY(0);}
 
     @media(max-width:1024px){.contact-grid{grid-template-columns:1fr;}.contact-sidebar{display:grid;grid-template-columns:1fr 1fr;gap:20px;}.trust-inner{grid-template-columns:repeat(2,1fr);}.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
-    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.form-card{padding:32px 24px;}.form-row{grid-template-columns:1fr;}.contact-sidebar{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.form-card{padding:32px 16px;}.contact-sidebar{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
     @media(max-width:480px){.trust-inner{grid-template-columns:1fr 1fr;}}
   </style>
   <script type="application/ld+json">
@@ -297,85 +277,31 @@
     <div class="container">
       <div class="contact-grid">
 
-        <!-- FORM -->
+        <!-- FORM (GoHighLevel embed) -->
         <div class="form-card">
           <h2>Let's Find Out How Much Your Business Can Save</h2>
           <p>A free, no-obligation benefits analysis takes less than 15 minutes. We'll review your current plan, show you what alternatives exist, and give you a clear picture of your savings potential — with zero pressure.</p>
 
-          <div id="form-success" style="display:none;background:linear-gradient(135deg,#0D1F3C,#162d56);border-radius:10px;padding:32px;text-align:center;">
-            <div style="width:56px;height:56px;background:rgba(34,197,94,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            </div>
-            <h3 style="font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;margin-bottom:8px;">We'll Be In Touch Soon!</h3>
-            <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Thanks for reaching out. We typically respond within one business day.</p>
-          </div>
-
-          <div id="form-fields">
-            <div class="form-row">
-              <div class="form-group">
-                <label>First Name *</label>
-                <input type="text" id="firstName" placeholder="John" />
-              </div>
-              <div class="form-group">
-                <label>Last Name *</label>
-                <input type="text" id="lastName" placeholder="Smith" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Phone Number <span style="font-weight:400;color:#6b7c99;">(Optional)</span></label>
-              <input type="tel" id="phone" placeholder="+1 (555) 000-0000" />
-            </div>
-            <div class="form-group">
-              <label>Business Email *</label>
-              <input type="email" id="email" placeholder="john@yourcompany.com" />
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Company Name *</label>
-                <input type="text" id="company" placeholder="Your Company LLC" />
-              </div>
-              <div class="form-group">
-                <label>Number of Employees *</label>
-                <select id="employees">
-                  <option value="" disabled selected>Select range</option>
-                  <option value="2-10">2–10 employees</option>
-                  <option value="11-25">11–25 employees</option>
-                  <option value="26-50">26–50 employees</option>
-                  <option value="51-100">51–100 employees</option>
-                  <option value="101-200">101–200 employees</option>
-                  <option value="200+">200+ employees</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Current Insurance Type</label>
-              <select id="insuranceType">
-                <option value="" disabled selected>Select current plan type</option>
-                <option value="fully-insured">Fully Insured / Traditional</option>
-                <option value="level-funded">Level Funded</option>
-                <option value="self-funded">Self Funded / ERISA</option>
-                <option value="unsure">Not Sure</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea id="message" rows="3" placeholder="Tell us about your current benefits situation or what you're looking to improve..." style="width:100%;padding:12px 14px;border:1.5px solid rgba(13,31,60,0.12);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:#0D1F3C;background:#F8F6F1;resize:vertical;outline:none;"></textarea>
-            </div>
-
-            <div class="sms-consent">
-              <input type="checkbox" id="smsConsent" />
-              <span>I consent to receive non-marketing text messages from Ascend Benefits Consulting Group LLC regarding appointment confirmation, appointment reminders, and follow-up. Message frequency varies. Message &amp; data rates may apply. Reply HELP for assistance, reply STOP to opt out.</span>
-            </div>
-            <div class="sms-consent" style="margin-bottom:18px;">
-              <input type="checkbox" id="marketingConsent" />
-              <span>I consent to receive marketing text messages from Ascend Benefits Consulting Group LLC regarding special offers, discounts, and service updates. Message frequency varies. Message &amp; data rates may apply. Reply HELP for assistance, reply STOP to opt out.</span>
-            </div>
-
-            <button class="btn-primary form-submit" id="submitBtn" onclick="handleSubmit()">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-              Request My Free Benefits Analysis
-            </button>
-            <p style="font-size:0.72rem;color:#6b7c99;line-height:1.5;margin-top:14px;">By submitting this form you agree to our <a href="/privacy" style="color:#C9A84C;text-decoration:underline;">Privacy Policy</a> and <a href="/terms" style="color:#C9A84C;text-decoration:underline;">Terms of Service</a>. We do not sell or share your information.</p>
+          <div class="ghl-form-wrap">
+            <iframe
+              src="https://link.ascendbenefitscg.com/widget/form/5UtrPfxaH0VRWpY7aaxF"
+              style="width:100%;height:1585px;border:none;border-radius:8px"
+              id="inline-5UtrPfxaH0VRWpY7aaxF"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Group Benefits Website Form"
+              data-height="1585"
+              data-layout-iframe-id="inline-5UtrPfxaH0VRWpY7aaxF"
+              data-form-id="5UtrPfxaH0VRWpY7aaxF"
+              data-cookie-consent="true"
+              data-cookie-consent-provider="auto"
+              title="Group Benefits Website Form">
+            </iframe>
           </div>
         </div>
 
@@ -487,44 +413,10 @@
     const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible");});},{threshold:0.05});
     document.querySelectorAll(".fade-up").forEach(el=>observer.observe(el));
     function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
-    function handleSubmit(){
-
-      const required=['firstName','lastName','email','company','employees'];
-      let valid=true;
-      required.forEach(id=>{
-        const el=document.getElementById(id);
-        if(!el.value.trim()){el.style.borderColor='#e53e3e';valid=false;}
-        else{el.style.borderColor='';}
-      });
-      if(!valid){return;}
-      const btn=document.getElementById('submitBtn');
-      btn.disabled=true;
-      btn.innerHTML='Sending...';
-      fetch('https://formspree.io/f/xeepdnvz',{
-        method:'POST',
-        headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body:JSON.stringify({
-          firstName:document.getElementById('firstName').value,
-          lastName:document.getElementById('lastName').value,
-          phone:document.getElementById('phone').value,
-          email:document.getElementById('email').value,
-          company:document.getElementById('company').value,
-          employees:document.getElementById('employees').value,
-          insuranceType:document.getElementById('insuranceType').value,
-          message:document.getElementById('message').value,
-          smsConsent:document.getElementById('smsConsent').checked?'Yes':'No',
-          marketingConsent:document.getElementById('marketingConsent').checked?'Yes':'No'
-        })
-      }).then(()=>{
-        document.getElementById('form-fields').style.display='none';
-        document.getElementById('form-success').style.display='block';
-      }).catch(()=>{
-        btn.disabled=false;
-        btn.innerHTML='Request My Free Benefits Analysis';
-        alert('Something went wrong. Please try again.');
-      });
-    }
   </script>
+
+  <!-- GoHighLevel form embed -->
+  <script src="https://link.ascendbenefitscg.com/js/form_embed.js"></script>
 
   <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69ef764ab50033039fb6dfb4" data-source="WEB_USER"></script>
 </body>
