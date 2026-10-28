@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERISA Plans Explained: Self-Funded Benefits for Small Business</title>
+  <meta name="description" content="ERISA self-funded plans let small businesses control costs, customize benefits, and avoid state mandates. Learn how these Fortune 500 strategies now apply to businesses with 2–250 employees." />
+  <link rel="canonical" href="https://ascendbenefitscg.com/blog/erisa-plans-explained" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--navy:#0D1F3C;--navy-mid:#162d56;--gold:#C9A84C;--gold-light:#e8c96a;--white:#ffffff;--off-white:#F8F6F1;--gray-50:#f8f9fc;--gray-600:#4b5563;--gray-800:#1f2937;--text-mid:#3a4a63;--border:rgba(201,168,76,0.2);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden;}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+    /* TICKER */
+    .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
+    .ticker-track{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap;}
+    .ticker-track span{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+    @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(13,31,60,0.08);box-shadow:0 2px 20px rgba(13,31,60,0.07);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-mark{width:38px;height:38px;background:#0D1F3C;border-radius:6px;display:flex;align-items:center;justify-content:center;}
+    .logo-mark svg{width:22px;height:22px;}
+    .logo-text{display:flex;flex-direction:column;}
+    .logo-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#0D1F3C;line-height:1.1;}
+    .logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;}
+    nav{display:flex;align-items:center;gap:2px;}
+    nav a{font-size:0.78rem;font-weight:500;color:#3a4a63;text-decoration:none;padding:6px 8px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    nav a:hover,nav a.active{color:#0D1F3C;background:#F8F6F1;}
+    .header-cta{display:flex;align-items:center;gap:10px;}
+    .btn-nav{display:inline-flex;align-items:center;background:#C9A84C;color:#0D1F3C;font-weight:700;font-size:0.82rem;padding:9px 16px;border-radius:4px;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+    .btn-nav:hover{background:#e2c06a;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:#0D1F3C;border-radius:2px;}
+    .mobile-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid rgba(201,168,76,0.2);padding:16px 24px 24px;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:#3a4a63;text-decoration:none;padding:12px 0;border-bottom:1px solid #F8F6F1;}
+
+    /* ARTICLE */
+    .article-hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3660 60%,#0f2847 100%);padding:72px 0 60px;}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;}
+    .breadcrumb a{color:var(--gold);text-decoration:none;}
+    .article-category{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:20px;}
+    .article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);color:var(--white);line-height:1.2;margin-bottom:20px;max-width:760px;}
+    .article-meta{font-size:14px;color:rgba(255,255,255,0.55);}
+    .article-body{padding:64px 0 80px;}
+    .article-layout{display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start;}
+    .article-content h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin:40px 0 16px;}
+    .article-content h2:first-child{margin-top:0;}
+    .article-content p{font-size:16px;color:var(--gray-600);line-height:1.8;margin-bottom:20px;}
+    .article-content ul{margin:0 0 20px 24px;}
+    .article-content li{font-size:16px;color:var(--gray-600);line-height:1.8;margin-bottom:10px;}
+    .article-content strong{color:var(--navy);font-weight:700;}
+    .callout{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-left:4px solid var(--gold);padding:24px 28px;margin:36px 0;border-radius:0 8px 8px 0;}
+    .callout p{color:rgba(255,255,255,0.9);font-size:16px;font-style:italic;line-height:1.7;margin:0 0 8px;}
+    .callout .source{color:rgba(255,255,255,0.45);font-size:13px;font-style:normal;}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;}
+    .stat-box{background:var(--gray-50);border:1px solid #e5e7eb;border-top:3px solid var(--gold);padding:20px 16px;text-align:center;border-radius:8px;}
+    .stat-box .num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700;display:block;}
+    .stat-box .label{font-size:12px;color:var(--gray-600);margin-top:6px;display:block;line-height:1.4;}
+    .sidebar{position:sticky;top:96px;}
+    .sidebar-card{background:var(--gray-50);border:1px solid #e5e7eb;border-radius:12px;padding:28px;margin-bottom:24px;}
+    .sidebar-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:12px;}
+    .sidebar-card p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:20px;}
+    .sidebar-cta{display:block;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;transition:background 0.2s;}
+    .sidebar-cta:hover{background:var(--gold-light);}
+    .sidebar-related h3{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+    .sidebar-related a{display:block;font-size:14px;color:var(--navy);text-decoration:none;padding:10px 0;border-bottom:1px solid #e5e7eb;line-height:1.4;font-weight:500;}
+    .sidebar-related a:last-child{border-bottom:none;}
+    .sidebar-related a:hover{color:var(--gold);}
+    .cta-section{padding:72px 0;background:linear-gradient(135deg,var(--navy) 0%,#1a3660 100%);text-align:center;}
+    .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);color:var(--white);margin-bottom:16px;}
+    .cta-section p{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:36px;}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--gold-light);}
+    footer{background:#080f1e;padding:48px 0 24px;}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-brand p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.7;margin-top:12px;max-width:260px;}
+    .footer-col h4{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;}
+    .footer-col a{display:block;color:rgba(255,255,255,0.6);font-size:13px;text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+    .footer-col a:hover{color:#fff;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-bottom p{color:rgba(255,255,255,0.4);font-size:12px;}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;}.sidebar{position:static;}.stat-row{grid-template-columns:1fr;}}
+    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://ascendbenefitscg.com/#organization",
+    "name": "Ascend Benefits Consulting Group",
+    "legalName": "Ascend Benefits Consulting Group LLC",
+    "url": "https://ascendbenefitscg.com/",
+    "logo": "https://ascendbenefitscg.com/logo-512x512.png",
+    "image": "https://ascendbenefitscg.com/logo-512x512.png",
+    "email": "info@ascendbenefitscg.com",
+    "description": "Ascend Benefits Consulting Group is an independent, virtual employee benefits broker for employers with 2–250 employees. We specialize in level-funded health plans (up to 30% savings) and Reference Based Pricing (RBP) plans (20–40% potential savings), plus GAP, dental, vision, life, and disability coverage. Licensed in all 50 states, with a primary focus on the Southeast.",
+    "slogan": "Smarter Benefits. Stronger Businesses.",
+    "founder": {
+      "@type": "Person",
+      "name": "Chase Webb",
+      "jobTitle": "Director of Benefit Strategies",
+      "worksFor": { "@id": "https://ascendbenefitscg.com/#organization" }
+    },
+    "areaServed": [
+      { "@type": "State", "name": "Tennessee" },
+      { "@type": "State", "name": "Alabama" },
+      { "@type": "State", "name": "Georgia" },
+      { "@type": "State", "name": "Florida" },
+      { "@type": "State", "name": "Texas" },
+      { "@type": "State", "name": "South Carolina" },
+      { "@type": "State", "name": "North Carolina" },
+      { "@type": "State", "name": "Mississippi" },
+      { "@type": "State", "name": "Louisiana" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "knowsAbout": [
+      "Employee benefits",
+      "Small business group health insurance",
+      "Level-funded health plans",
+      "Self-funded ERISA health plans",
+      "Reference Based Pricing (RBP) health plans",
+      "Stop-loss insurance",
+      "GAP insurance",
+      "Group dental and vision insurance",
+      "Group life and disability insurance",
+      "Individual health insurance for self-employed and 1099 contractors"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Employee Benefits Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Level-Funded Health Plans", "url": "https://ascendbenefitscg.com/employer-coverage" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reference Based Pricing (RBP) Plans", "url": "https://ascendbenefitscg.com/reference-based-pricing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive Care Plans", "url": "https://ascendbenefitscg.com/preventive-care" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Free Benefits Analysis", "url": "https://ascendbenefitscg.com/contact" } }
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/ascend-benefits-consulting-group/",
+      "https://www.facebook.com/profile.php?id=61572073336199"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "ERISA Plans Explained: How Small Businesses Access Fortune 500 Benefits Strategies",
+    "description": "ERISA self-funded plans let small businesses control costs, customize benefits, and avoid state mandates. Learn how these Fortune 500 strategies now apply to businesses with 2–250 employees.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ascendbenefitscg.com/blog/erisa-plans-explained"
+    },
+    "url": "https://ascendbenefitscg.com/blog/erisa-plans-explained",
+    "datePublished": "2026-04",
+    "inLanguage": "en-US",
+    "author": {
+      "@type": "Person",
+      "@id": "https://ascendbenefitscg.com/about#chase-webb",
+      "name": "Chase Webb",
+      "jobTitle": "Director of Benefit Strategies",
+      "url": "https://ascendbenefitscg.com/about",
+      "worksFor": {
+        "@id": "https://ascendbenefitscg.com/#organization"
+      }
+    },
+    "publisher": {
+      "@id": "https://ascendbenefitscg.com/#organization"
+    },
+    "image": "https://ascendbenefitscg.com/logo-512x512.png"
+  }
+  </script>
+<style>/* top menu: keep items on one line; switch to the menu button on narrower screens */header nav a,header .nav-links a,header .nav-cta,header .header-cta a{white-space:nowrap;}@media(max-width:1200px){header nav,header .nav-links{display:none!important;}header .hamburger{display:flex!important;}}</style>
+</head>
+<body>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Self-Funded ERISA Plan Specialists</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Fortune 500 Strategies for Small Business</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+      <span>Self-Funded ERISA Plan Specialists</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Fortune 500 Strategies for Small Business</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+          <div class="logo-text"><span class="logo-name">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
+          <a href="/reference-based-pricing">RBP Plans</a>
+          <a href="/preventive-care">Preventive Care</a>
+          <a href="/about">About</a>
+          <a href="/blog/" class="active">Blog</a>
+          <a href="/contact">Contact</a>
+          <a href="https://privatehealth.ascendbenefitscg.com/">Self-employed Health Plans</a>
+        </nav>
+        <div class="header-cta"><a href="/contact" class="btn-nav">Get Free Analysis</a></div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About</a><a href="/blog/">Blog</a><a href="/contact">Contact</a><a href="https://privatehealth.ascendbenefitscg.com/">Self-employed Health Plans</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/blog/">Blog</a> &rsaquo; Plan Strategy</div>
+      <div class="article-category">★ Plan Strategy</div>
+      <h1>ERISA Plans Explained: How Small Businesses Access Fortune 500 Benefits Strategies</h1>
+      <div class="article-meta">By Chase Webb, Director of Benefit Strategies &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; 7 min read</div>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="article-layout">
+        <div class="article-content">
+
+          <p>If you've heard the phrase "ERISA plan" and assumed it was only for large corporations, you're not alone — and you're leaving real money on the table. ERISA-governed self-funded health plans have been the benefits strategy of choice for Fortune 500 companies for decades. And thanks to innovations in stop-loss insurance and third-party plan administration, they're now fully accessible to businesses with as few as two employees.</p>
+
+          <h2>What Is ERISA?</h2>
+          <p>ERISA stands for the Employee Retirement Income Security Act of 1974. It's a federal law that sets minimum standards for employer-sponsored benefit plans — including health insurance. The law exists to protect employees by ensuring they receive the benefits they're promised and have recourse if something goes wrong.</p>
+          <p>For employers, ERISA matters for one specific reason: <strong>ERISA preempts state law.</strong> Self-funded plans governed by ERISA don't have to comply with state insurance mandates, state premium taxes, or state-specific regulations that drive up the cost of traditional, fully insured plans.</p>
+
+          <h2>What Does "Self-Funded" Actually Mean?</h2>
+          <p>In a traditional fully insured plan, the insurance carrier assumes all the financial risk. You pay premiums; they pay claims. The carrier prices in their profit margin, reserves for risk, and charges state premium taxes. All of that ends up in your renewal quote.</p>
+          <p>In a self-funded plan, your business assumes responsibility for paying employee health claims directly. You're not paying a carrier to take on risk — you're funding the actual cost of care your employees use. The result: no carrier profit margin, no state premium taxes, and full transparency into what your plan actually costs.</p>
+          <p>The concern for most small businesses is obvious: what happens if an employee needs a $500,000 surgery? This is where stop-loss insurance enters the picture.</p>
+
+          <h2>Stop-Loss Insurance: The Safety Net That Makes It Work</h2>
+          <p>Stop-loss insurance caps your exposure. There are two types:</p>
+          <ul>
+            <li><strong>Specific stop-loss</strong> protects against a single catastrophic claim. If one employee's claims exceed a set threshold — say $50,000 or $75,000 — stop-loss coverage pays the rest.</li>
+            <li><strong>Aggregate stop-loss</strong> protects your total plan from an unusually bad year across all employees. If your group's total claims exceed a set percentage of expected costs, aggregate stop-loss absorbs the excess.</li>
+          </ul>
+          <p>With both layers in place, you get the cost advantages of self-funding without the potentially company-threatening financial exposure of going bare.</p>
+
+          <div class="callout">
+            <p>"Self-funded plans operated under ERISA are exempt from state insurance mandates and state premium taxes — advantages that can represent significant cost savings, particularly for multi-state employers."</p>
+            <span class="source">— OneDigital, June 2025</span>
+          </div>
+
+          <h2>Key Benefits of an ERISA Self-Funded Plan</h2>
+          <p><strong>Exemption from state mandates.</strong> Every state has a list of benefits that fully insured carriers must include. These mandates add cost whether your employees want those benefits or not. ERISA plans aren't subject to them. You design a plan around what your workforce actually needs.</p>
+          <p><strong>No state premium taxes.</strong> Fully insured carriers pay state premium taxes — typically 2–3% of premium costs — and pass that cost to you. ERISA plans avoid these entirely.</p>
+          <p><strong>Uniform compliance across states.</strong> If your business operates in multiple states, a self-funded ERISA plan runs under a single federal standard rather than a patchwork of state regulations.</p>
+          <p><strong>Claims transparency.</strong> Traditional carriers own your claims data. With a self-funded ERISA plan, you receive detailed reports on what your employees are actually using — that data is the foundation of smart benefits decisions.</p>
+          <p><strong>Plan customization.</strong> You're not choosing from a carrier's pre-packaged menu. You can select networks, design benefit levels, add wellness programs, and structure cost-sharing in ways that reflect your workforce's actual needs.</p>
+
+          <h2>What About Compliance?</h2>
+          <p>ERISA plans come with real compliance obligations. Employers must provide employees with a Summary Plan Description (SPD), file annual IRS Form 5500 reports, follow nondiscrimination rules, comply with HIPAA privacy standards, and meet ACA requirements. The good news is that most of this complexity is handled by your Third-Party Administrator and benefits consultant.</p>
+
+          <h2>Is a Self-Funded ERISA Plan Right for Your Business?</h2>
+          <p>These plans work exceptionally well for businesses that have:</p>
+          <ul>
+            <li>A reasonably healthy workforce with moderate claims history</li>
+            <li>Stable or growing employee headcount</li>
+            <li>Frustration with annual premium increases they can't control or understand</li>
+            <li>A desire for more plan flexibility and transparency</li>
+            <li>Operations across multiple states</li>
+          </ul>
+
+          <div class="stat-row">
+            <div class="stat-box"><span class="num">2–3%</span><span class="label">State premium taxes avoided under ERISA plans</span></div>
+            <div class="stat-box"><span class="num">~50%</span><span class="label">Of U.S. insured employees now covered by self-funded plans</span></div>
+            <div class="stat-box"><span class="num">Up to 30%</span><span class="label">Potential savings vs. ACA small group plans for healthy groups</span></div>
+          </div>
+
+          <h2>The Bottom Line</h2>
+          <p>ERISA self-funded plans aren't a workaround or a gimmick. They're the mainstream benefits strategy for the majority of covered American workers — and they have been for decades. The perception that they're only for large employers is simply outdated. With modern stop-loss insurance and experienced TPA support, a business with 10, 20, or 50 employees can access the same structural advantages that have saved Fortune 500 companies billions of dollars.</p>
+          <p>The question isn't whether these plans are legitimate. The question is whether anyone has ever shown you what one would look like for your specific business.</p>
+
+        </div>
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <h3>Find Out What an ERISA Plan Could Save You</h3>
+            <p>15 years of experience. Independent advice. No carrier bias. Serving employers across Tennessee and the Southeast.</p>
+            <a href="/contact" class="sidebar-cta">Get Your Free Analysis →</a>
+          </div>
+          <div class="sidebar-card sidebar-related">
+            <h3>Related Articles</h3>
+            <a href="/blog/level-funded-health-plan-guide.html">What Is a Level-Funded Health Plan? A Plain-English Guide</a>
+            <a href="/blog/why-premiums-keep-rising.html">Why Your Premiums Keep Going Up — And What You Can Do About It</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to See What You've Been Missing?</h2>
+      <p>A free analysis takes 30 minutes and could save your company thousands per year.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-primary">Get Your Free Analysis</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+            <div class="logo-text"><span class="logo-name" style="color:#fff;">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+          </a>
+          <p>Independent employee benefits consulting for employers with 2–250 employees. Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; all 50 states.</p>
+        </div>
+        <div class="footer-col"><h4>Services</h4><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care Program</a><a href="/blog/">Blog &amp; Resources</a><a href="/contact">Free Benefits Analysis</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/contact">Contact Us</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ascend Benefits Consulting Group. All rights reserved.</p>
+        <p>Independent &amp; Unbiased · No Carrier Bias · Serving All 50 States</p>
+      </div>
+    </div>
+  </footer>
+  <script>function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9VGCHC0H1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z9VGCHC0H1');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Small Business Employee Benefits Blog | Ascend Benefits Consulting Group</title>
+  <meta name="description" content="Expert insights on small business employee benefits — covering health insurance plans, benefits packages, level-funded strategies, ERISA plans, and how to attract and retain talent across Tennessee and the Southeast." />
+  <link rel="canonical" href="https://ascendbenefitscg.com/blog/" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:#0D1F3C; --navy-mid:#162d56; --navy-light:#1e3d72;
+      --gold:#C9A84C; --gold-light:#e2c06a; --gold-pale:#f5e9c8;
+      --white:#FFFFFF; --off-white:#F8F6F1;
+      --text-dark:#0D1F3C; --text-mid:#3a4a63; --text-light:#6b7c99;
+      --border:rgba(201,168,76,0.2); --shadow:0 4px 32px rgba(13,31,60,0.12);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--text-dark);background:var(--white);overflow-x:hidden;}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-family:'DM Sans',sans-serif;font-weight:600;font-size:0.82rem;padding:10px 18px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s,box-shadow 0.2s;letter-spacing:0.02em;}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:0 8px 40px rgba(201,168,76,0.18);}
+
+    /* TICKER */
+    .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
+    .ticker-track{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap;}
+    .ticker-track span{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+    @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid rgba(13,31,60,0.08);box-shadow:0 2px 20px rgba(13,31,60,0.07);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-mark{width:38px;height:38px;background:var(--navy);border-radius:6px;display:flex;align-items:center;justify-content:center;}
+    .logo-mark svg{width:22px;height:22px;}
+    .logo-text{display:flex;flex-direction:column;}
+    .logo-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:var(--navy);line-height:1.1;}
+    .logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+    nav{display:flex;align-items:center;gap:2px;}
+    nav a{font-size:0.78rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:6px 8px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    nav a:hover,nav a.active{color:var(--navy);background:var(--off-white);}
+    .header-cta{display:flex;align-items:center;gap:10px;}
+    .btn-nav{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:700;font-size:0.82rem;padding:9px 16px;border-radius:4px;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+    .btn-nav:hover{background:var(--gold-light);}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;}
+    .mobile-nav{display:none;flex-direction:column;background:var(--white);border-top:1px solid var(--border);padding:16px 24px 24px;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:var(--text-mid);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--off-white);}
+    .mobile-nav .btn-primary{margin-top:16px;justify-content:center;}
+
+    /* HERO */
+    .blog-hero{background:var(--navy);padding:80px 0 70px;position:relative;overflow:hidden;}
+    .blog-hero-grid{position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(201,168,76,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,1) 1px,transparent 1px);background-size:60px 60px;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:20px;}
+    .blog-hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,54px);color:var(--white);line-height:1.15;margin-bottom:20px;position:relative;z-index:1;}
+    .blog-hero h1 span{color:var(--gold);}
+    .blog-hero p{font-size:17px;color:rgba(255,255,255,0.75);line-height:1.7;max-width:600px;position:relative;z-index:1;}
+    .hero-inner{position:relative;z-index:1;}
+
+    /* BLOG GRID */
+    .blog-section{padding:80px 0;background:var(--off-white);}
+    .section-label{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;margin-top:48px;}
+    .blog-card{background:var(--white);border-radius:16px;box-shadow:0 4px 24px rgba(13,31,60,0.08);overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;}
+    .blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(13,31,60,0.14);}
+    .card-top{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:32px 28px;}
+    .card-category{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+    .card-top h2{font-family:'Playfair Display',serif;font-size:20px;color:var(--white);line-height:1.3;}
+    .card-body{padding:24px 28px;flex:1;display:flex;flex-direction:column;}
+    .card-body p{font-size:14px;color:var(--text-mid);line-height:1.7;flex:1;margin-bottom:24px;}
+    .card-meta{font-size:12px;color:var(--text-light);margin-bottom:16px;}
+    .card-link{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;padding:10px 20px;border-radius:6px;text-decoration:none;transition:background 0.2s;width:fit-content;}
+    .card-link:hover{background:var(--gold-light);}
+
+    /* CTA */
+    .cta-section{padding:80px 0;background:var(--navy);text-align:center;position:relative;overflow:hidden;}
+    .cta-section::before{content:'';position:absolute;inset:0;opacity:0.04;background-image:linear-gradient(rgba(201,168,76,1) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,1) 1px,transparent 1px);background-size:60px 60px;}
+    .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,40px);color:var(--white);margin-bottom:16px;position:relative;z-index:1;}
+    .cta-section h2 em{color:var(--gold);font-style:normal;}
+    .cta-section p{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:36px;position:relative;z-index:1;}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+
+    /* FOOTER */
+    footer{background:#080f1e;padding:56px 0 28px;}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+    .footer-brand p{font-size:0.85rem;color:rgba(255,255,255,0.45);line-height:1.7;margin:16px 0 20px;}
+    .footer-contact a{display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.6);text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+    .footer-contact a:hover{color:var(--gold);}
+    .footer-contact svg{color:var(--gold);width:14px;height:14px;flex-shrink:0;}
+    .footer-col h5{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+    .footer-col a{display:block;font-size:0.84rem;color:rgba(255,255,255,0.5);text-decoration:none;margin-bottom:10px;transition:color 0.2s;}
+    .footer-col a:hover{color:var(--white);}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.3);}
+    .footer-bottom-links{display:flex;gap:20px;}
+    .footer-bottom-links a{font-size:0.78rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s;}
+    .footer-bottom-links a:hover{color:var(--gold);}
+
+    .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+
+    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.blog-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}}
+    @media(max-width:1024px){.footer-grid{grid-template-columns:1fr 1fr;gap:32px;}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://ascendbenefitscg.com/#organization",
+    "name": "Ascend Benefits Consulting Group",
+    "legalName": "Ascend Benefits Consulting Group LLC",
+    "url": "https://ascendbenefitscg.com/",
+    "logo": "https://ascendbenefitscg.com/logo-512x512.png",
+    "image": "https://ascendbenefitscg.com/logo-512x512.png",
+    "email": "info@ascendbenefitscg.com",
+    "description": "Ascend Benefits Consulting Group is an independent, virtual employee benefits broker for employers with 2–250 employees. We specialize in level-funded health plans (up to 30% savings) and Reference Based Pricing (RBP) plans (20–40% potential savings), plus GAP, dental, vision, life, and disability coverage. Licensed in all 50 states, with a primary focus on the Southeast.",
+    "slogan": "Smarter Benefits. Stronger Businesses.",
+    "founder": {
+      "@type": "Person",
+      "name": "Chase Webb",
+      "jobTitle": "Director of Benefit Strategies",
+      "worksFor": { "@id": "https://ascendbenefitscg.com/#organization" }
+    },
+    "areaServed": [
+      { "@type": "State", "name": "Tennessee" },
+      { "@type": "State", "name": "Alabama" },
+      { "@type": "State", "name": "Georgia" },
+      { "@type": "State", "name": "Florida" },
+      { "@type": "State", "name": "Texas" },
+      { "@type": "State", "name": "South Carolina" },
+      { "@type": "State", "name": "North Carolina" },
+      { "@type": "State", "name": "Mississippi" },
+      { "@type": "State", "name": "Louisiana" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "knowsAbout": [
+      "Employee benefits",
+      "Small business group health insurance",
+      "Level-funded health plans",
+      "Self-funded ERISA health plans",
+      "Reference Based Pricing (RBP) health plans",
+      "Stop-loss insurance",
+      "GAP insurance",
+      "Group dental and vision insurance",
+      "Group life and disability insurance",
+      "Individual health insurance for self-employed and 1099 contractors"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Employee Benefits Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Level-Funded Health Plans", "url": "https://ascendbenefitscg.com/employer-coverage" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reference Based Pricing (RBP) Plans", "url": "https://ascendbenefitscg.com/reference-based-pricing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive Care Plans", "url": "https://ascendbenefitscg.com/preventive-care" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Free Benefits Analysis", "url": "https://ascendbenefitscg.com/contact" } }
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/ascend-benefits-consulting-group/",
+      "https://www.facebook.com/profile.php?id=61572073336199"
+    ]
+  }
+  </script>
+<style>/* top menu: keep items on one line; switch to the menu button on narrower screens */header nav a,header .nav-links a,header .nav-cta,header .header-cta a{white-space:nowrap;}@media(max-width:1200px){header nav,header .nav-links{display:none!important;}header .hamburger{display:flex!important;}}</style>
+</head>
+<body>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Benefits Insights &amp; Education</span><span>★</span>
+      <span>Level-Funded Plan Strategies</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+      <span>Benefits Insights &amp; Education</span><span>★</span>
+      <span>Level-Funded Plan Strategies</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <div class="logo-mark">
+            <svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">Ascend Benefits</span>
+            <span class="logo-sub">Consulting Group</span>
+          </div>
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/employer-coverage">Benefit Packages</a>
+          <a href="/reference-based-pricing">RBP Plans</a>
+          <a href="/preventive-care">Preventive Care</a>
+          <a href="/about">About</a>
+          <a href="/blog/" class="active">Blog</a>
+          <a href="/contact">Contact</a>
+          <a href="https://privatehealth.ascendbenefitscg.com/">Self-employed Health Plans</a>
+        </nav>
+        <div class="header-cta">
+          <a href="/contact" class="btn-nav">Get Free Analysis</a>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/">Home</a>
+      <a href="/employer-coverage">Benefit Packages</a>
+      <a href="/reference-based-pricing">RBP Plans</a>
+      <a href="/preventive-care">Preventive Care</a>
+      <a href="/about">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact">Contact</a>
+      <a href="https://privatehealth.ascendbenefitscg.com/">Self-employed Health Plans</a>
+      <a href="/contact" class="btn-primary">Get Free Benefits Analysis</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="blog-hero">
+    <div class="blog-hero-grid"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-badge">★ Resources &amp; Insights</div>
+        <h1>Small Business <span>Employee Benefits</span> — Insights From Ascend Benefits</h1>
+        <p>Straightforward answers to the questions your traditional broker was never asked. Learn how level-funded plans, ERISA strategies, and smarter benefits design can reduce your costs without cutting your coverage.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:620px;margin-top:12px;">Whether you're looking to offer benefits for the first time, build a more competitive benefits package, or cut costs on your health insurance plan — this blog covers health insurance, disability insurance, life insurance, paid leave, retirement plans, and employee assistance programs to help small businesses attract and retain top talent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section class="blog-section">
+    <div class="container">
+      <span class="section-label">Latest Articles</span>
+      <div class="blog-grid">
+
+        <div class="blog-card fade-up">
+          <div class="card-top">
+            <div class="card-category">Employee Benefits Education</div>
+            <h2>How Do Small Business Owners Get Health Insurance? A 2026 Guide to Every Option</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">October 2026 &nbsp;·&nbsp; 9 min read</div>
+            <p>Group plans, level-funded plans, RBP, QSEHRA, ICHRA, or individual coverage. Here's every way a small business owner can get health insurance, who each option fits, and how to choose.</p>
+            <a href="/blog/how-small-business-owners-get-health-insurance.html" class="card-link">Read Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card fade-up">
+          <div class="card-top">
+            <div class="card-category">Individual Coverage</div>
+            <h2>Health Insurance for 1099 Contractors and the Self-Employed: What to Know for 2026</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">October 2026 &nbsp;·&nbsp; 8 min read</div>
+            <p>Marketplace or private plan? How 1099 contractors and solo owners get coverage in 2026, what changed with subsidies, and how the self-employed health insurance deduction works.</p>
+            <a href="/blog/health-insurance-for-1099-contractors.html" class="card-link">Read Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card fade-up">
+          <div class="card-top">
+            <div class="card-category">Tennessee Employers</div>
+            <h2>Small Business Health Insurance in Tennessee: What Employers Need to Know for 2026</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">October 2026 &nbsp;·&nbsp; 8 min read</div>
+            <p>Tennessee's individual premiums jumped about 37.5% for 2026. Here are the group options Tennessee small businesses are using instead, from level-funded to RBP.</p>
+            <a href="/blog/small-business-health-insurance-tennessee.html" class="card-link">Read Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card fade-up">
+          <div class="card-top">
+            <div class="card-category">Cost Management</div>
+            <h2>Is Health Insurance Tax Deductible for a Small Business? A Plain-English Guide</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">October 2026 &nbsp;·&nbsp; 7 min read</div>
+            <p>How health insurance deductions work for the business, for employees, and for owners of sole proprietorships, partnerships, S-corps, and C-corps, plus the small business tax credit.</p>
+            <a href="/blog/is-health-insurance-tax-deductible-for-small-business.html" class="card-link">Read Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card fade-up">
+          <div class="card-top">
+            <div class="card-category">Cost Management / Plan Strategy</div>
+            <h2>Why Tennessee Businesses with 20 to 200 Employees Are Leaving Traditional Insurance Behind</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">May 2026 &nbsp;·&nbsp; 8 min read</div>
+            <p>Tennessee employers are switching to level funded health plans and saving significantly. Learn how stop-loss protection makes alternative funding safe, smart, and accessible for businesses with 20 to 200 employees.</p>
+            <a href="/blog/tennessee-businesses-level-funded-health-plans.html" class="card-link">Read Article →</a>
+          </div>
+        </div>
+
+                <div class="blog-card fade-up">
+          <div class="card-top">
+            <div class="card-category">Employee Benefits Education</div>
+            <h2>What Is a Level-Funded Health Plan? A Plain-English Guide for Small Business Owners</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">April 2026 &nbsp;·&nbsp; 8 min read</div>
+            <p>Most small business owners have been given two choices: traditional fully insured plans, or the risky world of full self-insurance. Level funding sits in the middle — and it could save your business up to 30%.</p>
+            <a href="/blog/level-funded-health-plan-guide.html" class="card-link">Read Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card fade-up">
+          <div class="card-top">
+            <div class="card-category">Cost Management</div>
+            <h2>Why Your Group Health Insurance Premiums Keep Going Up — And What You Can Do About It</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">April 2026 &nbsp;·&nbsp; 7 min read</div>
+            <p>The median proposed small group premium increase for 2026 is 11%. Here's why costs keep climbing — and the specific strategies employers are using to fight back without cutting employee benefits.</p>
+            <a href="/blog/why-premiums-keep-rising.html" class="card-link">Read Article →</a>
+          </div>
+        </div>
+
+        <div class="blog-card fade-up">
+          <div class="card-top">
+            <div class="card-category">Plan Strategy</div>
+            <h2>ERISA Plans Explained: How Small Businesses Access Fortune 500 Benefits Strategies</h2>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">April 2026 &nbsp;·&nbsp; 7 min read</div>
+            <p>ERISA self-funded plans have been the benefits strategy of choice for large corporations for decades. Thanks to modern stop-loss insurance, they're now accessible to businesses with as few as 2 employees.</p>
+            <a href="/blog/erisa-plans-explained.html" class="card-link">Read Article →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Stop Overpaying for <em>Benefits?</em></h2>
+      <p>A free analysis takes 30 minutes and could save your company thousands per year.</p>
+      <div class="cta-buttons">
+        <a href="/contact" class="btn-primary" style="font-size:1rem;padding:16px 32px;">Get Your Free Analysis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+            <div class="logo-text"><span class="logo-name" style="color:var(--white);">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+          </a>
+          <p>Smarter Benefits. Stronger Businesses. Independent benefits consulting for employers with 2–250 employees across the Southeast and all 50 states.</p>
+          <div class="footer-contact">
+            <a href="mailto:info&#64;ascendbenefitscg.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Send Us an Email
+            </a>
+          </div>
+        </div>
+        <div class="footer-col"><h5>Pages</h5><a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About Us</a><a href="/contact">Contact</a></div>
+        <div class="footer-col"><h5>Services</h5><a href="/employer-coverage">Level-Funded Plans</a><a href="/employer-coverage">Self-Funded / ERISA</a><a href="/reference-based-pricing">Reference-Based Pricing</a><a href="/employer-coverage">Stop-Loss Insurance</a><a href="/employer-coverage">Dental &amp; Vision</a><a href="/employer-coverage">Life &amp; Disability</a></div>
+        <div class="footer-col"><h5>Resources</h5><a href="/blog/">Blog &amp; Insights</a><a href="/employer-coverage">What is Level-Funding?</a><a href="/employer-coverage">ERISA Plan Guide</a><a href="/contact">Free Benefits Analysis</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ascend Benefits Consulting Group. All rights reserved.</p>
+        <div class="footer-bottom-links"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}
+    const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible');});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+  </script>
+
+  <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="69ef764ab50033039fb6dfb4" data-source="WEB_USER"></script>
+
+</body>
+</html>

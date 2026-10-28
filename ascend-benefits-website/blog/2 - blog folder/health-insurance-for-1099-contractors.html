@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Insurance for 1099 Contractors & Self-Employed (2026)</title>
+  <meta name="description" content="How 1099 contractors and self-employed people get health insurance in 2026: Marketplace vs. private plans, the subsidy changes, and the self-employed health insurance deduction." />
+  <link rel="canonical" href="https://ascendbenefitscg.com/blog/health-insurance-for-1099-contractors" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--navy:#0D1F3C;--navy-mid:#162d56;--gold:#C9A84C;--gold-light:#e8c96a;--white:#ffffff;--off-white:#F8F6F1;--gray-50:#f8f9fc;--gray-600:#4b5563;--gray-800:#1f2937;--text-mid:#3a4a63;--border:rgba(201,168,76,0.2);}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--gray-800);background:var(--white);overflow-x:hidden;}
+    .container{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+    /* TICKER */
+    .ticker{background:var(--navy);border-bottom:1px solid rgba(201,168,76,0.3);padding:8px 0;overflow:hidden;}
+    .ticker-track{display:flex;gap:60px;animation:ticker 30s linear infinite;white-space:nowrap;}
+    .ticker-track span{color:var(--gold);font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;}
+    @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+    /* HEADER */
+    header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid rgba(13,31,60,0.08);box-shadow:0 2px 20px rgba(13,31,60,0.07);}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:12px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-mark{width:38px;height:38px;background:#0D1F3C;border-radius:6px;display:flex;align-items:center;justify-content:center;}
+    .logo-mark svg{width:22px;height:22px;}
+    .logo-text{display:flex;flex-direction:column;}
+    .logo-name{font-family:'Playfair Display',serif;font-size:0.95rem;font-weight:700;color:#0D1F3C;line-height:1.1;}
+    .logo-sub{font-size:0.68rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;}
+    nav{display:flex;align-items:center;gap:2px;}
+    nav a{font-size:0.78rem;font-weight:500;color:#3a4a63;text-decoration:none;padding:6px 8px;border-radius:4px;transition:color 0.2s,background 0.2s;}
+    nav a:hover,nav a.active{color:#0D1F3C;background:#F8F6F1;}
+    .header-cta{display:flex;align-items:center;gap:10px;}
+    .btn-nav{display:inline-flex;align-items:center;background:#C9A84C;color:#0D1F3C;font-weight:700;font-size:0.82rem;padding:9px 16px;border-radius:4px;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+    .btn-nav:hover{background:#e2c06a;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;background:#0D1F3C;border-radius:2px;}
+    .mobile-nav{display:none;flex-direction:column;background:#fff;border-top:1px solid rgba(201,168,76,0.2);padding:16px 24px 24px;}
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{font-size:1rem;font-weight:500;color:#3a4a63;text-decoration:none;padding:12px 0;border-bottom:1px solid #F8F6F1;}
+
+    /* ARTICLE */
+    .article-hero{background:linear-gradient(135deg,var(--navy) 0%,#1a3660 60%,#0f2847 100%);padding:72px 0 60px;}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:20px;}
+    .breadcrumb a{color:var(--gold);text-decoration:none;}
+    .article-category{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:20px;}
+    .article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,48px);color:var(--white);line-height:1.2;margin-bottom:20px;max-width:760px;}
+    .article-meta{font-size:14px;color:rgba(255,255,255,0.55);}
+    .article-body{padding:64px 0 80px;}
+    .article-layout{display:grid;grid-template-columns:1fr 320px;gap:64px;align-items:start;}
+    .article-content h2{font-family:'Playfair Display',serif;font-size:26px;color:var(--navy);margin:40px 0 16px;}
+    .article-content h2:first-child{margin-top:0;}
+    .article-content p{font-size:16px;color:var(--gray-600);line-height:1.8;margin-bottom:20px;}
+    .article-content ul{margin:0 0 20px 24px;}
+    .article-content li{font-size:16px;color:var(--gray-600);line-height:1.8;margin-bottom:10px;}
+    .article-content strong{color:var(--navy);font-weight:700;}
+    .callout{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-left:4px solid var(--gold);padding:24px 28px;margin:36px 0;border-radius:0 8px 8px 0;}
+    .callout p{color:rgba(255,255,255,0.9);font-size:16px;font-style:italic;line-height:1.7;margin:0 0 8px;}
+    .callout .source{color:rgba(255,255,255,0.45);font-size:13px;font-style:normal;}
+    .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:32px 0;}
+    .stat-box{background:var(--gray-50);border:1px solid #e5e7eb;border-top:3px solid var(--gold);padding:20px 16px;text-align:center;border-radius:8px;}
+    .stat-box .num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:700;display:block;}
+    .stat-box .label{font-size:12px;color:var(--gray-600);margin-top:6px;display:block;line-height:1.4;}
+    .sidebar{position:sticky;top:96px;}
+    .sidebar-card{background:var(--gray-50);border:1px solid #e5e7eb;border-radius:12px;padding:28px;margin-bottom:24px;}
+    .sidebar-card h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--navy);margin-bottom:12px;}
+    .sidebar-card p{font-size:14px;color:var(--gray-600);line-height:1.7;margin-bottom:20px;}
+    .sidebar-cta{display:block;background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;padding:12px 20px;border-radius:6px;text-decoration:none;text-align:center;transition:background 0.2s;}
+    .sidebar-cta:hover{background:var(--gold-light);}
+    .sidebar-related h3{font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+    .sidebar-related a{display:block;font-size:14px;color:var(--navy);text-decoration:none;padding:10px 0;border-bottom:1px solid #e5e7eb;line-height:1.4;font-weight:500;}
+    .sidebar-related a:last-child{border-bottom:none;}
+    .sidebar-related a:hover{color:var(--gold);}
+    .cta-section{padding:72px 0;background:linear-gradient(135deg,var(--navy) 0%,#1a3660 100%);text-align:center;}
+    .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,38px);color:var(--white);margin-bottom:16px;}
+    .cta-section p{font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:36px;}
+    .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    .btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;transition:background 0.2s;}
+    .btn-primary:hover{background:var(--gold-light);}
+    footer{background:#080f1e;padding:48px 0 24px;}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+    .footer-brand p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.7;margin-top:12px;max-width:260px;}
+    .footer-col h4{color:var(--gold);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;}
+    .footer-col a{display:block;color:rgba(255,255,255,0.6);font-size:13px;text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+    .footer-col a:hover{color:#fff;}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-bottom p{color:rgba(255,255,255,0.4);font-size:12px;}
+    .answer-box{background:var(--off-white);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:24px 28px;margin:0 0 32px;}
+    .answer-label{display:block;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+    .answer-box p{color:var(--navy);font-size:17px;margin:0;}
+    .article-content ol{margin:0 0 20px 24px;}
+    .article-content{min-width:0;}
+    .article-content a{color:var(--gold);font-weight:600;text-decoration:none;}
+    .article-content a:hover{text-decoration:underline;}
+    .table-wrap{overflow-x:auto;margin:24px 0 32px;}
+    .compare{width:100%;border-collapse:collapse;font-size:14px;}
+    .compare th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-weight:600;}
+    .compare td{padding:12px 14px;border-bottom:1px solid #e5e7eb;color:var(--gray-600);vertical-align:top;}
+    .compare td:first-child{font-weight:700;color:var(--navy);}
+    .compare tr:nth-child(even) td{background:var(--gray-50);}
+    .faq-item{border:1px solid #e5e7eb;border-radius:10px;padding:24px;margin-bottom:16px;background:var(--gray-50);}
+    .faq-item h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--navy);margin-bottom:10px;}
+    .faq-item p{font-size:15px;margin:0;}
+    @media(max-width:900px){.article-layout{grid-template-columns:1fr;}.sidebar{position:static;}.stat-row{grid-template-columns:1fr;}}
+    @media(max-width:768px){nav{display:none;}.hamburger{display:flex;}.footer-grid{grid-template-columns:1fr;}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://ascendbenefitscg.com/#organization",
+    "name": "Ascend Benefits Consulting Group",
+    "legalName": "Ascend Benefits Consulting Group LLC",
+    "url": "https://ascendbenefitscg.com/",
+    "logo": "https://ascendbenefitscg.com/logo-512x512.png",
+    "image": "https://ascendbenefitscg.com/logo-512x512.png",
+    "email": "info@ascendbenefitscg.com",
+    "description": "Ascend Benefits Consulting Group is an independent, virtual employee benefits broker for employers with 2–250 employees. We specialize in level-funded health plans (up to 30% savings) and Reference Based Pricing (RBP) plans (20–40% potential savings), plus GAP, dental, vision, life, and disability coverage. Licensed in all 50 states, with a primary focus on the Southeast.",
+    "slogan": "Smarter Benefits. Stronger Businesses.",
+    "founder": {
+      "@type": "Person",
+      "name": "Chase Webb",
+      "jobTitle": "Director of Benefit Strategies",
+      "worksFor": { "@id": "https://ascendbenefitscg.com/#organization" }
+    },
+    "areaServed": [
+      { "@type": "State", "name": "Tennessee" },
+      { "@type": "State", "name": "Alabama" },
+      { "@type": "State", "name": "Georgia" },
+      { "@type": "State", "name": "Florida" },
+      { "@type": "State", "name": "Texas" },
+      { "@type": "State", "name": "South Carolina" },
+      { "@type": "State", "name": "North Carolina" },
+      { "@type": "State", "name": "Mississippi" },
+      { "@type": "State", "name": "Louisiana" },
+      { "@type": "Country", "name": "United States" }
+    ],
+    "knowsAbout": [
+      "Employee benefits",
+      "Small business group health insurance",
+      "Level-funded health plans",
+      "Self-funded ERISA health plans",
+      "Reference Based Pricing (RBP) health plans",
+      "Stop-loss insurance",
+      "GAP insurance",
+      "Group dental and vision insurance",
+      "Group life and disability insurance",
+      "Individual health insurance for self-employed and 1099 contractors"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Employee Benefits Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Level-Funded Health Plans", "url": "https://ascendbenefitscg.com/employer-coverage" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reference Based Pricing (RBP) Plans", "url": "https://ascendbenefitscg.com/reference-based-pricing" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive Care Plans", "url": "https://ascendbenefitscg.com/preventive-care" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Free Benefits Analysis", "url": "https://ascendbenefitscg.com/contact" } }
+      ]
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/ascend-benefits-consulting-group/",
+      "https://www.facebook.com/profile.php?id=61572073336199"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do companies have to provide health insurance to 1099 contractors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Independent contractors aren't employees, so the companies they work with aren't required to offer them health coverage. Contractors buy their own coverage through the Marketplace, a private plan, or a spouse's plan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I deduct health insurance if I'm a 1099 contractor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually, yes. If you have a net profit from self-employment, you can generally deduct premiums for yourself, your spouse, and your dependents through the self-employed health insurance deduction. You can't take it for months you were eligible for a subsidized employer plan, including through a spouse."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Did ACA subsidies change for 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The enhanced premium tax credits expired at the start of 2026, so subsidies are smaller for many people, and households earning more than 400% of the federal poverty level generally no longer qualify for any tax credit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is open enrollment for 2027 health insurance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On HealthCare.gov, open enrollment for 2027 coverage runs November 1, 2026 through January 15, 2027. Enroll by December 15 for coverage that starts January 1."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Health Insurance for 1099 Contractors and the Self-Employed: What to Know for 2026",
+    "description": "How 1099 contractors and self-employed people get health insurance in 2026: Marketplace vs. private plans, the subsidy changes, and the self-employed health insurance deduction.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ascendbenefitscg.com/blog/health-insurance-for-1099-contractors"
+    },
+    "url": "https://ascendbenefitscg.com/blog/health-insurance-for-1099-contractors",
+    "datePublished": "2026-10-15",
+    "inLanguage": "en-US",
+    "author": {
+      "@type": "Person",
+      "@id": "https://ascendbenefitscg.com/about#chase-webb",
+      "name": "Chase Webb",
+      "jobTitle": "Director of Benefit Strategies",
+      "url": "https://ascendbenefitscg.com/about",
+      "worksFor": {
+        "@id": "https://ascendbenefitscg.com/#organization"
+      }
+    },
+    "publisher": {
+      "@id": "https://ascendbenefitscg.com/#organization"
+    },
+    "image": "https://ascendbenefitscg.com/logo-512x512.png"
+  }
+  </script>
+<style>/* top menu: keep items on one line; switch to the menu button on narrower screens */header nav a,header .nav-links a,header .nav-cta,header .header-cta a{white-space:nowrap;}@media(max-width:1200px){header nav,header .nav-links{display:none!important;}header .hamburger{display:flex!important;}}</style>
+</head>
+<body>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Health Coverage for the Self-Employed</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Fortune 500 Strategies for Small Business</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+      <span>Health Coverage for the Self-Employed</span><span>★</span>
+      <span>Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; All 50 States</span><span>★</span>
+      <span>15 Years of Industry Experience</span><span>★</span>
+      <span>Fortune 500 Strategies for Small Business</span><span>★</span>
+      <span>Independent &amp; Unbiased Consulting</span><span>★</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="logo">
+          <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+          <div class="logo-text"><span class="logo-name">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/employer-coverage">Level Funded/Self Funded Plans</a>
+          <a href="/reference-based-pricing">RBP Plans</a>
+          <a href="/preventive-care">Preventive Care</a>
+          <a href="/about">About</a>
+          <a href="/blog/" class="active">Blog</a>
+          <a href="/contact">Contact</a>
+          <a href="https://privatehealth.ascendbenefitscg.com/">Self-employed Health Plans</a>
+        </nav>
+        <div class="header-cta"><a href="/contact" class="btn-nav">Get Free Analysis</a></div>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="/">Home</a><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care</a><a href="/about">About</a><a href="/blog/">Blog</a><a href="/contact">Contact</a><a href="https://privatehealth.ascendbenefitscg.com/">Self-employed Health Plans</a>
+    </div>
+  </header>
+
+  <section class="article-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="/blog/">Blog</a> &rsaquo; Individual Coverage</div>
+      <div class="article-category">★ Individual Coverage</div>
+      <h1>Health Insurance for 1099 Contractors and the Self-Employed: What to Know for 2026</h1>
+      <div class="article-meta">By Chase Webb, Director of Benefit Strategies &nbsp;·&nbsp; October 2026 &nbsp;·&nbsp; 8 min read</div>
+    </div>
+  </section>
+
+  <section class="article-body">
+    <div class="container">
+      <div class="article-layout">
+        <div class="article-content">
+
+          <div class="answer-box">
+            <span class="answer-label">The Short Answer</span>
+            <p>1099 contractors and self-employed people get health insurance on their own — through the ACA Marketplace (HealthCare.gov), a private individual plan, or a spouse's employer plan. If you show a profit, you can usually deduct your premiums with the self-employed health insurance deduction. For 2027 coverage, Marketplace open enrollment runs November 1, 2026 through January 15, 2027.</p>
+          </div>
+
+          <p>When you leave a W-2 job to work for yourself, the paycheck isn't the only thing that changes. The group health plan goes with it. And if you've never shopped for your own coverage, the options can feel like a maze.</p>
+          <p>Here's how it actually works for 1099 contractors, freelancers, gig workers, and solo business owners — and what changed for 2026.</p>
+
+          <h2>Can 1099 Contractors Get Group Health Insurance?</h2>
+          <p><strong>Usually not on their own.</strong> Group plans are built for employers with employees. A solo owner with no W-2 employees generally doesn't qualify for a traditional small group plan. That leaves three main paths: the Marketplace, private individual plans, or coverage through a spouse.</p>
+          <p>The companies you contract with also aren't required to cover you. Under the ACA, employer coverage obligations apply to employees, not independent contractors.</p>
+
+          <h2>Option 1: The ACA Marketplace</h2>
+          <p>The Marketplace (HealthCare.gov in Tennessee and most states) sells ACA-compliant plans that can't turn you down or charge more for pre-existing conditions. Depending on your income, you may qualify for a premium tax credit that lowers your monthly cost.</p>
+          <p><strong>Important change for 2026:</strong> the enhanced premium tax credits that had been in place since 2021 expired at the start of 2026. That means:</p>
+          <ul>
+            <li>Subsidies are smaller for many people who still qualify.</li>
+            <li>The "subsidy cliff" is back — if your household income is above 400% of the federal poverty level, you generally get no tax credit at all.</li>
+            <li>Full-price premiums jumped in many states. In Tennessee, the average full-price Marketplace premium rose about 37.5% for 2026.</li>
+          </ul>
+          <p>For self-employed people whose income swings year to year, that cliff matters. Estimate your income carefully when you apply, because you'll reconcile the credit on your tax return.</p>
+
+          <h2>Option 2: Private Individual Health Plans</h2>
+          <p>Outside the Marketplace, there's a whole market of private individual plans. Some are ACA-compliant plans bought directly from a carrier. Others are medically underwritten plans that price your coverage based on your health — which can mean noticeably lower premiums for healthy people, especially those who earn too much for a subsidy.</p>
+          <p>The trade-off: underwritten plans may limit or exclude coverage for pre-existing conditions and can have different benefit rules than ACA plans. Read the plan details carefully, or work with a licensed agent who can walk you through the differences side by side.</p>
+          <p>You can <a href="https://privatehealth.ascendbenefitscg.com/">compare private individual plans here</a>.</p>
+
+          <h2>Option 3: A Spouse's Employer Plan</h2>
+          <p>If your spouse has access to an employer plan, joining it is often the simplest option. Just know that it can affect your tax deduction — more on that below.</p>
+
+          <div class="callout">
+            <p>If you earn too much for a Marketplace subsidy and you're in good health, don't assume the Marketplace is your only option. Compare it against private plans before you choose.</p>
+          </div>
+
+          <h2>The Self-Employed Health Insurance Deduction</h2>
+          <p>This is the part a lot of 1099 workers miss. If you have a net profit from self-employment, you can generally deduct what you pay for health insurance for yourself, your spouse, your dependents, and children under 27 — as an adjustment to income on Schedule 1 of your Form 1040. You don't have to itemize.</p>
+          <p>A few rules to know:</p>
+          <ul>
+            <li><strong>You need a profit.</strong> The deduction is tied to your self-employment earnings.</li>
+            <li><strong>The month-by-month rule.</strong> You can't take the deduction for any month you were <em>eligible</em> to join a subsidized employer plan — including through your spouse's job — even if you didn't enroll.</li>
+            <li><strong>S-corp owners</strong> who own more than 2% can qualify too, as long as the premiums are run through the S-corp and reported on their W-2.</li>
+            <li><strong>Long-term care premiums</strong> can be included, up to age-based limits.</li>
+          </ul>
+          <p>Some filers need IRS Form 7206 to calculate it. Your tax preparer can confirm how it applies to you.</p>
+
+          <h2>When Can You Sign Up?</h2>
+          <p>For Marketplace plans, open enrollment for 2027 coverage runs <strong>November 1, 2026 through January 15, 2027</strong>. Enroll by December 15 for coverage starting January 1. Outside that window, you generally need a qualifying life event — like losing other coverage — to enroll.</p>
+          <p>Private underwritten plans often have more flexible start dates, which can help if you're between jobs or just starting out on your own.</p>
+
+          <h2>Hiring Your First Employee? Your Options Change</h2>
+          <p>Once you bring on a W-2 employee, group options open up — including level-funded plans and health reimbursement arrangements. Our guide on <a href="/blog/how-small-business-owners-get-health-insurance">how small business owners get health insurance</a> covers every option once you have a team.</p>
+
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <h3>Do companies have to provide health insurance to 1099 contractors?</h3>
+            <p>No. Independent contractors aren't employees, so the companies they work with aren't required to offer them health coverage. Contractors buy their own coverage through the Marketplace, a private plan, or a spouse's plan.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I deduct health insurance if I'm a 1099 contractor?</h3>
+            <p>Usually, yes. If you have a net profit from self-employment, you can generally deduct premiums for yourself, your spouse, and your dependents through the self-employed health insurance deduction. You can't take it for months you were eligible for a subsidized employer plan, including through a spouse.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Did ACA subsidies change for 2026?</h3>
+            <p>Yes. The enhanced premium tax credits expired at the start of 2026, so subsidies are smaller for many people, and households earning more than 400% of the federal poverty level generally no longer qualify for any tax credit.</p>
+          </div>
+          <div class="faq-item">
+            <h3>When is open enrollment for 2027 health insurance?</h3>
+            <p>On HealthCare.gov, open enrollment for 2027 coverage runs November 1, 2026 through January 15, 2027. Enroll by December 15 for coverage that starts January 1.</p>
+          </div>
+
+          <h2>The Bottom Line</h2>
+          <p>Being self-employed means building your own benefits — but you have more options than most people realize, and the tax deduction takes a real bite out of the cost. With subsidies shrinking in 2026, it's worth comparing the Marketplace and private plans side by side before you renew.</p>
+
+        </div>
+        <aside class="sidebar">
+          <div class="sidebar-card">
+            <h3>Compare Your Options With a Licensed Agent</h3>
+            <p>Marketplace or private plan? We'll compare both side by side for your situation, at no cost.</p>
+            <a href="https://privatehealth.ascendbenefitscg.com/" class="sidebar-cta">Compare Individual Plans →</a>
+          </div>
+          <div class="sidebar-card sidebar-related">
+            <h3>Related Articles</h3>
+            <a href="/blog/how-small-business-owners-get-health-insurance.html">How Do Small Business Owners Get Health Insurance? A 2026 Guide</a>
+            <a href="/blog/is-health-insurance-tax-deductible-for-small-business.html">Is Health Insurance Tax Deductible for a Small Business?</a>
+            <a href="/blog/small-business-health-insurance-tennessee.html">Small Business Health Insurance in Tennessee: 2026 Guide</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Find the Right Plan for You?</h2>
+      <p>Compare Marketplace and private individual plans in minutes.</p>
+      <div class="cta-buttons">
+        <a href="https://privatehealth.ascendbenefitscg.com/" class="btn-primary">Compare Individual Plans</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <div class="logo-mark"><svg viewBox="0 0 26 26" fill="none"><path d="M4 20 L13 6 L22 20" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 20 L13 12 L18 20" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></svg></div>
+            <div class="logo-text"><span class="logo-name" style="color:#fff;">Ascend Benefits</span><span class="logo-sub">Consulting Group</span></div>
+          </a>
+          <p>Independent employee benefits consulting for employers with 2–250 employees. Serving TN, AL, GA, FL, TX, SC, NC, MS, LA &amp; all 50 states.</p>
+        </div>
+        <div class="footer-col"><h4>Services</h4><a href="/employer-coverage">Level Funded/Self Funded Plans</a><a href="/reference-based-pricing">RBP Plans</a><a href="/preventive-care">Preventive Care Program</a><a href="/blog/">Blog &amp; Resources</a><a href="/contact">Free Benefits Analysis</a></div>
+        <div class="footer-col"><h4>Legal</h4><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/contact">Contact Us</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Ascend Benefits Consulting Group. All rights reserved.</p>
+        <p>Independent &amp; Unbiased · No Carrier Bias · Serving All 50 States</p>
+      </div>
+    </div>
+  </footer>
+  <script>function toggleMenu(){document.getElementById('mobileNav').classList.toggle('open');}</script>
+</body>
+</html>
